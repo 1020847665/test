@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "系统角色";
+    Layout = "~/Views/Shared/_ListPage.cshtml";
+}
+
+@section Js{
+    <script type="text/javascript">
+        $(function () {
+            //#######初始化列表数据#######
+            $('#list').datagrid({
+                url: '/SysRole/GetPageList?_=' + GetGuid(),
+                method: 'post',
+                pagination: true,
+                pageSize: 100,
+                pageList: [100, 200, 300, 400],
+                striped: true,
+                rownumbers: true,
+                fit: true,
+                fitColumns: true,
+                singleSelect: true,
+                remoteSort: true, //服务器排序
+                multiSort: false, //混合排序
+                //onLoadSuccess: function (data) { $(".pagin i").text(data.total); },  //显示总记录数
+                toolbar: [
+                 {
+                     id: 'btn-add',
+                     text: '添加',
+                     iconCls: 'icon-add',
+                     handler: ToolFunction.Add
+                 }, '-', {
+                     id: 'btn-edit',
+                     text: '编辑',
+                     iconCls: 'icon-edit',
+                     handler: ToolFunction.Edit
+                 }, '-', {
+                     id: 'btn-delete',
+                     text: '删除',
+                     iconCls: 'icon-Empty',
+                     handler: ToolFunction.Delete
+                 },
+                  '-', {
+                      id: 'btn-refreshn',
+                      text: '刷新',
+                      iconCls: 'icon-arrow_rotate_anticlockwise',
+                      handler: ToolFunction.Refresh
+                  }
+                ],
+                columns: [
+                    [
+                        { title: '角色名称', field: 'RoleName', width: 200, sortable: true },
+                        { title: '父级名称', field: 'ParentName', width: 200, sortable: true },
+                        { title: '创建日期', field: 'Cdt', width: 200, sortable: true, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '更新日期', field: 'Mdt', width: 200, sortable: true, formatter: function (value, row, index) { return FormatDateTime(value); } }
+                    ]
+                ],
+                //双击行【编辑模式】
+                onDblClickRow: function (row, data) {
+                    ToolFunction.CreateOrModify(data.RoleId);
+                }
+            });
+        });
+
+        //#######构建按钮事件#######
+        var ToolFunction = {
+            //保存新增、编辑详情
+            Save: function () {
+                if ($('#form-detail').form('validate')) {
+                    $Ajax({
+                        url: "/SysRole/Save",
+                        data: $("#form-detail").serializeArray(),
+                        callBack: function (result) {
+                            CloseDialog();
+                            $.messager.alert("提示", result.Message, "info", function () {
+                                ToolFunction.Refresh();
+                            });
+                        }
+                    });
+                }
+            },
+            //搜索
+            Search: function () {
+                $('#list').datagrid('load', $("#form-search").serializeJson());
+            },
+            //重置
+            Reset: function () {
+                window.location.href = location.href;
+            },
+            //刷新
+            Refresh: function () {
+                $('#list').datagrid('reload');
+            },
+            //新增
+            Add: function () {
+                OpenDialog({
+                    href: "/SysRole/Edit",
+                    title: "新增系统角色",
+                    width: 500,
+                    height: 350,
+                    resizable: true,
+                    buttons: [
+                        {
+                            text: '保存',
+                            iconCls: 'icon-tick',
+                            handler: ToolFunction.Save
+                        }, {
+                            text: '关闭',
+                            iconCls: 'icon-cross',
+                            handler: CloseDialog
+                        }
+                    ]
+                });
+            },
+            //编辑
+            Edit: function () {
+                var checkedRow = $('#list').datagrid('getSelected');
+                if (!checkedRow) $.messager.alert('提示', "请选择要编辑的角色！", 'warning');
+                else {
+                    OpenDialog({
+                        href: "/SysRole/Edit?RoleId=" + checkedRow.RoleId,
+                        title: "编辑系统角色",
+                        width: 500,
+                        height: 350,
+                        resizable: true,
+                        buttons: [
+                            {
+                                text: '保存',
+                                iconCls: 'icon-tick',
+                                handler: ToolFunction.Save
+                            }, {
+                                text: '关闭',
+                                iconCls: 'icon-cross',
+                                handler: CloseDialog
+                            }
+                        ]
+                    });
+                }
+            },
+            //删除
+            Delete: function () {
+                var checkedRow = $('#list').datagrid('getSelected');
+                if (!checkedRow) $.messager.alert('提示', "请选择要删除的角色！", 'warning');
+                else {
+                    $.messager.confirm('提示', "角色功能将一并删除，确定删除？", function (r) {
+                        if (r) {
+                            $Ajax({
+                                url: "/SysRole/DeleteSysRoles",
+                                data: { roleId: checkedRow.RoleId },
+                                callBack: function (result) {
+                                    $.messager.alert("提示", result.Message, "info", function () {
+                                        ToolFunction.Refresh();
+                                    });
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+}
+
+
+<div class="easyui-layout" data-options="fit:true">
+    <!--搜索模块-->
+    <div data-options="region:'north',split:true,border:false" style="height:40px;line-height:30px;padding:2px 0;">
+        <form id="form-search" method="post">
+            <ul class="searchitem">
+                <li>@Html.TextBox("RoleName", string.Empty, new { @class = "search-input", placeholder = "角色名称" })</li>
+                <li class="searchbtnbox">
+                    <a href="javascript:ToolFunction.Search();" class="easyui-linkbutton searchbtn" data-options="iconCls:'icon-zoom'">搜索</a>
+                    <a href="javascript:ToolFunction.Reset();" class="easyui-linkbutton searchbtn" data-options="iconCls:'icon-arrow_rotate_clockwise'">重置</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div data-options="region:'center',split:true,border:false">
+        <div class="easyui-layout" data-options="fit:true">
+            <!--数据列表主体-->
+            <div data-options="region:'center',split:true,border:false">
+                <table id="list"></table>
+            </div>
+        </div>
+    </div>
+</div>

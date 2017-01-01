@@ -1,0 +1,121 @@
+﻿@using BestWise.MM.Service.Model.System
+@{
+    Layout = null;
+    SysMenu topSelectedModule = null;
+    SysUser currentUser = ViewBag.CurrentUser as SysUser;
+    SystemConfig config = ViewBag.SysConfig as SystemConfig;
+    if (currentUser.MenuList != null && currentUser.MenuList.Count > 0)
+    {
+        topSelectedModule = currentUser.MenuList.FirstOrDefault(o => o.ParentID == Guid.Empty && o.IsSelected);
+        topSelectedModule = topSelectedModule == null ? currentUser.MenuList.First() : topSelectedModule;
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@config.MainTitle</title>
+    <!--公用样式-->
+    <link href="~/Styles/main.css" rel="stylesheet" />
+    <link href="~/Plugs/easyui/icon.css" rel="stylesheet" />
+    <link href="~/Plugs/easyui/easyuiext.css" rel="stylesheet" />
+    <!--公用脚本-->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Plugs/easyui/jquery.easyui.min.js"></script>
+    <script src="~/Plugs/easyui/easyui-lang-zh_cn.js"></script>
+    <script src="~/Plugs/easyui/Jquery.easyui.validExtend.js"></script>
+    <script src="~/Plugs/layer/layer.min.js"></script>
+    <script src="~/Plugs/my97/WdatePicker.js"></script>
+    <script src="~/Plugs/my97/lang/zh-cn.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/main.js"></script>
+</head>
+<body>
+    <div class="easyui-layout" data-options="fit:true">
+        <!--顶部菜单-->
+        <div id="layout-top" data-options="region:'north'">
+            <div class="topleft">
+                <a href="@config.IndexUrl" target="_parent">
+                    <img src="/Images/logo.png" title="系统首页" />
+                </a>
+            </div>
+            <ul class="nav">
+                @if (currentUser.MenuList != null && currentUser.MenuList.Count > 0)
+                {
+                    foreach (var menu in currentUser.MenuList.Where(o => o.ParentID == Guid.Empty).ToList())
+                    {
+                        <li>
+                            <a key="@menu.MenuID" href="javascript:;">
+                                <img src="@menu.ShowImgUrl" title="@menu.MenuName" /><h2>@menu.MenuName</h2>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+            <div class="topright">
+                <ul>
+                    <li><a href="javascript:;" class="btn-alterpwd">修改密码</a></li>
+                    <li><a href="javascript:;" class="btn-loginout" target="_parent">退出</a></li>
+                </ul>
+                <div class="user">
+                    @if (!string.IsNullOrWhiteSpace(currentUser.Head))
+                    {
+                        <img src="@currentUser.ShowHead" style="width:30px;height:30px;vertical-align:top;border-radius:1px;" />
+                    }
+                    <span>
+                        @string.Format("{0}[{1}]", currentUser.ShowName, currentUser.Account)
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div data-options="region:'center',border:false">
+            <div id="layoutCenter" class="easyui-layout" data-options="fit:true">
+                <!--左侧菜单-->
+                <div id="layout-left" title="功能导航" data-options="region:'west', iconCls: 'icon-icon0',collapsed:true">
+                    <dl class="leftmenu">
+                        @if (topSelectedModule != null)
+                        {
+                            foreach (var menu in currentUser.MenuList.Where(o => o.ParentID == topSelectedModule.MenuID).ToList())
+                            {
+                                <dd>
+                                    <div class="title">
+                                        <span><img src="/Images/icon0.png" /></span>@menu.MenuName
+                                    </div>
+                                    <ul class="menuson" style="display:@(menu.IsSelected ? "block" : "block")">
+                                        @foreach (var child in currentUser.MenuList.Where(o => o.ParentID == menu.MenuID).ToList())
+                                        {
+                                            <li class="@(child.IsSelected?"active":string.Empty)">
+                                                <cite></cite>
+                                                <a href="javascript:;" onclick="EasyExt.AddTab({title:'@string.Format("{0}/{1}/{2}",topSelectedModule.MenuName,menu.MenuName,child.MenuName)',requestUrl:'@string.Format("{0}?_={1}",child.NavigateUrl,DateTime.Now.Ticks)'});">@child.MenuName</a>
+                                                <i></i>
+                                            </li>
+                                        }
+                                    </ul>
+                                </dd>
+                            }
+                        }
+                    </dl>
+                </div>
+                <!--右侧列表主体-->
+                <div id="bodyPanel" data-options="region:'center',split:true">
+                    <div id="bodyTab" class="easyui-tabs" data-options="fit:true">
+                        <div title="首页" data-options="border:false,bodyCls:'tabContentStyle'">
+                            <iframe src="/Home/Default" class="rightFrame" width="100%" height="100%" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部备案信息-->
+        <div data-options="region:'south'" style="height:40px;line-height:33px;text-align:center;">
+            @config.ICP
+        </div>
+    </div>
+    <!--TAB右键菜单（关闭选项卡）-->
+    <div id="rcmenu" class="easyui-menu">
+        <div id="closecur" data-options="iconCls:'icon-01'">关闭</div>
+        <div id="closeall" data-options="iconCls:'icon-application_delete'">关闭全部</div>
+        <div id="closeother" data-options="iconCls:'icon-application_osx_delete'">关闭其他</div>
+    </div>
+</body>
+</html>

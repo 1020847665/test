@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "课程预约";
+    Layout = "~/Views/Shared/_ListPage.cshtml";
+}
+
+@section js{
+    <script type="text/javascript">
+        //#######初始化列表数据#######
+        $(function () {
+            $('#list').datagrid({
+                url: '/StudentBook/GetPagedList?bookType=1',
+                method: 'post',
+                loadMsg: "数据加载中.......",
+                pagination: true,
+                fit: true,
+                fitColumns: true,
+                singleSelect: true,
+                striped: true,
+                rownumbers: true,
+                pageSize: 100,
+                pageList: [100, 200, 300, 400],
+                toolbar: [
+               {
+                   id: 'btn-add',
+                   text: '详情',
+                   iconCls: 'icon-detail',
+                   handler: ToolFunction.BookDetail
+               }, '-', {
+                   id: 'btn-edit',
+                   text: '预约处理',
+                   iconCls: 'icon-edit',
+                   handler: ToolFunction.DealState
+               }
+                ],
+                columns: [
+                    [
+                        { title: '名称', field: 'BookName', width: 200 },
+                        { title: '预约人', field: 'UserName', width: 100 },
+                        { title: '培训单位', field: 'TrainOrganization', width: 200 },
+                        { title: '培训地点', field: 'TrainAddress', width: 200 },
+                        { title: '培训人数', field: 'TrainNumber', width: 50 },
+                        { title: '手机号', field: 'MobileNumber', width: 100 },
+                        { title: '开始时间', field: 'StartTime', width: 100, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '结束时间', field: 'EndTime', width: 100, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '创建日期', field: 'Cdt', width: 100, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '处理状态', field: 'DealStateText', width: 50 },
+                    ]
+                ],
+                //双击行【编辑模式】
+                onDblClickRow: function (rowIndex, rowData) {
+                    ToolFunction.BookDetail()
+                }
+            });
+        });
+
+        var ToolFunction = {
+            //搜索
+            Search: function () {
+                console.log($("#form-search").serializeJson());
+                $('#list').datagrid('load', $("#form-search").serializeJson());
+            },
+            //刷新
+            Refresh: function () {
+                $('#list').datagrid('reload');
+            },
+            //保存预约状态处理
+            Save: function () {
+                if ($('#form-book-deal').form('validate')) {
+                    var jsonData = $("#form-book-deal").serializeJson();
+                    $Ajax({
+                        url: "/StudentBook/DealState",
+                        data: jsonData,
+                        callBack: function (result) {
+                            CloseDialog();
+                            $.messager.alert("提示", result.Message, "info", function () {
+                                ToolFunction.Refresh();
+                            });
+                        }
+                    });
+                }
+            },
+            //状态处理页
+            DealState: function () {
+                var checkedRow = $('#list').datagrid('getSelected');
+                if (!checkedRow) $.messager.alert('提示', "请选择要处理的预约信息！", 'warning');
+                else {
+                    OpenDialog({
+                        href: "/StudentBook/BookDeal?bookId=" + checkedRow.BookId,
+                        title: "预约处理",
+                        width: 400,
+                        height: 300,
+                        resizable: true,
+                        buttons: [
+                            {
+                                text: '保存',
+                                iconCls: 'icon-tick',
+                                handler: ToolFunction.Save
+                            }, {
+                                text: '关闭',
+                                iconCls: 'icon-cross',
+                                handler: CloseDialog
+                            }
+                        ]
+                    });
+                }
+            },
+            //详情
+            BookDetail: function () {
+                var checkedRow = $('#list').datagrid('getSelected');
+                if (!checkedRow) $.messager.alert('提示', "请选择要查看的预约信息！", 'warning');
+                else {
+                    OpenDialog({
+                        href: "/StudentBook/Detail?bookId=" + checkedRow.BookId,
+                        title: "预约详情",
+                        width: 600,
+                        iconCls: "icon-detail",
+                        height: 800,
+                        resizable: true,
+                        buttons: [
+                            {
+                                text: '关闭',
+                                iconCls: 'icon-cross',
+                                handler: CloseDialog
+                            }
+                        ]
+                    });
+                }
+            }
+        };
+    </script>
+}
+<div class="easyui-layout" data-options="fit:true">
+    <!--搜索模块-->
+    <div data-options="region:'north',split:true,border:false" style="height:40px;line-height:30px;padding:2px 0; ">
+        <form id="form-search" method="post">
+            <ul class="searchitem">
+                <li>@Html.TextBox("searchKey", string.Empty, new { @class = "search-input", placeholder = "名称/预约人" })</li>
+                <li class="searchbtnbox">
+                    <a href="javascript:ToolFunction.Search();" class="easyui-linkbutton searchbtn" data-options="iconCls:'icon-zoom'">搜索</a>
+                    <a href="javascript:ToolFunction.Reset();" class="easyui-linkbutton searchbtn" data-options="iconCls:'icon-arrow_rotate_clockwise'">重置</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <div data-options="region:'center',split:true,border:false">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'center',split:true,border:false">
+                <table id="list"></table>
+            </div>
+        </div>
+    </div>
+</div>

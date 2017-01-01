@@ -1,0 +1,33 @@
+﻿@using BestWise.MM.Service.Model.System
+@{
+    SysUser currentUser = ViewBag.CurrentUser as SysUser;
+    Guid topMenuid = ConvertUtils.ConvertToGuid(Request.Params["pid"]);
+    SysMenu topModule = null;
+    if (currentUser.MenuList != null && currentUser.MenuList.Count > 0 && topMenuid != Guid.Empty)
+    {
+        topModule = currentUser.MenuList.FirstOrDefault(o => o.MenuID == topMenuid);
+    }
+}
+<dl class="leftmenu">
+    @if (topModule != null)
+    {
+        foreach (var menu in currentUser.MenuList.Where(o => o.ParentID == topMenuid).ToList())
+        {
+            <dd>
+                <div class="title">
+                    <span><img src="/Images/icon0.png" /></span>@menu.MenuName
+                </div>
+                <ul class="menuson" style="display:@(menu.IsSelected ? "block" : "block")">
+                    @foreach (var child in currentUser.MenuList.Where(o => o.ParentID == menu.MenuID).ToList())
+                    {
+                        <li class="@(child.IsSelected?"active":string.Empty)">
+                            <cite></cite>
+                            <a href="javascript:;" onclick="EasyExt.AddTab({title:'@string.Format("{0}/{1}/{2}", topModule.MenuName, menu.MenuName, child.MenuName)',requestUrl:'@string.Format("{0}?_={1}",child.NavigateUrl,DateTime.Now.Ticks)'});">@child.MenuName</a>
+                            <i></i>
+                        </li>
+                    }
+                </ul>
+            </dd>
+        }
+    }
+</dl>

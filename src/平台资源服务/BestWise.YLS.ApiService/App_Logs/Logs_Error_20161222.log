@@ -1,0 +1,32 @@
+2016-12-22 11:06:29,236 [52] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 必须声明标量变量 "@IsDisabled"。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
+   在 BestWise.User.FrameWork.DAL.DALUsers.UpdateUserState(Users user) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\DAL\DALUsers.cs:行号 287
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.UpdateUserState(Users user) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 293
+ClientConnectionId:8a8aa909-23ea-474b-8079-79d72d7bd57a
+Error Number:137,State:2,Class:15
+2016-12-22 11:08:00,433 [49] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 必须声明标量变量 "@IsDisabled"。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteNonQuery(DbCommand command)
+   在 BestWise.User.FrameWork.DAL.DALUsers.UpdateUserState(Users user) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\DAL\DALUsers.cs:行号 287
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.UpdateUserState(Users user) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 293
+ClientConnectionId:8a8aa909-23ea-474b-8079-79d72d7bd57a
+Error Number:137,State:2,Class:15

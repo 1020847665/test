@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "菜单管理";
+    Layout = "~/Views/Shared/_ListPage.cshtml";
+}
+@section js{
+
+    <script type="text/javascript">
+        //#######初始化列表数据#######
+        $(function () {
+            $('#list').treegrid({
+                url: '/SysMenu/GetTreeList',
+                method: 'post',
+                rownumbers: true,
+                idField: 'Id',
+                striped: true,
+                treeField: 'Name',
+                fitColumns: true,
+                fit: true,
+
+                //onLoadSuccess: function (row, data) { $(".pagin i").text(data.rows.length); }, //显示总记录数
+                columns: [
+                    [
+                        { title: '菜单名称', field: 'Name', width: 200 },
+                        { title: '导航地址', field: 'Identify', width: 200 },
+                        { title: '排序编号', field: 'Sort', width: 200 },
+                        {
+                            title: '默认选中',
+                            field: 'IsSelected',
+                            width: 200,
+                            formatter: function (value, row, index) {
+                                if (value) {
+                                    return '<span style="color:green">√</span>';
+                                }
+                            }
+                        },
+                        { title: '创建日期', field: 'Cdt', width: 200, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '更新日期', field: 'Mdt', width: 200, formatter: function (value, row, index) { return FormatDateTime(value); } },
+                        { title: '备注', field: 'Notes', width: 200 }
+                    ]
+                ],
+                toolbar: [
+                   {
+                       id: 'btn-add',
+                       text: '添加',
+                       iconCls: 'icon-add',
+                       handler: function () {
+                           var checkedRow = $('#list').treegrid('getSelected');
+                           ToolFunction.AddOrEdit(0);
+                       }
+                   }, '-', {
+                       id: 'btn-edit',
+                       text: '编辑',
+                       iconCls: 'icon-edit',
+                       handler: ToolJs.Edit
+                   }, '-', {
+                       id: 'btn-delete',
+                       text: '删除',
+                       iconCls: 'icon-Empty',
+                       handler: ToolFunction.Delete
+                   }, '-', {
+                       id: 'btn-expand',
+                       text: '展开',
+                       iconCls: 'icon-arrow_nw_ne_sw_se',
+                       handler: ToolFunction.Expand
+                   }, '-', {
+                       id: 'btn-collapse',
+                       text: '折叠',
+                       iconCls: 'icon-arrow_in_longer',
+                       handler: ToolFunction.Collapse
+                   }, '-', {
+                       id: 'btn-refreshn',
+                       text: '刷新',
+                       iconCls: 'icon-arrow_rotate_anticlockwise',
+                       handler: ToolFunction.Refresh
+                   }
+                ],
+
+                //双击行【编辑模式】
+                onDblClickRow: function (row) {
+                    var checkRow = $('#list').datagrid('getSelected');
+                    if (checkRow) {
+                        ToolFunction.AddOrEdit(checkRow.Id);
+                    } else
+                        $.messager.alert('提示', "请选择要编辑的菜单！", 'warning');
+                }
+            });
+        });
+
+        //#######构建菜单功能按钮#######
+        var ToolJs = {
+            Edit: function () {
+                var checkedRow = $('#list').treegrid('getSelected');
+                if (checkedRow) ToolFunction.AddOrEdit(checkedRow.Id);
+                else $.messager.alert('提示', "请选择要编辑的菜单！", 'warning');
+            },
+            Delete: function () {
+                var checkedRow = $('#list').treegrid('getSelected');
+                if (checkedRow) ToolFunction.Delete(checkedRow.Id);
+                else $.messager.alert('提示', "请选择要删除的菜单！", 'warning');
+            }
+        }
+
+        //#######构建按钮事件#######
+        var ToolFunction = {
+            //新增或者编辑，弹窗
+            AddOrEdit: function (id) {
+                OpenDialog({
+                    href: "/SysMenu/CreateOrModify?id=" + id,
+                    title: (id == 0 ? "新增 | " : "编辑 | ") + "系统菜单",
+                    width: 500,
+                    height: 500,
+                    resizable: true,
+                    buttons: [
+                        {
+                            text: '保存',
+                            iconCls: 'icon-tick',
+                            handler: function () {
+                                //保存新增、编辑详情
+                                if ($('#form-detail').form('validate')) {
+                                    $Ajax({
+                                        url: "/SysMenu/Save",
+                                        data: $("#form-detail").serializeArray(),
+                                        callBack: function (result) {
+                                            CloseDialog();
+                                            $.messager.alert("提示", result.Message, "info", function () {
+                                                ToolFunction.Refresh();
+                                            });
+                                        }
+                                    });
+                                }
+                            }
+                        }, {
+                            text: '关闭',
+                            iconCls: 'icon-cross',
+                            handler: CloseDialog
+                        }
+                    ]
+                });
+            },
+            //删除
+            Delete: function (id) {
+                var checkedRow = $('#list').datagrid('getSelected');
+                if (!checkedRow) $.messager.alert('提示', "请选择要删除的菜单！", 'warning');
+                $.messager.confirm('提示', "确定要删除该菜单？", function (r) {
+                    if (r) {
+                        $Ajax({
+                            url: "/SysMenu/Delete",
+                            data: { id: checkedRow.Id},
+                            callBack: function (result) {
+                                $.messager.alert("提示", result.Message, "info", function () {
+                                    ToolFunction.Refresh();
+                                });
+                            }
+                        });
+                    }
+                });
+            },
+            //刷新
+            Refresh: function () {
+                $('#list').treegrid('reload');
+            },
+            //展开
+            Expand: function () {
+                $('#list').treegrid('expandAll');
+            },
+            //折叠
+            Collapse: function () {
+                $('#list').treegrid('collapseAll');
+            }
+        }
+    </script>
+
+}
+
+<div class="easyui-layout" data-options="fit:true">
+    <!--数据列表主体-->
+    <div data-options="region:'center',split:true,border:false">
+        <table id="list"></table>
+    </div>
+</div>

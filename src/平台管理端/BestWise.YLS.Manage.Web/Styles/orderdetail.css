@@ -1,0 +1,104 @@
+﻿@CHARSET "UTF-8";
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td{/* table elements 表格元素 */ margin: 0; padding: 0;}
+/* 设置默认字体 */
+body,
+button, input, select, textarea{/* for ie */ /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif !important; /*font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */}
+h1{font-size: 18px; /* 18px / 12px = 1.5 */}
+h2{font-size: 16px;}
+h3{font-size: 14px;}
+h4, h5, h6{font-size: 100%;}
+address, cite, dfn, em, var{font-style: normal;} /* 将斜体扶正 */
+code, kbd, pre, samp, tt{font-family: "Courier New", Courier, monospace;} /* 统一等宽字体 */
+small{font-size: 12px;} /* 小于 12px 的中文很难阅读，让 small 正常化 */
+/* 重置列表元素 */
+ul, ol{list-style: none;}
+/* 重置文本格式元素 */
+a{text-decoration: none;}
+a:hover{text-decoration: underline;}
+abbr[title], acronym[title]{/* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */ border-bottom: 1px dotted; cursor: help;}
+q:before, q:after{content: '';}
+/* 重置表单元素 */
+legend{color: #000;} /* for ie6 */
+fieldset, img{border: none;} /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea{font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */}
+/* 重置表格元素 */
+table{border-collapse: collapse; border-spacing: 0;}
+/* 重置 hr */
+hr{border: none; height: 1px;}
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html{overflow-y: scroll;font-size:12px;color:#666}
+.box-ini{width:100%;overflow:hidden;padding:0 20px;background-color: #fff;}
+.pul-l{float:left;}
+.pul-r{float:right;}
+.clear, .clr{clear: both; display: block; font-size: 0; height: 0; line-height: 0; overflow: hidden;}
+/*默认按钮样式*/
+.m-btn{background-image: none; border: 1px solid transparent; border-radius: 4px; cursor: pointer; display: inline-block; font-size: 14px; font-weight: 400; margin-bottom: 0; padding: 6px 12px; text-align: center; vertical-align: middle; white-space: nowrap;}
+.m-btn-default {background-color: #fff;border-color: #ccc;color: #333;}
+.m-btn-default:hover{background-color: #adadad; border-color: #ccc; color: #333;}
+.m-btn-default:active:focus , .m-btn-default:active:hover{background-color: #d4d4d4; border-color: #8c8c8c; color: #333;}
+
+.m-btn-success {background-color: #5cb85c;border-color: #4cae4c;color: #fff;}
+.m-btn-success:hover{background-color: #286090; border-color: #398439; color: #fff;}
+.m-btn-success:active:focus , .m-btn-success:active:hover{background-color: #398439; border-color: #255625; color: #fff;}
+
+.m-btn-info {background-color: #5bc0de;border-color: #46b8da;color: #fff;}
+.m-btn-info:hover{background-color: #31b0d5; border-color: #269abc; color: #fff;}
+.m-btn-info:active:focus , .m-btn-info:active:hover{background-color: #269abc; border-color: #1b6d85; color: #fff;}
+
+.m-btn-warning {background-color: #f0ad4e;border-color: #eea236;color: #fff;}
+.m-btn-warning:hover{background-color: #ec971f; border-color: #d58512; color: #fff;}
+.m-btn-warning:active:focus , .m-btn-warning:active:hover{background-color: #d58512; border-color: #985f0d; color: #fff;}
+
+.m-btn-primary {background-color: #337ab7;border-color: #2e6da4;color: #fff;}
+.m-btn-primary:hover{background-color: #286090; border-color: #204d74; color: #fff;}
+.m-btn-primary:active:focus , .m-btn-primary:active:hover{background-color: #204d74; border-color: #122b40; color: #fff;}
+
+.m-btn-danger{background-color: #d9534f; border-color: #d43f3a; color: #fff;}
+.m-btn-danger:hover{background-color: #c9302c; border-color: #ac2925; color: #fff;}
+.m-btn-danger:active:focus , .m-btn-danger:active:hover{background-color: #ac2925; border-color: #761c19; color: #fff;}
+
+/*默认输入框样式*/
+.m-f-control{background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 2px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset; color: #555; display: block; font-size: 12px; padding: 6px 12px; transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s; width: 80%;}
+.m-f-control:focus{border-color:#66afe9;box-shadow: 0 1px 1px rgba(0,0,0,0.075) insert,0 0 8px rgba(102,175,233,0.6);outline:0 onoe;}
+
+.mine{width: 998px;margin: 0 auto}
+.tit{font-size: 14px}
+.box{border: solid 1px #e1e1e1;margin-bottom: 25px}
+.boxtit{line-height: 30px;border-bottom: solid 1px #e1e1e1;padding: 0 10px}
+.m-info-tit{width: 17%;display: block;padding-left: 15px;float: left;}
+.half-box{width: 50%;line-height: 25px;float: left}
+/*订单头部*/
+.o-title{height: 35px;padding: 10px 10px;background-color: #F3F3F3}
+.o-title span{display: inline-block}
+.o-title .line{line-height:30px;}
+.o-title .m-btn{margin-right: 5px;float: right;}
+.o-osn{width: 7%;text-align: center;color: #666}
+.o-orsn{width: 25%;color: #333}
+.o-tyle{width: 25%;color: #333}
+.o-title .o-set{margin-right: 25px;}
+
+/**/
+.o-info-user{margin-right: 15px}
+.o-info-usersn{margin-right: 50px}
+.o-info-list{line-height: 25px;}
+.o-i-l-box{padding: 10px 0;overflow: hidden}
+.o-i-l-l{width: 50%}
+.o-i-l-r{width: 50%}
+.o-i-l-t{}
+.o-i-l-i{color: #333}
+.m-info-l{display: inline-block;width: 75%;color:#333}
+
+/*table*/
+.o-table{width:80%;margin:0 auto;}
+.o-s-table{width:90%}
+.o-table thead{background-color:#F3F3F3;line-height:30px}
+.o-table thead td{min-width:60px;color:#333}
+.o-table td{padding-left:10px;border:solid 1px #e1e1e1}
+.o-table tbody td{padding:5px 10px;}
+.table-img img{height:50px;display:block;margin:0 auto}

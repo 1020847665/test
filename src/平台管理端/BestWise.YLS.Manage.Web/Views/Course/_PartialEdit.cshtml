@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "课程信息";
+}
+@model BestWise.YLS.Model.Course
+
+<style type="text/css">
+    .checkbox {
+        vertical-align: middle;
+        margin-top: -2px;
+        margin-bottom: 1px;
+    }
+</style>
+
+<script type="text/javascript">
+    $(function () {
+        //初始化附件上传
+        $('#fileUpload').uploadify({
+            buttonText: '选择附件',
+            swf: '/Plugs/uploadify/uploadify.swf',
+            uploader: '/UploadAttachment/course',
+            multi: false,
+            auto: true,
+            fileTypeExts: '*',
+            fileTypeDesc: '选择Logo',
+            fileSizeLimit: 0,
+            queueSizeLimit: 1,
+            simUploadLimit: 1,
+            queueID: 'queuebox',
+            removeCompleted: true,
+            onUploadSuccess: function (file, data, response) {
+                var result = jQuery.parseJSON(data);
+                if (result.Status == 1) {
+                    $("#LogoUrl").val(result.Data);
+                    $(".viewimg").attr("src", result.Data);
+                    $(".imageClick").attr("href", result.Data);
+                    $("#imageShow").removeAttr("style");
+                } else parent.layer.msg(result.Message, 1, 2);
+            }
+        });
+    });
+</script>
+<div class="easyui-panel" data-options="fit:true,border:false;" style="padding:5px;">
+    <form id="form-detail" method="post">
+        <table class="tabdetail">
+            <tr>
+                <td class="tdtitle"><i>*</i>名称：</td>
+                <td colspan="2">@Html.TextBoxFor(m => m.Name, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "课程名称" })</td>
+            </tr>
+            <tr>
+                <td class="tdtitle"><i>*</i>简介：</td>
+                <td colspan="2">
+                    @Html.TextAreaFor(m => m.Introduce, new { @class = "detailtextArea easyui-validatebox", data_options = "required:true", placeholder = "请输入简介" })
+                </td>
+            </tr>
+            <tr>
+                <td class="tdtitle"><i>*</i>详情：</td>
+                <td colspan="2">@Html.TextAreaFor(m => m.Body, new { @class = "detailtextArea easyui-validatebox", data_options = "required:true", placeholder = "请输入详情" })</td>
+            </tr>
+            <tr>
+                <td class="tdtitle">是否可预约：</td>
+                <td colspan="2">@Html.CheckBoxFor(m => m.IsOrder, new { @class = "checkbox"})<span style="color:green; margin-left:10px;text-align:center">备注：如是可预约,请进行勾选</span></td>
+            </tr>
+            <tr>
+                <td class="tdtitle">Logo：</td>
+                <td width="90px;">
+                    @Html.HiddenFor(m => m.LogoUrl)
+                    <input id="fileUpload" name="fileUpload" type="file" />
+                </td>
+                <td>
+                    @if (Model != null && !string.IsNullOrWhiteSpace(Model.LogoUrl))
+                    {
+                        <div id="imageShow"><a href="@Model.LogoUrl" class="imageClick" data-lightbox="imgitem"><img title="点击查看大图" class="viewimg" src="@Model.LogoUrl" sty style="max-width:40px;max-height:40px;vertical-align:middle;" /></a></div>
+                    }
+                    else
+                    {
+                        <div id="imageShow" style="display:none"><a href="@Model.LogoUrl" class="imageClick" data-lightbox="imgitem"><img title="点击查看大图" class="viewimg" src="@Model.LogoUrl" sty style="max-width:40px;max-height:40px;vertical-align:middle;" /></a></div>
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <td class="tdtitle">上传进度：</td>
+                <td id="queuebox" colspan="2"></td>
+            </tr>
+            <tr>
+                <td class="tdtitle">备注：</td>
+                <td colspan="2">@Html.TextAreaFor(m => m.Notes, new { @class = "detailtextArea", placeholder = "备注" })</td>
+            </tr>
+        </table>
+        @Html.HiddenFor(m => m.CourseId)
+    </form>
+</div>

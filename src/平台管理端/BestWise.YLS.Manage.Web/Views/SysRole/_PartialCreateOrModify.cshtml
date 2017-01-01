@@ -1,0 +1,42 @@
+﻿
+@model BestWise.User.Model.Sys_Roles
+@{
+    ViewBag.Title = "角色管理";
+    Layout = null;
+}
+
+<script type="text/javascript">
+    $(function () {
+        $('#ParentID').combotree({
+            url: '/SysRole/Combotree',
+            lines: true,
+            required: true,
+            method: 'post',
+            editable: false
+        });
+    });
+</script>
+
+<div class="easyui-panel" data-options="fit:true,border:false;">
+    <form id="form-detail" method="post">
+        <table class="tabdetail">
+            <tr>
+                <td class="tdtitle"><i>*</i>父节点：</td>
+                <td>@Html.TextBox("ParentID", string.Equals(Model.ParentId, 0) ? "0" : Model.ParentId.ToString(), new { style = "width:300px;height:25px;" })</td>
+            </tr>
+            <tr>
+                <td class="tdtitle"><i>*</i>角色名称：</td>
+                <td>@Html.TextBoxFor(m => m.RoleName, new { @class = "detailinput easyui-validatebox", placeholder = "角色名称", data_options = "required:true" })</td>
+            </tr>
+            <tr>
+                <td class="tdtitle">超级管理员：</td>
+                <td>@Html.CheckBoxFor(m => m.IsSuperAdmin)</td>
+            </tr>
+            <tr>
+                <td class="tdtitle">备注：</td>
+                <td>@Html.TextAreaFor(o => o.Notes, new { @class = "detailtextArea", placeholder = "备注" })</td>
+            </tr>
+        </table>
+        @Html.HiddenFor(m => m.RoleId)
+    </form>
+</div>

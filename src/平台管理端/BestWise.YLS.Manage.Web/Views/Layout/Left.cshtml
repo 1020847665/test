@@ -1,0 +1,46 @@
+﻿@using BestWise.User.Model
+@using BestWise.Common
+@{
+
+    Users currentUser = ViewBag.CurrentUser as Users;
+    List<UserMenu> leftList = ViewBag.leftList as List<UserMenu>;
+    int topMenuid = ConvertUtils.ConvertToInt32(Request.Params["pid"]);
+    UserMenu topModule = null;
+    if (leftList != null && leftList.Count > 0 && topMenuid > 0)
+    {
+        topModule = leftList.FirstOrDefault(o => o.Id == topMenuid);
+    }
+}
+<dl class="leftmenu">
+    @if (topModule != null)
+    {
+        foreach (var menu in leftList.Where(o => o.Id == topMenuid).ToList())
+        {
+            if (menu.Children != null && menu.Children.Count > 0)
+            {
+                foreach (var item in menu.Children)
+                {
+                    <dd>
+                        <div class="title">
+                            <span><img src="/Images/icon0.png" /></span>@item.Name
+                        </div>
+                        <ul class="menuson" style="display:@(menu.IsSelected ? "block" : "block")">
+                            @if (item.Children != null && item.Children.Count > 0)
+                            {
+                                foreach (var child in item.Children)
+                                {
+                                    <li class="@(child.IsSelected?"active":string.Empty)">
+                                        <cite></cite>
+                                        <a href="javascript:;" onclick="EasyExt.AddTab({title:'@string.Format("{0}/{1}/{2}", topModule.Name, item.Name, child.Name)',requestUrl:'@string.Format("{0}?_={1}",child.Identify,DateTime.Now.Ticks)'});">@child.Name</a>
+                                        <i></i>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </dd>
+                }
+            }
+        }
+    }
+</dl>

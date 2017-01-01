@@ -1,0 +1,56 @@
+2016-12-25 17:59:58,082 [6] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:00:14,732 [6] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:00:30,017 [10] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:04:57,648 [6] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:06:22,812 [20] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:10:26,696 [25] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:14:41,605 [24] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54
+2016-12-25 18:15:06,774 [24] WARN  Logging - 程序异常
+System.InvalidOperationException: 此实现不是 Windows 平台 FIPS 验证的加密算法的一部分。
+   在 System.Security.Cryptography.MD5CryptoServiceProvider..ctor()
+   在 YSF.CT.Encrypt.YS.GenerateKey(String str) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 14
+   在 YSF.CT.Encrypt.YS.Encrypt(String text, String sKey) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 51
+   在 YSF.CT.Encrypt.YS.Encrypt(String text) 位置 d:\Work\Code\YST.CodeLib\YSF\YSF.CT\Encrypt\YS.cs:行号 38
+   在 BestWise.User.FrameWork.BLL.BLLBaseUser.<SignInAsync>d__0.MoveNext() 位置 d:\源码\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLBaseUser.cs:行号 54

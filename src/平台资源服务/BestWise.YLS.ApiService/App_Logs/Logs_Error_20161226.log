@@ -1,0 +1,450 @@
+2016-12-26 09:53:36,038 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:53:36,094 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:54:13,177 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:54:13,178 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:54:29,019 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:54:29,019 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:55:18,923 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:55:18,924 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:56:20,220 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:56:20,220 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:56:41,142 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:56:41,142 [37] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:57:08,559 [25] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:57:08,559 [25] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:57:21,445 [25] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:57:21,445 [25] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:57:44,703 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:57:44,703 [36] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 09:59:02,068 [33] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 402
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 59
+2016-12-26 09:59:10,857 [33] WARN  Logging - 程序异常
+System.Exception: 指定的转换无效。；属性名：Type ---> System.InvalidCastException: 指定的转换无效。
+   在 DynamicCreateEntity(DataRow )
+   在 System.Linq.DataTableEntityBuilder`1.Build(DataRow dataRecord) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 396
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataTable dt, Boolean isClose) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 68
+   在 System.Linq.DataTableExtentions.ToList[TResult](DataSet ds) 位置 g:\公司项目开发\倍智公共类库项目\trunk\BestWise.Common.Solution\BestWise.Common\DBUtility\DataTableExtentions.cs:行号 27
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 279
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(Guid materialId) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 186
+2016-12-26 10:41:42,547 [17] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 连接超时时间已到。在尝试使用预登录握手确认时超过了此超时时间。这可能是因为预登录握手失败或服务器未能及时响应。  尝试连接到此服务器时花费的持续时间是 - [Pre-Login] initialization=205；handshake=14970； ---> System.ComponentModel.Win32Exception (0x80004005): 等待的操作过时。
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetNewOpenConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetWrappedConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   在 BestWise.User.FrameWork.DAL.DALRoles.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\DAL\DALRoles.cs:行号 161
+   在 BestWise.User.FrameWork.BLL.BLLRoles.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\Common4Net\src\.NET Framework\用户类库\BestWise.User\FrameWork\BLL\BLLRoles.cs:行号 114
+ClientConnectionId:35716050-04c7-41c4-af81-adcee4ea446c
+Error Number:-2,State:0,Class:11
+2016-12-26 16:47:24,721 [87] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Introduce'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:132760f9-b8bd-405b-a301-d4d0c5dfe4a6
+Error Number:515,State:2,Class:16
+2016-12-26 16:49:36,909 [84] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Introduce'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:7c501e1a-ea32-4dfa-90b3-8e85583c08e0
+Error Number:515,State:2,Class:16
+2016-12-26 16:56:52,996 [102] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Introduce'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:7c501e1a-ea32-4dfa-90b3-8e85583c08e0
+Error Number:515,State:2,Class:16
+2016-12-26 16:59:26,790 [77] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:7c501e1a-ea32-4dfa-90b3-8e85583c08e0
+Error Number:515,State:2,Class:16
+2016-12-26 19:36:53,970 [6] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:6efa93fc-da30-4534-ab28-b2758a951401
+Error Number:515,State:2,Class:16
+2016-12-26 19:37:35,573 [6] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:6efa93fc-da30-4534-ab28-b2758a951401
+Error Number:515,State:2,Class:16
+2016-12-26 19:39:29,694 [34] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:df989172-57cd-488c-a520-b871477a188e
+Error Number:515,State:2,Class:16
+2016-12-26 19:41:45,345 [34] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:42:33,050 [33] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:44:22,511 [20] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:44:47,953 [20] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:49:46,935 [38] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:51:22,730 [45] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:584f245e-413d-49f6-b006-2e9ed5d5faab
+Error Number:515,State:2,Class:16
+2016-12-26 19:52:08,182 [45] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) ---> System.ComponentModel.Win32Exception (0x80004005): 找不到网络路径。
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetNewOpenConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetWrappedConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 169
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 138
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-12-26 19:54:08,802 [45] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: Named Pipes Provider, error: 40 - 无法打开到 SQL Server 的连接) ---> System.ComponentModel.Win32Exception (0x80004005): 找不到网络路径。
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetNewOpenConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.GetWrappedConnection()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 169
+   在 BestWise.YLS.FrameWork.BLL.BLLMaterial.GetPageList(BaseFilter baseFilter) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\BLL\BLLMaterial.cs:行号 138
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2016-12-26 19:56:02,823 [36] WARN  Logging - 程序异常
+System.Data.SqlClient.SqlException (0x80131904): 不能将值 NULL 插入列 'Name'，表 'YouthLeagueSchool.dbo.Material'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Microsoft.Practices.EnterpriseLibrary.Data.Database.DoExecuteNonQuery(DbCommand command)
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.Add(Material model, BWDatabaseWithTransaction transaction) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 128
+   在 BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(Material model, String attachment) 位置 g:\GitWork\YouthLeagueSchool\src\平台资源服务\BestWise.YLS.FrameWork\DAL\DALMaterial.cs:行号 216
+ClientConnectionId:0b14466a-eee1-48fd-a32d-2f5246448b56
+Error Number:515,State:2,Class:16

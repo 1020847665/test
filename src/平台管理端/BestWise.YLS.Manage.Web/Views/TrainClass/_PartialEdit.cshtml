@@ -1,0 +1,272 @@
+﻿@{
+    ViewBag.Title = "教师信息";
+    var targetid = string.Format("d{0}", DateTime.Now.Ticks);
+    var trainNeeds = string.Format("d{0}", Guid.NewGuid());
+}
+@model BestWise.YLS.Model.TrainClass
+@using BestWise.Common
+@using BestWise.YLS.Model
+
+<style type="text/css">
+    .checkbox {
+        vertical-align: middle;
+        margin-top: -2px;
+        margin-bottom: 1px;
+    }
+</style>
+
+<script type="text/javascript">
+    //初始化编辑器
+    var editor = UE.getEditor('@targetid');
+    var trainNeeds = UE.getEditor('@trainNeeds');
+    var pictureUrl = [];
+
+    var jsonstr = '{"total":1,"rows":[]}';
+    var data = $.parseJSON(jsonstr);
+
+    $(function () {
+        //初始化附件上传
+        $('#fileUpload').uploadify({
+            buttonText: '选择Logo',
+            swf: '/Plugs/uploadify/uploadify.swf',
+            uploader: '/UploadAttachment/teacher',
+            multi: true,
+            auto: true,
+            fileTypeExts: '*',
+            fileTypeDesc: '选择Logo',
+            fileSizeLimit: 0,
+            queueSizeLimit: 1,
+            simUploadLimit: 1,
+            queueID: 'queuebox',
+            removeCompleted: false,
+            onUploadSuccess: function (file, data, response) {
+                var result = jQuery.parseJSON(data);
+                if (result.Status == 1) {
+                    $("LogoUrl").val(result.Data)
+                } else parent.layer.msg(result.Message, 1, 2);
+            }
+        });
+
+        $('#contactList').datagrid({
+            url: '/TrainClass/GetContactList?trainId=@ViewBag.TrainId',
+            method: 'post',
+            loadMsg: "数据加载中.......",
+            pagination: false,
+            fit: true,
+            autoRowHeight: true,
+            fitColumns: true,
+            singleSelect: false,
+            striped: true,
+            rownumbers: false,
+            toolbar: [
+             {
+                 id: 'btn-add',
+                 text: '添加',
+                 iconCls: 'icon-add',
+                 handler: ContactFunction.Add
+             }, '-', {
+                 id: 'btn-edit',
+                 text: '编辑',
+                 iconCls: 'icon-edit',
+                 handler: ContactFunction.Edit
+             }, '-', {
+                 id: 'btn-delete',
+                 text: '删除',
+                 iconCls: 'icon-Empty',
+                 handler: ContactFunction.Delete
+             }
+            ],
+            columns: [
+                [
+                       {
+                           title: '联系人', field: 'Name', width: 200,
+                           editor: {
+                               type: 'validatebox', options: { required: true }
+                           }
+                       },
+                       {
+                           title: '联系电话', field: 'ContactNumber', width: 200,
+                           editor: {
+                               type: 'numberbox', options: { required: true }
+                           }
+                       },
+                       {
+                           title: '备注', field: 'Notes', width: 200,
+                           editor: { type: 'text', options: { required: true } }
+                       },
+                ]
+            ],
+            onAfterEdit: function (index, row) {
+                row.editing = false;
+            },
+        });
+
+        $("#trainTeacher").chosen({ no_results_text: "没有找到", allow_single_deselect: true });
+    });
+</script>
+<div class="easyui-tabs" data-options="fit:true">
+    <div title="基本信息" style="padding:5px">
+        <form id="form-detail" method="post">
+            <table class="tabdetail">
+                <tr>
+                    <td class="tdtitle"><i>*</i>名称：</td>
+                    <td colspan="2">@Html.TextBoxFor(m => m.Name, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入名称" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>学号前缀：</td>
+                    <td colspan="2">@Html.TextBoxFor(m => m.NumberPrefix, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入培训地点" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>简介：</td>
+                    <td colspan="2">
+                        @Html.TextArea(targetid, Model.Introduce, new { style = "width:530px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>内容：</td>
+                    <td colspan="2">
+                        @Html.TextAreaFor(m => m.Body, new { @class = "detailtextArea easyui-validatebox", data_options = "required:true", placeholder = "请输入内容" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训班类型：</td>
+                    <td colspan="2">
+                        @Html.DropDownListFor(m => m.Type, ViewBag.Type as SelectList, new { @class = "combo", style = "width:200px;height:27px", placeholder = "请选择培训班类型" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训班老师：</td>
+                    <td colspan="2">
+                        <select id="trainTeacher" style="width:530px" data-placeholder="选择培训老师" class="easyui-validatebox" multiple data_options="required:true">
+                            @{
+                                IList<Teacher> teacherList = ViewBag.Teacher as List<Teacher>;
+                                List<Guid> ckTeacherArray = new List<Guid>();
+                                if (!string.IsNullOrWhiteSpace(Model.Teachers))
+                                {
+                                    ckTeacherArray = Model.Teachers.Split(",").Select(m => Guid.Parse(m)).ToList();
+                                }
+                                if (teacherList != null && teacherList.Count > 0)
+                                {
+                                    foreach (var item in teacherList)
+                                    {
+                                        <option value="@item.TeacherId" @(ckTeacherArray.Contains(item.TeacherId) ? "selected=selected" : string.Empty)>@item.Name</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训班状态：</td>
+                    <td colspan="2">
+                        @Html.DropDownListFor(m => m.Type, ViewBag.State as SelectList, new { @class = "combo", style = "width:200px;height:27px", placeholder = "请选择培训班类型" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训人数：</td>
+                    <td colspan="2">@Html.TextBoxFor(m => m.Number, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入培训人数" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训要求：</td>
+                    <td colspan="2">
+                        @Html.TextArea(trainNeeds, Model.TrainNeeds, new { style = "width:530px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训对象：</td>
+                    <td colspan="2">@Html.TextBoxFor(m => m.Target, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入培训对象" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>培训地点：</td>
+                    <td colspan="2">@Html.TextBoxFor(m => m.Address, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入培训地点" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">Logo：</td>
+                    <td width="90px;">
+                        @Html.HiddenFor(m => m.LogoUrl)
+                        <input id="fileUpload" name="fileUpload" type="file" />
+                    </td>
+                    <td>
+                        @if (Model != null && !string.IsNullOrWhiteSpace(Model.LogoUrl))
+                        {
+                            <div id="imageShow"><a href="@Model.LogoUrl" class="imageClick" data-lightbox="imgitem"><img title="点击查看大图" class="viewimg" src="@Model.LogoUrl" sty style="max-width:40px;max-height:40px;vertical-align:middle;" /></a></div>
+                        }
+                        else
+                        {
+                            <div id="imageShow" style="display:none"><a href="@Model.LogoUrl" class="imageClick" data-lightbox="imgitem"><img title="点击查看大图" class="viewimg" src="@Model.LogoUrl" sty style="max-width:40px;max-height:40px;vertical-align:middle;" /></a></div>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">上传进度：</td>
+                    <td id="queuebox" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">是否可预约：</td>
+                    <td colspan="2">@Html.CheckBoxFor(m => m.IsOrder, new { @class = "checkbox" })<span style="color:green; margin-left:10px;text-align:center">备注：如是可预约,请进行勾选</span></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">开始时间：</td>
+                    <td colspan="2">
+                        @Html.TextBoxFor(m => m.StartTime, (Model.StartTime == null || Model.StartTime.GetDateTime().Year <= 1900) ? DateTimeExtentions.FormatShortStr(DateTime.Now) : DateTimeExtentions.FormatShortStr(Model.StartTime), new { @class = "detailinput easyui-datebox", placeholder = "开始时间", data_options = "editable: false", style = "width:200px;height:25px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">结束时间：</td>
+                    <td colspan="2">
+                        @Html.TextBoxFor(m => m.EndTime, (Model.EndTime == null || Model.EndTime.GetDateTime().Year <= 1900) ? DateTimeExtentions.FormatShortStr(DateTime.Now) : DateTimeExtentions.FormatShortStr(Model.EndTime), new { @class = "detailinput easyui-datebox", placeholder = "结束时间", data_options = "editable: false", style = "width:200px;height:25px" })
+                </tr>
+                <tr>
+                    <td class="tdtitle">截止时间：</td>
+                    <td colspan="2">
+                        @Html.TextBoxFor(m => m.DeadLineTime, (Model.DeadLineTime == null || Model.DeadLineTime.GetDateTime().Year <= 1900) ? DateTimeExtentions.FormatShortStr(DateTime.Now) : DateTimeExtentions.FormatShortStr(Model.DeadLineTime), new { @class = "detailinput easyui-datebox", placeholder = "截止时间", data_options = "editable: false", style = "width:200px;height:25px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">备注：</td>
+                    <td colspan="2">@Html.TextAreaFor(m => m.Notes, new { @class = "detailtextArea", placeholder = "备注" })</td>
+                </tr>
+            </table>
+            @Html.HiddenFor(m => m.TrainId)
+        </form>
+    </div>
+    <div title="联系人管理" style="padding:10px">
+        @*<table class="tabdetail" id="filelist">
+                <thead>
+                    <tr>
+                        <td class="tdtitle" colspan="3">
+                            <div style="float:left;"><a id="addLink" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="AddLinkInput()">添加联系人</a></div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div>
+                <div data-options="region:'center',split:true,border:false">
+                    <table id="picturelist"></table>
+                </div>
+
+            </div>*@
+
+        <div class="easyui-layout" data-options="fit:true">
+            @*<div data-options="region:'north',split:true,border:true" style="width:300px;padding:2px;">
+                    <table class="tabdetail" id="filelist" style="border:none">
+                        <thead>
+                            <tr>
+                                <td class="tdtitle">
+                                    <div style="float:left;"><a id="addLink" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="AddLinkInput()">添加联系人</a></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td id="queuebox"></td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>*@
+            <div data-options="region:'center',split:true,border:false">
+                <table id="contactList"></table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@{SystemConfig config = ViewBag.SysConfig as SystemConfig;}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@config.MainTitle</title>
+    <!--Css-->
+    <link href="~/Styles/init.css" rel="stylesheet" />
+    <link href="~/Styles/right.css" rel="stylesheet" />
+    <link href="~/Plugs/easyui/icon.css" rel="stylesheet" />
+    <link href="~/Plugs/easyui/easyui.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+    <!--Scripts-->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Plugs/easyui/jquery.easyui.min.js"></script>
+    <script src="~/Plugs/easyui/easyui-lang-zh_cn.js"></script>
+    <script src="~/Plugs/easyui/Jquery.easyui.validExtend.js"></script>
+    <script src="~/Plugs/layer/layer.min.js"></script>
+    <script src="~/Plugs/my97/WdatePicker.js"></script>
+    <script src="~/Plugs/my97/lang/zh-cn.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    @RenderSection("Js", false)
+</head>
+<body>
+    <div id="rightBody" class="easyui-panel" data-options="fit:true,border:false">
+        @RenderBody()
+    </div>
+    @RenderSection("FooterJs", false)
+</body>
+</html>

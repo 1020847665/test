@@ -1,0 +1,1649 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestWise.Common.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:System.Web.Mvc.BaseController">
+            <summary>
+            控制器基类。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.BaseController.Json(System.Object,System.String,System.Text.Encoding,System.Web.Mvc.JsonRequestBehavior)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="contentType"></param>
+            <param name="contentEncoding"></param>
+            <param name="behavior"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.BaseController.File(System.Web.Mvc.FileContentActionInfo)">
+            <summary>
+            下载文件。
+            </summary>
+            <param name="fileInfo">下载文件的信息。</param>
+            <returns>文件内容结果对象。</returns>
+        </member>
+        <member name="T:BestWise.Common.Mvc.Captcha.RndCode">
+             <summary>  
+            RndCode 的摘要说明  
+             </summary>  
+        </member>
+        <member name="T:BestWise.Common.Mvc.Captcha.CaptchaImage">
+            <summary> 
+            CAPTCHA Image 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.GetCachedCaptcha(System.String)">
+            <summary> 
+            Gets the cached captcha. 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.GetRandomFontFamily">
+            <summary> 
+            Returns a random font family from the font whitelist 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.GenerateRandomText">
+            <summary> 
+            generate random text for the CAPTCHA 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.RandomPoint(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary> 
+            Returns a random point within the specified x and y ranges 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.GetRandomColor">
+            <summary> 
+            Get Random color. 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.RandomPoint(System.Drawing.Rectangle)">
+            <summary> 
+            Returns a random point within the specified rectangle 
+            </summary>  
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.TextPath(System.String,System.Drawing.Font,System.Drawing.Rectangle)">
+            <summary> 
+            Returns a GraphicsPath containing the specified string and font 
+            </summary>  
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.GetFont">
+            <summary> 
+            Returns the CAPTCHA font in an appropriate size 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.RenderImage">
+            <summary> 
+            Renders the CAPTCHA image 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.WarpText(System.Drawing.Drawing2D.GraphicsPath,System.Drawing.Rectangle)">
+            <summary> 
+            Warp the provided text GraphicsPath by a variable amount 
+            </summary> 
+            <param name="textPath">The text path.</param> 
+            <param name="rect">The rect.</param> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.AddNoise(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary> 
+            Add a variable level of graphic noise to the image 
+            </summary> 
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.CaptchaImage.AddLine(System.Drawing.Graphics,System.Drawing.Rectangle)">
+            <summary> 
+            Add variable level of curved lines to the image 
+            </summary> 
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaImage.UniqueId">
+            <summary> 
+            Returns a GUID that uniquely identifies this Captcha 
+            </summary> 
+            <value>The unique id.</value> 
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaImage.Text">
+            <summary> 
+            Gets the randomly generated Captcha text. 
+            </summary> 
+            <value>The text.</value> 
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaImage.Value">
+            <summary>
+            Gets the randomly generated Captcha value.
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.TextLength">
+            <summary>
+            验证字符长度（字符个数）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.TextChars">
+            <summary>
+            生成验证码用的字符
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.FontWarp">
+            <summary>
+            Font warp factor
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.BackgroundNoise">
+            <summary>
+            Background Noise level
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.LineNoise">
+            <summary>
+            线条杂色级别
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.Type">
+            <summary>
+            验证码类型
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.Width">
+            <summary>
+            Width of captcha image
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.Height">
+            <summary>
+            Height of captcha image
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.ValidationInputBoxId">
+            <summary>
+            客户端验证码输入文本框的Id
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.CaptchaOptions.DelayLoad">
+            <summary>
+            是否延迟加载（验证文本框获得焦点时才生成并加载验证图片）
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.Mvc.Captcha.ValidateCodeType">
+            <summary>
+            验证码类型
+            </summary>
+        </member>
+        <member name="F:BestWise.Common.Mvc.Captcha.ValidateCodeType.None">
+            <summary>
+            普通字符验证
+            </summary>
+        </member>
+        <member name="F:BestWise.Common.Mvc.Captcha.ValidateCodeType.Arithmetic">
+            <summary>
+            算术运算验证
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the CaptchaValidationAttribute class.
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CaptchaValidationAttribute class.
+            </summary>
+            <param name="field">The field.</param>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the CaptchaValidationAttribute class.
+            </summary>
+            <param name="field">The field.</param>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary> 
+            Called when [action executed]. 
+            </summary> 
+            <param name="filterContext">The filter filterContext.</param> 
+        </member>
+        <member name="P:BestWise.Common.Mvc.Captcha.ValidateCaptchaAttribute.Field">
+            <summary>
+            Gets or sets the field.
+            </summary>
+            <value>The field.</value>
+        </member>
+        <member name="M:TGShop.Common.ValidateCode.CreateValidateCode(System.Int32)">
+            生成验证码
+            
+            <param name="length">指定验证码的长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:TGShop.Common.ValidateCode.CreateValidateGraphic(System.String)">
+            <summary>
+            创建验证码的图片
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.DataTables.DataTablesParam.PageSize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.DataTables.DataTablesParam.PageIndex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.FileContentActionInfo">
+            <summary>
+            文件内容结果信息对象类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.FileContentActionInfo.FileContents">
+            <summary>
+            要发送到响应的二进制内容。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.FileContentActionInfo.ContentType">
+            <summary>
+            内容类型（MIME 类型）。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.FileContentActionInfo.DownloadName">
+            <summary>
+            浏览器中显示的文件下载对话框内要使用的文件名。
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.ModelValidFilterAttribute">
+            <summary>
+            请求实体对象实例有效性验证筛选器。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.ModelValidFilterAttribute.OnActionExecuting(System.Web.Mvc.ActionExecutingContext)">
+            <summary>
+            在执行操作方法之前由 ASP.NET MVC 框架调用。
+            </summary>
+            <param name="filterContext">筛选器上下文</param>
+        </member>
+        <member name="T:System.Web.Http.ModelValidFilterAttribute">
+            <summary>
+            请求实体对象实例有效性验证筛选器。
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.ModelValidFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            在执行操作方法之前由 ASP.NET WebApi 框架调用。
+            </summary>
+            <param name="actionContext">操作上下文。</param>
+        </member>
+        <member name="T:System.Web.Mvc.Html.CheckboxListExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxListExtensions.CheckboxListFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Web.Mvc.LayoutDirection)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="helper"></param>
+            <param name="expression"></param>
+            <param name="selectList"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxListExtensions.CheckboxList(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Web.Mvc.LayoutDirection)">
+            <summary>
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="selectList"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxListExtensions.CheckboxList(System.Web.Mvc.HtmlHelper,System.String,System.Collections.Generic.IEnumerable{System.Web.Mvc.SelectListItem},System.Web.Mvc.LayoutDirection)">
+            <summary>
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="name"></param>
+            <param name="selectList"></param>
+            <param name="direction"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.Html.CheckboxTreeExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,``0[],System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="trees"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,``0[],System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}},System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,``0[],System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}},System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.CheckboxTree``2(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.CheckboxTreeExtensions.checkboxTree``2(System.String,``0[],System.Collections.Generic.IEnumerable{BestWise.Common.Tree{``0,``1}})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TText"></typeparam>
+            <param name="name"></param>
+            <param name="values"></param>
+            <param name="trees"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url">Ajax 请求地址</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url">Ajax 请求地址</param>
+            <param name="isDefaultOption">是否默认值选择项</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="parentValueField">父级值字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="parentValueField">父级值字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+            <param name="isDefaultOption">是否默认值选择项</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="parentValueField">父级值字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+            <param name="isDefaultOption">是否默认值选择项</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="parentValueField">父级值字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+            <param name="method">Ajax 请求方法</param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.DropdownTreeOptions.#ctor(System.Object,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="defaultValue">默认值</param>
+            <param name="defaultText">默认文本</param>
+            <param name="valueField">值字段列名</param>
+            <param name="textField">文本字段列名</param>
+            <param name="parentValueField">父级值字段列名</param>
+            <param name="url">Ajax 请求地址</param>
+            <param name="method">Ajax 请求方法</param>
+            <param name="isDefaultOption">是否默认值选择项</param>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.DefaultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.DefaultText">
+            <summary>
+            默认文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.ParentValueField">
+            <summary>
+            父级值字段列名
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.ValueField">
+            <summary>
+            值字段列名
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.TextField">
+            <summary>
+            文本字段列名
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.Url">
+            <summary>
+            Ajax 请求地址
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.Method">
+            <summary>
+            Ajax 请求方法
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.IsDefaultOption">
+            <summary>
+            是否默认值选择项
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.CurrentValue">
+            <summary>
+            当前节点的主键值。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.DropdownTreeOptions.TopValue">
+            <summary>
+            顶级的值。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlExtensions.ShowDiscount(System.Web.Mvc.HtmlHelper,System.Decimal)">
+            <summary>
+            显示折扣
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="discount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlExtensions.AnchorButton(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String,System.Boolean,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="linkText"></param>
+            <param name="linkUrk"></param>
+            <param name="btnStyleName"></param>
+            <param name="iconName"></param>
+            <param name="enable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadFileExtensions.UploadFile(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadFileExtensions.UploadFile(System.Web.Mvc.HtmlHelper,System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="helper"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadImageExtensions.UploadImage(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.Html.Size,System.Boolean)">
+            <summary>
+            上传图片控件的元素
+            </summary>
+            <param name="helper">HTML 帮助器</param>
+            <param name="name">窗体字段名</param>
+            <param name="value">控件的值</param>
+            <param name="size">生成小图的最大 Size 。</param>
+            <param name="isLarge">是否生成大图(默认不生成) 。</param>
+            <returns>返回上传图片控件的元素</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadImageExtensions.UploadImage(System.Web.Mvc.HtmlHelper,System.String,System.Object,System.Web.Mvc.Html.Size)">
+            <summary>
+            上传图片控件的元素
+            </summary>
+            <param name="helper">HTML 帮助器</param>
+            <param name="name">窗体字段名</param>
+            <param name="value">控件的值</param>
+            <param name="size">生成小图的最大 Size 。</param>
+            <param name="isLarge">是否生成大图 。</param>
+            <returns>返回上传图片控件的元素</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadImageExtensions.UploadImageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.Size,System.Boolean)">
+            <summary>
+            上传图片控件的元素
+            </summary>
+            <typeparam name="TModel">对象实体类型</typeparam>
+            <typeparam name="TProperty">对象属性类型</typeparam>
+            <param name="helper">HTML 帮助器</param>
+            <param name="expression">一个表达式，用于标识包含要呈现的属性的对象</param>
+            <param name="size">生成小图的最大 Size (默认不生成)。</param>
+            <returns>返回上传图片控件的元素</returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.HtmlUploadImageExtensions.UploadImageFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.Size)">
+            <summary>
+            上传图片控件的元素
+            </summary>
+            <typeparam name="TModel">对象实体类型</typeparam>
+            <typeparam name="TProperty">对象属性类型</typeparam>
+            <param name="helper">HTML 帮助器</param>
+            <param name="expression">一个表达式，用于标识包含要呈现的属性的对象</param>
+            <param name="size">生成小图的最大 Size 。</param>
+            <returns>返回上传图片控件的元素</returns>
+        </member>
+        <member name="P:System.Web.Mvc.Html.HtmlUploadImageExtensions.ImageEmpty">
+            <summary>
+            获取暂无图片的地址
+            </summary>
+            <returns>暂无图片的地址</returns>
+        </member>
+        <member name="T:System.Web.Mvc.Html.Size">
+            <summary>
+            图片的Size值
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.Size.Empty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.Size.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.Size.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.ImageUploader.Value">
+            <summary>
+            上传图片初始值
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.ImageUploader.Size">
+            <summary>
+            生成小图的 Size
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.ImageUploader.Width">
+            <summary>
+             生成小图的宽度
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.ImageUploader.Height">
+            <summary>
+            生成小图的高度
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.ImageUploader.IsLarge">
+            <summary>
+            是否生成大图
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTreeFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.DropdownTreeOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTreeFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.DropdownTreeOptions,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTreeFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.DropdownTreeOptions)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTree(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.Html.DropdownTreeOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTree(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.Html.DropdownTreeOptions,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.DropdownTree(System.Web.Mvc.HtmlHelper,System.String,System.Web.Mvc.Html.DropdownTreeOptions)">
+            <summary>
+            
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="name"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.RangeSliderFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.RangeSliderOptions)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.RangeSliderFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.RangeSliderOptions,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.RangeSliderFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.RangeSliderOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="minValue"></param>
+            <param name="maxValue"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SpinnerFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.SpinnerOptions)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SpinnerFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.SpinnerOptions,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SpinnerFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.Html.SpinnerOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SwitchFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Web.Mvc.Html.SwitchOptions)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SwitchFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Web.Mvc.Html.SwitchOptions,System.Object)">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.InputExtensions.SwitchFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Web.Mvc.Html.SwitchOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="options"></param>
+            <param name="htmlAttributes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Type">
+            <summary>
+            Choose slider type, could be single - for one handle, or double four two handles
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Min">
+            <summary>
+            Set slider minimum value
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Max">
+            <summary>
+            Set slider maximum value
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Form">
+            <summary>
+            Set start position for left handle (or for single handle)
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.To">
+            <summary>
+            Set start position for right handle
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Step">
+            <summary>
+            Set sliders step. Always > 0. Could be fractional.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Vaules">
+            <summary>
+            Set up your own array of possible slider values. They could be numbers or strings. If the values array is set up, min, max and step param, are no longer can be changed.
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.RangeSliderOptions.Unit">
+            <summary>
+            Set postfix for values. Will be set up right after the number: 100k
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SpinnerOptions.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SpinnerOptions.#ctor(System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="min"></param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SpinnerOptions.#ctor(System.Decimal,System.Decimal)">
+            <summary>
+            
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.Culture">
+            <summary>
+            设置culture选项 用于解析和格式化值。 如果为null，在Globalize下当前设置的culture将被使用， 可供的culture，请查看Globalize 文档。 只有当numberFormat选项设置了，才会有关联。 需要引用Globalize。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.Min">
+            <summary>
+            允许的最小值。 如果元素的min属性存在，该选项未明确设置，那么该元素的min属性就被用作该选项的值。 如果为null，表示没有下限。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.Max">
+            <summary>
+            允许的最大值。 如果元素的max属性存在，该选项未明确设置，那么该元素的max属性就被用作该选项的值。 如果为null，表示没有上限。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.NumberFormat">
+            <summary>
+            通过Globalize格式化数字， 如果有效的话。 最常见的用于"n"用作十进制数 和"C"用作货币值。 也看到了culture选择。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.Step">
+            <summary>
+            通过按钮或stepUp()/stepDown()方法微调时，采取的步数。 如果元素的step属性存在，并且该选项未明确设置，那么元素的step属性值将作为该选项的值使用。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SpinnerOptions.Unit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.Html.SwitchOptions">
+            <summary>
+            开关控件选项
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SwitchOptions.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SwitchOptions.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="onLabel"></param>
+            <param name="offLabel"></param>
+        </member>
+        <member name="M:System.Web.Mvc.Html.SwitchOptions.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="onColor"></param>
+            <param name="onLabel"></param>
+            <param name="offColor"></param>
+            <param name="offLabel"></param>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SwitchOptions.OnColor">
+            <summary>
+            开启颜色
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SwitchOptions.OnLabel">
+            <summary>
+            开启文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SwitchOptions.OffColor">
+            <summary>
+            关闭颜色
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.Html.SwitchOptions.OffLabel">
+            <summary>
+            关闭文本
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.Html.ValidationExtensions.ValidationFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            MVC 验证控件
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.Html.ValidationExtensions.ValidationFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Int32)">
+            <summary>
+            MVC 验证控件
+            </summary>
+            <typeparam name="TModel"></typeparam>
+            <typeparam name="TProperty"></typeparam>
+            <param name="htmlHelper"></param>
+            <param name="expression"></param>
+            <param name="colNum"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Net.Http.HttpRequestMessageExtentions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Net.Http.HttpRequestMessageExtentions.CreateErrorResponse``1(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode,``0)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="statusCode"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Net.Http.HttpRequestMessageExtentions.CreateErrorResponse``1(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode,System.Func{System.Boolean,``0})">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
+            <param name="statusCode"></param>
+            <param name="resultCreator"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.JsonNetValueProviderFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.JsonNetValueProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.JsonNetValueProviderResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.LayoutDirection">
+            <summary>
+            布局方向
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.LayoutDirection.Vertical">
+            <summary>
+            垂直方向
+            </summary>
+        </member>
+        <member name="F:System.Web.Mvc.LayoutDirection.Horizontal">
+            <summary>
+            水平方向
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.ModelStateDictionaryExtentions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.ModelStateDictionaryExtentions.GetErrors(System.Web.Mvc.ModelStateDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="modelStateDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Http.ModelStateDictionaryExtentions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:System.Web.Http.ModelStateDictionaryExtentions.GetErrors(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="modelStateDictionary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.DF1D1DataTypeModelValidatorProvider">
+            <summary>
+            数字型和日期型的验证。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.DF1D1DataTypeModelValidatorProvider.GetValidators(System.Web.Mvc.ModelMetadata,System.Web.Mvc.ControllerContext)">
+            <summary>
+            
+            </summary>
+            <param name="metadata"></param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BestWise.Common.Mvc.PagedList`1">
+            <summary>
+            分页数据实体类。
+            </summary>
+            <typeparam name="TItem">数据对象的实体类型。</typeparam>
+        </member>
+        <member name="M:BestWise.Common.Mvc.PagedList`1.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.PagedList`1.#ctor(System.Collections.Generic.IList{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="items">当前页的数据。</param>
+            <param name="totalItemCount">总记录数</param>
+            <param name="pageSize">页尺寸（即每页多少条记录）。</param>
+            <param name="pageIndex">当前页码。</param>
+        </member>
+        <member name="M:BestWise.Common.Mvc.PagedList`1.ToMvcPagedList">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.PagedList`1.ToDataTableData">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.Mvc.PagedList`1.Items">
+            <summary>
+            当前页的数据。
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.PagedList`1.TotalItemCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.PagedList`1.PageSize">
+            <summary>
+            页尺寸（即每页多少条记录）。
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.PagedList`1.TotalPageCount">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.PagedList`1.CurrentPageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Pager.IPagedList.CurrentPageIndex">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Pager.IPagedList.PageSize">
+            <summary>
+            页尺寸（即第页多少条记录）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.Mvc.Pager.IPagedList.TotalItemCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PagedList`1.#ctor(System.Collections.Generic.IList{`0},System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PagedList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="items"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <param name="totalItemCount"></param>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PageHelper.CreatePageSql(System.String,System.Int32,System.Int32)">
+            <summary>
+            创建分页SQL
+            </summary>
+            <param name="TableName">表名</param>
+            <param name="StartIndex">开始位置</param>
+            <param name="TopIndex">TOP数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PageHelper.CreatePageSql(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            创建分页SQL
+            </summary>
+            <param name="TableName">表名</param>
+            <param name="StartIndex">开始位置</param>
+            <param name="TopIndex">TOP数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PageHelper.CreatePageSql(System.Text.StringBuilder,System.Text.StringBuilder,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            创建分页SQL
+            </summary>
+            <param name="sqlstr">查询sql</param>
+            <param name="totalsql">总页数sql</param>
+            <param name="pageIndex">页索引</param>
+            <param name="pageSize">分页大小</param>
+            <param name="where">查询条件</param>
+            <param name="orderby">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PageHelper.CreatePageSql(System.Text.StringBuilder,System.Text.StringBuilder,System.Text.StringBuilder,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            创建分页SQL
+            </summary>
+            <param name="tmp">sql临时表</param>
+            <param name="sqlstr">查询sql</param>
+            <param name="totalsql">总页数sql</param>
+            <param name="pageIndex">页索引</param>
+            <param name="pageSize">分页大小</param>
+            <param name="where">查询条件</param>
+            <param name="orderby">排序</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PageHelper.CreatePageSql(System.Text.StringBuilder,System.Int32,System.String)">
+            <summary>
+            创建分页SQL
+            </summary>
+            <param name="sql"></param>
+            <param name="StartIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PagerBuilder.#ctor(System.Web.Mvc.HtmlHelper,System.Web.Mvc.AjaxHelper,System.Web.Mvc.PagerOptions,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            适用于PagedList为null时
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PagerBuilder.GenerateUrl(System.Int32)">
+            <summary>
+            根据页索引生成分页导航Url
+            </summary>
+            <param name="pageIndex">要生成导航链接的页索引</param>
+            <returns>分页导航链接Url</returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Pager.PagerBuilder.RenderPager">
+            <summary>
+            生成最终的分页Html代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.AutoHide">
+            <summary>
+            当总页数只有一页时是否自动隐藏
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageIndexOutOfRangeErrorMessage">
+            <summary>
+            页索引超出范围时显示的错误消息
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.InvalidPageIndexErrorMessage">
+            <summary>
+            页索引无效时显示的错误消息
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageIndexParameterName">
+            <summary>
+            url中页索引参数的名称
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowPageIndexBox">
+            <summary>
+            是否显示页索引输入出选择框
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageIndexBoxCssClass">
+            <summary>
+            显示页索引输入出选择框htmlCSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageIndexBoxType">
+            <summary>
+            页索引输入或选择框的类型
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.MaximumPageIndexItems">
+            <summary>
+            页索引下拉框中显示的最大页索引条数，该属性仅当PageIndexBoxType设为PageIndexBoxType.DropDownList时有效
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowGoButton">
+            <summary>
+            是否显示跳转按钮
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.GoButtonText">
+            <summary>
+            跳转按钮上的文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.GoButtonCssClass">
+            <summary>
+            跳转按钮上的htmlCSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageNumberFormatString">
+            <summary>
+            数字页索引格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.CurrentPageNumberFormatString">
+            <summary>
+            当前页索引格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ContainerTagName">
+            <summary>
+            分页控件html容器标签名，默认为div
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PagerItemWrapperFormatString">
+            <summary>
+            包容数字页、当前页及上、下、前、后分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NumericPagerItemWrapperFormatString">
+            <summary>
+            包容数字页索引分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NumericPageCssClass">
+            <summary>
+            包容数字页索引分页元素的htmlCSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.CurrentPagerItemWrapperFormatString">
+            <summary>
+            包容当前页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NavigationPagerItemWrapperFormatString">
+            <summary>
+            包容上页、下页、首页和尾首四个分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.MorePagerItemWrapperFormatString">
+            <summary>
+            包容更多页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PageIndexBoxWrapperFormatString">
+            <summary>
+            包容页索引输入或选择框的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.GoToPageSectionWrapperFormatString">
+            <summary>
+            包容页索引框及跳转按钮所在区域的html文本框字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.AlwaysShowFirstLastPageNumber">
+            <summary>
+            whether or not show first and last numeric page number
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NumericPagerItemCount">
+            <summary>
+            显示的最大数字页索引按钮数
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowPrevNext">
+            <summary>
+            是否显示上页和下页
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PrevPagerItemWrapperFormatString">
+            <summary>
+            包容上一页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PrevPageCssClass">
+            <summary>
+            上一页CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.PrevPageText">
+            <summary>
+            上一页文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NextPagerItemWrapperFormatString">
+            <summary>
+            包容下一页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NextPageCssClass">
+            <summary>
+            下一页CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.NextPageText">
+            <summary>
+            下一页文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowNumericPagerItems">
+            <summary>
+            是否显示数字页索引按钮及更多页按钮
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowFirstLast">
+            <summary>
+            是否显示第一页和最后一页
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.FirstPagerItemWrapperFormatString">
+            <summary>
+            包容第一页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.FirstPageCssClass">
+            <summary>
+            第一页CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.FirstPageText">
+            <summary>
+            第一页文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.LastPagerItemWrapperFormatString">
+            <summary>
+            包容最后一页分页元素的html文本格式字符串
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.LastPageCssClass">
+            <summary>
+            最后一页CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.LastPageText">
+            <summary>
+            最后一页文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowMorePagerItems">
+            <summary>
+            是否显示更多页按钮
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.MorePageCssClass">
+            <summary>
+            更多页CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.MorePageText">
+            <summary>
+            更多页按钮文本
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.Id">
+            <summary>
+            包含分页控件的div标签的ID
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.HorizontalAlign">
+            <summary>
+            水平对齐方式
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.CssClass">
+            <summary>
+            CSS样式类
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.ShowDisabledPagerItems">
+            <summary>
+            whether or not show disabled navigation buttons
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.SeparatorHtml">
+            <summary>
+            seperating item html
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.MaxPageIndex">
+            <summary>
+            限制显示的最大页数，默认值为0，即根据总记录数算出的总页数
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.PagerOptions.UseJqueryAjax">
+            <summary>
+            是否使用jQuery实现Ajax分页(内部用)
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.Mvc.Providers.TokenHelper">
+            <summary>
+            获取当前用户信息
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetUserId(System.Web.Http.ApiController)">
+            <summary>
+            返回用户ID
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns>返回用户ID</returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetUserName(System.Web.Http.ApiController)">
+            <summary>
+            返回用户名称(昵称)
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetStudentName(System.Web.Http.ApiController)">
+            <summary>
+            获取当前用户真实姓名
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns>获取当前用户真实姓名</returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetUserHeadImage(System.Web.Http.ApiController)">
+            <summary>
+            获取当前用户头像
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns>获取当前用户头像</returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetUserSource(System.Web.Http.ApiController)">
+            <summary>
+            获取当前用户表来源
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns>获取当前用户表来源</returns>
+        </member>
+        <member name="M:BestWise.Common.Mvc.Providers.TokenHelper.GetUserIdentity(System.Web.Http.ApiController)">
+            <summary>
+            获取当前用户身份(1-已注册用户,2-游客)
+            </summary>
+            <param name="controller">调用控制器</param>
+            <returns>用户身份标识</returns>
+        </member>
+        <member name="T:System.Web.Mvc.SortInfo">
+            <summary>
+            数据表用于排序有列的列表对象类。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="json">表示排序的 JSON 字符串。</param>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.ToSort``1(System.String)">
+            <summary>
+            获取最终用于排序的字符串（基于实体对象类型）。
+            </summary>
+            <typeparam name="TModel">基本的实体对象类型。</typeparam>
+            <param name="tabelName">表名或表别名。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.ToSort``1">
+            <summary>
+            获取最终用于排序的字符串（基于实体对象类型）。
+            </summary>
+            <typeparam name="TModel">基本的实体对象类型。</typeparam>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.ToSort(System.String)">
+            <summary>
+            获取最终用于排序的字符串（不基于实体对象类型，即排序的列名为最终表的列名）。
+            </summary>
+            <param name="tabelName">表名或表别名。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.SortInfo.ToSort">
+            <summary>
+            获取最终用于排序的字符串（不基于实体对象类型，即排序的列名为最终表的列名）。
+            </summary>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.SortModelHelper.ToModelBySort``1(``0)">
+            <summary>
+            单MODEL生成排序字符串对象
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.SortInfoItem">
+            <summary>
+            用于排序列信息对象类。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.SortInfoItem.Field">
+            <summary>
+            排序的字段。
+            </summary>
+        </member>
+        <member name="P:System.Web.Mvc.SortInfoItem.IsASC">
+            <summary>
+            是否升序排列。
+            </summary>
+        </member>
+        <member name="T:System.Web.Mvc.StringExtensions">
+            <summary>
+            字符串的扩展方法类。
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.StringExtensions.ToSortByJsonSort(System.String,System.String)">
+            <summary>
+            获取最终用于排序的字符串（不基于实体对象类型，即排序的列名为最终表的列名）。
+            </summary>
+            <param name="jsonSort">表示排序的 JSON 字符串。</param>
+            <param name="tabelName">表名或表别名。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.StringExtensions.ToSortByJsonSort(System.String)">
+            <summary>
+            获取最终用于排序的字符串（不基于实体对象类型，即排序的列名为最终表的列名）。
+            </summary>
+            <param name="jsonSort">表示排序的 JSON 字符串。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.StringExtensions.ToSortByJsonSort``1(System.String,System.String)">
+            <summary>
+            获取最终用于排序的字符串（基于实体对象类型）。
+            </summary>
+            <typeparam name="TModel">基本的实体对象类型。</typeparam>
+            <param name="jsonSort">表示排序的 JSON 字符串。</param>
+            <param name="tabelName">表名或表别名。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+        <member name="M:System.Web.Mvc.StringExtensions.ToSortByJsonSort``1(System.String)">
+            <summary>
+            获取最终用于排序的字符串（基于实体对象类型）。
+            </summary>
+            <typeparam name="TModel">基本的实体对象类型。</typeparam>
+            <param name="jsonSort">表示排序的 JSON 字符串。</param>
+            <returns>返回最终用于排序的字符串。</returns>
+        </member>
+    </members>
+</doc>

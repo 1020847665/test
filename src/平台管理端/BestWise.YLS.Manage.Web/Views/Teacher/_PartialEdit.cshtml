@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "教师信息";
+    //var targetid = string.Format("d{0}", DateTime.Now.Ticks);
+}
+@model BestWise.YLS.Model.Teacher
+
+<style type="text/css">
+    .checkbox {
+        vertical-align: middle;
+        margin-top: -2px;
+        margin-bottom: 1px;
+    }
+</style>
+
+<script type="text/javascript">
+    //初始化编辑器
+    @*var editor = UE.getEditor('@targetid');*@
+    var pictureUrl = [];
+    $(function () {
+        //初始化附件上传
+        $('#fileUpload').uploadify({
+            buttonText: '选择附件',
+            swf: '/Plugs/uploadify/uploadify.swf',
+            uploader: '/UploadAttachment/teacher',
+            multi: true,
+            auto: true,
+            fileTypeExts: '*',
+            fileTypeDesc: '选择图片',
+            fileSizeLimit: 0,
+            queueSizeLimit: 10,
+            simUploadLimit: 1,
+            queueID: 'queuebox',
+            removeCompleted: false,
+            onUploadSuccess: function (file, data, response) {
+                var result = jQuery.parseJSON(data);
+                if (result.Status == 1) {
+                    var griddata = $('#picturelist').datagrid('getData');
+                    if (griddata.rows == null || griddata.rows == "") {
+                        $('#picturelist').datagrid('loadData', [{
+                            Url: result.Data
+                        }])
+                    } else {
+                        $('#picturelist').datagrid('appendRow', {
+                            Url: result.Data
+                        });
+                    }
+                } else parent.layer.msg(result.Message, 1, 2);
+            }
+        });
+
+        $('#picturelist').datagrid({
+            url: '/Teacher/GetPictureList?teacherId=@ViewBag.TeacherId',
+            method: 'post',
+            loadMsg: "数据加载中.......",
+            pagination: false,
+            fit: true,
+            autoRowHeight: true,
+            fitColumns: true,
+            singleSelect: false,
+            striped: true,
+            rownumbers: false,
+            toolbar: [
+            {
+                id: 'btn-deleteImage',
+                text: '删除',
+                iconCls: 'icon-Empty',
+                handler: function () {
+                    ImageFunction.Delete();
+                }
+            }],
+            columns: [
+                [
+                    {
+                        title: '教师图片',
+                        field: 'Url',
+                        width: 400,
+                        formatter: function (value, row, index) {
+                            return '<div style="display:bock;width:100%;height:100%;text-align:left"><img src="' + row.Url + '" style="max-width:80px;vertical-align:middle" /></div>';
+                        }
+                    }
+                ]
+            ],
+        });
+    });
+
+    var ImageFunction = {
+        //删除
+        Delete: function () {
+            var rows = $('#picturelist').datagrid("getSelections");
+            var copyRows = [];
+            for (var j = 0; j < rows.length; j++) {
+                copyRows.push(rows[j]);
+            }
+            for (var i = 0; i < copyRows.length; i++) {
+                var index = $('#picturelist').datagrid('getRowIndex', copyRows[i]);
+                $('#picturelist').datagrid('deleteRow', index);
+            }
+        },
+        //刷新
+        Refresh: function () {
+            $('#picturelist').datagrid('reload');
+        },
+    };
+
+</script>
+<div class="easyui-tabs" data-options="fit:true">
+    <div title="基本信息" style="padding:5px">
+        <form id="form-detail" method="post">
+            <table class="tabdetail">
+                <tr>
+                    <td class="tdtitle"><i>*</i>名称：</td>
+                    <td>@Html.TextBoxFor(m => m.Name, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入名称" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>介绍：</td>
+                    <td>
+                        @Html.TextAreaFor(m => m.Introduce, new { @class = "detailtextArea easyui-validatebox", data_options = "required:true",placeholder = "请输入介绍"})
+                    </td>
+                </tr>
+                @*<tr>
+                        <td class="tdtitle"><i>*</i>单位：</td>
+                        <td>@Html.TextBoxFor(m => m.Organization, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入单位" })</td>
+                    </tr>*@
+                <tr>
+                    <td class="tdtitle"><i>*</i>职位：</td>
+                    <td>@Html.TextBoxFor(m => m.Position, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入职位" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle"><i>*</i>主讲课程：</td>
+                    <td>@Html.TextBoxFor(m => m.Course, new { @class = "detailinput easyui-validatebox", data_options = "required:true", placeholder = "请输入主讲课程" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">类型：</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.Type, ViewBag.Type as SelectList, new { @class = "combo", style = "width:200px;height:27px", placeholder = "请选择教师类型" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">是否可预约：</td>
+                    <td colspan="2">@Html.CheckBoxFor(m => m.IsOrder, new { @class = "checkbox" })<span style="color:green; margin-left:10px;text-align:center">备注：如是可预约,请进行勾选</span></td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">邮箱：</td>
+                    <td>@Html.TextBoxFor(m => m.Email, new { @class = "detailinput easyui-validatebox", placeholder = "请输入邮箱" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">手机号：</td>
+                    <td>@Html.TextBoxFor(m => m.MobileNumber, new { @class = "detailinput easyui-validatebox", placeholder = "请输入手机号" })</td>
+                </tr>
+                <tr>
+                    <td class="tdtitle">备注：</td>
+                    <td>@Html.TextAreaFor(m => m.Notes, new { @class = "detailtextArea", placeholder = "备注" })</td>
+                </tr>
+            </table>
+            @Html.HiddenFor(m => m.Pictures)
+            @Html.HiddenFor(m => m.TeacherId)
+        </form>
+    </div>
+    <div title="图片管理" style="padding:10px">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'west',split:true,border:true" style="width:300px;padding:2px;">
+                <table class="tabdetail" id="filelist" style="border:none">
+                    <thead>
+                        <tr>
+                            <td class="tdtitle">
+                                <input id="fileUpload" name="fileUpload" type="file" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="queuebox"></td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div data-options="region:'center',split:true,border:false">
+                <table id="picturelist">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

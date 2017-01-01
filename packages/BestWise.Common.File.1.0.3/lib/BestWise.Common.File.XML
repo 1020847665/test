@@ -1,0 +1,1573 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestWise.Common.File</name>
+    </assembly>
+    <members>
+        <member name="M:BestWise.Common.File.Cache.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到服务器
+            </summary>
+            <param name="Context"></param>
+            <param name="SavePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="FilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="FilePath"></param>
+            <param name="ObjectPath"></param>
+            <param name="ObjectFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetFileInfo(System.String)">
+            <summary>
+            得到Remoting服务文件信息
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.IsExistsByFile(System.String)">
+            <summary>
+            判断Remoting服务文件是否存在
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.ContentLength(System.String)">
+            <summary>
+            得到Remoting服务文件的大小
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件的大小</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetPictureSize(System.String)">
+            <summary>
+            得到Remoting服务图片文件的尺寸
+            </summary>
+            <param name="FilePath">Remoting图片文件的路径</param>
+            <returns>图片文件的尺寸</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.CutPicture(System.String,System.Drawing.Size)">
+            <summary>
+            返回截取Remoting服务图片文件的尺寸后的数据字节
+            </summary>
+            <param name="FilePath">Remoting图片文件的路径</param>
+            <param name="Size">截取后图片文件的尺寸</param>
+            <returns>截取后图片文件数据字节</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.CutPicture(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            上传图片到远程文件服务器
+            </summary>
+            <param name="path">保存图片的路径</param>
+            <param name="bytes">上传图片的数据字节数组</param>
+            <param name="Size">保存图片的Size</param>
+            <returns>是否上传成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.UpdateFileName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件名
+            </summary>
+            <param name="sourceFilePath">Remoting原文件的路径</param>
+            <param name="destFilePath">Remoting新文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹信息</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetFiles(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetDirectoryInfo(System.String)">
+            <summary>
+            得到Remoting服务文件夹信息
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>文件夹信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.UpdateDirectoryName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件夹名
+            </summary>
+            <param name="sourceFolderPath">Remoting原文件夹的路径</param>
+            <param name="destFolderPath">Remoting新文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.DeleteDirectory(System.String)">
+            <summary>
+            删除Remoting服务文件夹
+            </summary>
+            <param name="FolderPath">Remoting文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetDirectories(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹信息</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetDirectories(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Cache.GetFileBytes(System.String)">
+            <summary>
+            得到Remoting服务文件二进制数据
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.FileConfigSection.GetConfiguration">
+            <summary>
+            Gets an instance of <see cref="T:BestWise.Common.File.Configuration.FileConfigSection"/> that represents the current configuration.
+            </summary>
+            <returns>An instance of <see cref="T:BestWise.Common.File.Configuration.FileConfigSection"/>, or null if no configuration is specified.</returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileConfigSection.Files">
+            <summary>
+            文件节点配置
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.File.Configuration.FileElement">
+            <summary>
+            文件节点
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElement.Type">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElement.Name">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElement.RootPath">
+            <summary>
+            文件存放的根路径
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElement.ContentLength">
+            <summary>
+            文件上传的大小 （默认为500KB，单位为: bytes，为0时，表示不做限制）
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.FileElementCollection.FirstOrDefault">
+            <summary>
+            获取第一个文件节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.FileElementCollection.CreateNewElement">
+            <summary>
+            创建新节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.FileElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            得到节点的键
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElementCollection.Item(System.Int32)">
+            <summary>
+            通过索引创建节点
+            </summary>
+            <param name="index">索引</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.FileElementCollection.Item(System.String)">
+            <summary>
+            通过名称获取节点
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageConfigSection.GetConfiguration">
+            <summary>
+            Gets an instance of <see cref="T:BestWise.Common.File.Configuration.ImageConfigSection"/> that represents the current configuration.
+            </summary>
+            <returns>An instance of <see cref="T:BestWise.Common.File.Configuration.ImageConfigSection"/>, or null if no configuration is specified.</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageConfigSection.GetImagePaths(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片所有 Size 的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片所有 Size 的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageConfigSection.GetImageDefaultPath(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片默认 Size 的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片默认 Size 的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageConfigSection.GetBestImagePath(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            获取最合适显示 Size 的图片的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <param name="size"></param>
+            <returns>返回最合适显示 Size 的图片的路径</returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageConfigSection.Images">
+            <summary>
+            图片节点配置
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.Type">
+            <summary>
+            图片类型
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.IsSaveOriginal">
+            <summary>
+            是否保存原图片文件
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.IsFileNameWithSize">
+            <summary>
+            保存文件名是否包含有图片 SIze 的信息
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.RootPath">
+            <summary>
+            图片存放的根路径
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.ContentLength">
+            <summary>
+            图片上传大小 （默认为500KB，单位为: bytes，为0时，表示不做限制）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.Quality">
+            <summary>
+            图片生成的品质 （默认为-1，表示使用系统统一的品质压缩值）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElement.Sizes">
+            <summary>
+            图片的 Size 列表
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageElementCollection.FirstOrDefault">
+            <summary>
+            获取第一个图片节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageElementCollection.CreateNewElement">
+            <summary>
+            创建新节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.ImageElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            得到节点的键
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElementCollection.Item(System.Int32)">
+            <summary>
+            通过索引创建节点
+            </summary>
+            <param name="index">索引</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.ImageElementCollection.Item(System.String)">
+            <summary>
+            通过类型获取节点
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.Name">
+            <summary>
+            图片大小别名
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.Width">
+            <summary>
+            图片最大宽度（不设置或为0时，表示宽度不做限制，单位为:像素(px)）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.Height">
+            <summary>
+            图片最大高度（不设置或为0时，表示高度不做限制，单位为:像素(px)）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.IsCrop">
+            <summary>
+            是否最大范围裁剪图片（true：最大范围裁剪图片；false：等比例缩放图片）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.IsDefault">
+            <summary>
+            是否默认 Size
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.Quality">
+            <summary>
+            图片生成的品质 （默认为-1，表示使用系统统一的品质压缩值）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElement.Path">
+            <summary>
+            该 Size 的图片存放相对根路径的路径,{0}表示图片存放的根路径，{1}表示图片文件名
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.File.Configuration.SizeElementCollection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.SizeElementCollection.FirstOrDefault">
+            <summary>
+            获取第一个Size
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.SizeElementCollection.CreateNewElement">
+            <summary>
+            创建新节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.SizeElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            得到节点的键
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElementCollection.Item(System.Int32)">
+            <summary>
+            通过索引获取Size
+            </summary>
+            <param name="index">索引</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.SizeElementCollection.Item(System.String)">
+            <summary>
+            通过名称获取Size
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Configuration.TaskProviderConfigurationSection.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.TaskProviderConfigurationSection.Providers">
+            <summary>
+            推送数据的所有的 Provider 集合
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Configuration.TaskProviderConfigurationSection.Properties">
+            <summary>
+             推送数据的Provider的属性集合
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.File.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.File.Exists(System.String)">
+            <summary>
+            判断文件是否存在
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.Delete(System.String)">
+            <summary>
+            删除指定的文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.Save(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <param name="bytes">文件二进制数据</param>
+            <returns>保存文件是否成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.ImportExcel(System.String)">
+            <summary>
+            导入Excel信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.ConfigureSave(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="name">节点名称</param>
+            <param name="bytes">文件二进制数据</param>
+            <returns>保存文件是否成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.SaveFile(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="name">节点名称</param>
+            <param name="bytes">文件二进制数据</param>
+            <returns>保存文件是否成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.File.Read(System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>文件的二进制数据</returns>
+        </member>
+        <member name="T:BestWise.Common.File.FileController">
+            <summary>
+            上传附件API
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.FileController.UploadImage">
+            <summary>
+            图片上传
+            </summary>
+            <returns>返回上传结果</returns>
+        </member>
+        <member name="M:BestWise.Common.File.FileController.UploadAttachment">
+            <summary>
+            附件上传
+            </summary>
+            <returns>返回上传结果</returns>
+        </member>
+        <member name="F:BestWise.Common.File.FileType.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="F:BestWise.Common.File.FileType.Folder">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="T:BestWise.Common.File.FileUploadConfig">
+            <summary>
+            文件上传配置
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.FileUploadConfig.IsUpYun">
+            <summary>
+            判断是否应用 UpYun
+            </summary>
+            <returns>是否应用 UpYun</returns>
+        </member>
+        <member name="M:BestWise.Common.File.FileUploadConfig.IsRemoting">
+            <summary>
+            判断是否应用 Remoting
+            </summary>
+            <returns>是否应用 Remoting</returns>
+        </member>
+        <member name="T:BestWise.Common.File.IDirectory">
+            <summary>
+            目录的操作接口
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.IDirectory.Create(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>创建是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IDirectory.Delete(System.String)">
+            <summary>
+            删除目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IDirectory.GetInfo(System.String)">
+            <summary>
+            获取目录信息
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>目录信息数组列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IDirectory.GetFolderUsage(System.String)">
+            <summary>
+            获取目录的占用信息
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>目录的占用信息(失败返回 null)</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IDirectory.GetFolderUsage">
+            <summary>
+            获取空间占用信息
+            </summary>
+            <returns>空间占用信息(失败返回 null)</returns>
+        </member>
+        <member name="T:BestWise.Common.File.IFile">
+            <summary>
+            文件的操作接口
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.IFile.Exists(System.String)">
+            <summary>
+            判断文件是否存在
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFile.Delete(System.String)">
+            <summary>
+            删除指定的文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFile.Save(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <param name="bytes">文件二进制数据</param>
+            <returns>保存文件是否成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFile.Read(System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>文件的二进制数据</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFile.GetFileInfo(System.String)">
+            <summary>
+            读取文件信息
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="strDirName"></param>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到服务器
+            </summary>
+            <param name="Context"></param>
+            <param name="SavePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="FilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="FilePath"></param>
+            <param name="ObjectPath"></param>
+            <param name="ObjectFilename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetFileInfo(System.String)">
+            <summary>
+            得到Remoting服务文件信息
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.IsExistsByFile(System.String)">
+            <summary>
+            判断Remoting服务文件是否存在
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.ContentLength(System.String)">
+            <summary>
+            得到Remoting服务文件的大小
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件的大小</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetPictureSize(System.String)">
+            <summary>
+            得到Remoting服务图片文件的尺寸
+            </summary>
+            <param name="FilePath">Remoting图片文件的路径</param>
+            <returns>图片文件的尺寸</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.CutPicture(System.String,System.Drawing.Size)">
+            <summary>
+            返回截取Remoting服务图片文件的尺寸后的数据字节
+            </summary>
+            <param name="FilePath">Remoting图片文件的路径</param>
+            <param name="Size">截取后图片文件的尺寸</param>
+            <returns>截取后图片文件数据字节</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.CutPicture(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            上传图片到远程文件服务器
+            </summary>
+            <param name="path">保存图片的路径</param>
+            <param name="bytes">上传图片的数据字节数组</param>
+            <param name="Size">保存图片的Size</param>
+            <returns>是否上传成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.UpdateFileName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件名
+            </summary>
+            <param name="sourceFilePath">Remoting原文件的路径</param>
+            <param name="destFilePath">Remoting新文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹信息</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetFiles(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetDirectoryInfo(System.String)">
+            <summary>
+            得到Remoting服务文件夹信息
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>文件夹信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.UpdateDirectoryName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件夹名
+            </summary>
+            <param name="sourceFolderPath">Remoting原文件夹的路径</param>
+            <param name="destFolderPath">Remoting新文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.DeleteDirectory(System.String)">
+            <summary>
+            删除Remoting服务文件夹
+            </summary>
+            <param name="FolderPath">Remoting文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetDirectories(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹信息</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetDirectories(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="FilePath">Remoting文件夹的路径</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IFileServer.GetFileBytes(System.String)">
+            <summary>
+            得到Remoting服务文件二进制数据
+            </summary>
+            <param name="FilePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IImage.GetSize(System.String)">
+            <summary>
+            得到Remoting服务图片文件的尺寸
+            </summary>
+            <param name="path">Remoting图片文件的路径</param>
+            <returns>图片文件的尺寸</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IImage.GetBytes(System.String,System.Drawing.Size)">
+            <summary>
+            返回截取Remoting服务图片文件的尺寸后的数据字节
+            </summary>
+            <param name="path">Remoting图片文件的路径</param>
+            <param name="szie">截取后图片文件的尺寸</param>
+            <returns>截取后图片文件数据字节</returns>
+        </member>
+        <member name="M:BestWise.Common.File.IImage.Save(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            上传图片到远程文件服务器
+            </summary>
+            <param name="path">保存图片的路径</param>
+            <param name="bytes">上传图片的数据字节数组</param>
+            <param name="szie">保存图片的Size</param>
+            <returns>是否上传成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetSize(System.String)">
+            <summary>
+            获取图片的 Size
+            </summary>
+            <param name="path">图片地址</param>
+            <returns>图片的 Size</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Zoom(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            图片等比例缩放后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="bytes">图片二进制数据</param>
+            <param name="size">图片的 Size</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Zoom(System.String,System.Byte[],System.Drawing.Size,System.Int32)">
+            <summary>
+            图片等比例缩放后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="bytes">图片二进制数据</param>
+            <param name="size">图片的 Size</param>
+            <param name="quality">处理后图片的品质</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Zoom(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            图片等比例缩放后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="base64">图片 base64 字符串</param>
+            <param name="size">图片的 Size</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Zoom(System.String,System.String,System.Drawing.Size,System.Int32)">
+            <summary>
+            图片等比例缩放后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="base64">图片 base64 字符串</param>
+            <param name="size">图片的 Size</param>
+            <param name="quality">处理后图片的品质</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Crop(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            最大适应裁剪图片后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="bytes">图片二进制数据</param>
+            <param name="size">图片的 Size</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Crop(System.String,System.Byte[],System.Drawing.Size,System.Int32)">
+            <summary>
+            最大适应裁剪图片后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="bytes">图片二进制数据</param>
+            <param name="size">图片的 Size</param>
+            <param name="quality">处理后图片的品质</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Crop(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            最大适应裁剪图片后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="base64">图片 base64 字符串</param>
+            <param name="size">图片的 Size</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Crop(System.String,System.String,System.Drawing.Size,System.Int32)">
+            <summary>
+            最大适应裁剪图片后保存
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="base64">图片 base64 字符串</param>
+            <param name="size">图片的 Size</param>
+            <param name="quality">处理后图片的品质</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Save(System.String,System.String,System.Byte[])">
+            <summary>
+            保存图片
+            </summary>
+            <param name="type">图片地址</param>
+            <param name="fileName">图片文件名（用于获取扩展名，不做保存文件名）</param>
+            <param name="bytes">图片二进制数据</param>
+            <returns>保存后主图片的路径，为空时，表示上传不成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Save(System.String,System.String,System.String)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="type">图片地址</param>
+            <param name="fileName">图片文件名（用于获取扩展名，不做保存文件名）</param>
+            <param name="base64">图片 base64 字符串</param>
+            <returns>保存后主图片的路径，为空时，表示上传不成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.Delete(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，删除所有 Size 的图片
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>是否删除成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImagePaths(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片所有 Size 的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片所有 Size 的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImagePath(System.String,System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片指定键的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <param name="key">图片基本路径键</param>
+            <returns>返回图片所有 Size 的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImageUrls(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片所有 Size 的 URL 路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片所有 Size 的 URL 路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImageUrl(System.String,System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片指定键的 URL 路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <param name="key">图片基本路径键</param>
+            <returns>返回图片所有 Size 的 URL 路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImageUrl(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片默认 Size 的 URL 路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片默认 Size 的 URL 路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetImagePath(System.String,System.String)">
+            <summary>
+            根据图片配置类型和图片基本路径，返回图片默认 Size 的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <returns>返回图片默认 Size 的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetBestImagePath(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            获取最合适显示 Size 的图片的路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <param name="size"></param>
+            <returns>返回最合适显示 Size 的图片的路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Image.GetBestImageUrl(System.String,System.String,System.Drawing.Size)">
+            <summary>
+            获取最合适显示 Size 的图片的 URL 路径
+            </summary>
+            <param name="type">图片配置类型</param>
+            <param name="path">图片基本路径</param>
+            <param name="size"></param>
+            <returns>返回最合适显示 Size 的图片的 URL 路径</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到服务器
+            </summary>
+            <param name="context">上传的二进制数据</param>
+            <param name="path">文件路径</param>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">要删除的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="path">文件路径</param>
+            <param name="objectPath">目标目录</param>
+            <param name="objectFilename">复制后的文件名，如果为空则为原文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.IsExistsByFile(System.String)">
+            <summary>
+            判断服务文件是否存在
+            </summary>
+            <param name="path">文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.BaseProvider.GetFileBytes(System.String)">
+            <summary>
+            得到服务文件二进制数据
+            </summary>
+            <param name="path">文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到Remoting服务器
+            </summary>
+            <param name="Context">上传的二进制数据</param>
+            <param name="path">文件路径</param>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">要删除的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="path">文件路径</param>
+            <param name="ObjectPath">目标目录</param>
+            <param name="ObjectFilename">复制后的文件名，如果为空则为原文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.IsExistsByFile(System.String)">
+            <summary>
+            判断Remoting服务文件是否存在
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.GetFileBytes(System.String)">
+            <summary>
+            得到Remoting服务文件二进制数据
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.RemotingProvider.GetServerPath(System.String)">
+            <summary>
+            获取服务器地址
+            </summary>
+            <param name="path">地址</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.RemotingProvider.RemotingIp">
+            <summary>
+            RemotingIP
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.RemotingProvider.RemotingPort">
+            <summary>
+            RemotingPort 
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.RemotingProvider.RemotingRoot">
+            <summary>
+            RemotingRoot 
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.TaskProviderCollection.Add(System.Configuration.Provider.ProviderBase)">
+            <summary>
+            向集合中添加提供程序。
+            </summary>
+            <param name="provider">要添加的提供程序。</param>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.IsExistsByFile(System.String)">
+            <summary>
+            判断文件是否存在
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.DeleteFile(System.String)">
+            <summary>
+            删除指定的文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到服务器
+            </summary>
+            <param name="context">上传的二进制数据</param>
+            <param name="path">文件路径</param>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.GetFileInfo(System.String)">
+            <summary>
+            得到服务文件信息
+            </summary>
+            <param name="path">文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.GetFileBytes(System.String)">
+            <summary>
+            得到服务文件二进制数据
+            </summary>
+            <param name="path">文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Providers.UpYunProvider.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.UpYunProvider.SpaceName">
+            <summary>
+             空间名称
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.UpYunProvider.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.UpYunProvider.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Providers.UpYunProvider.ApiDomain">
+            <summary>
+            API接口域名
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="strDirName">目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到FTP服务器
+            </summary>
+            <param name="context">上传的二进制数据</param>
+            <param name="savePath">文件路径</param>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="filePath">要删除的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="filePath">文件路径</param>
+            <param name="objectPath">目标目录</param>
+            <param name="objectFilename">复制后的文件名，如果为空则为原文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetFileInfo(System.String)">
+            <summary>
+            得到Remoting服务文件信息
+            </summary>
+            <param name="filePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.IsExistsByFile(System.String)">
+            <summary>
+            判断Remoting服务文件是否存在
+            </summary>
+            <param name="filePath">Remoting文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.ContentLength(System.String)">
+            <summary>
+            得到Remoting服务文件的大小
+            </summary>
+            <param name="filePath">Remoting文件的路径</param>
+            <returns>文件的大小</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetPictureSize(System.String)">
+            <summary>
+            得到Remoting服务图片文件的尺寸
+            </summary>
+            <param name="filePath">Remoting图片文件的路径</param>
+            <returns>图片文件的尺寸</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.CutPicture(System.String,System.Drawing.Size)">
+            <summary>
+            返回截取Remoting服务图片文件的尺寸后的数据字节
+            </summary>
+            <param name="filePath">Remoting图片文件的路径</param>
+            <param name="size">截取后图片文件的尺寸</param>
+            <returns>截取后图片文件数据字节</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.CutPicture(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            上传图片到远程文件服务器
+            </summary>
+            <param name="path">保存图片的路径</param>
+            <param name="bytes">上传图片的数据字节数组</param>
+            <param name="Size">保存图片的Size</param>
+            <returns>是否上传成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.UpdateFileName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件名
+            </summary>
+            <param name="sourceFilePath">Remoting原文件的路径</param>
+            <param name="destFilePath">Remoting新文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="folderInfo">Remoting文件夹信息</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetFiles(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="folderPath">Remoting文件夹的路径</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetDirectoryInfo(System.String)">
+            <summary>
+            得到Remoting服务文件夹信息
+            </summary>
+            <param name="folderPath">Remoting文件夹的路径</param>
+            <returns>文件夹信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.UpdateDirectoryName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件夹名
+            </summary>
+            <param name="sourceFolderPath">Remoting原文件夹的路径</param>
+            <param name="destFolderPath">Remoting新文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.DeleteDirectory(System.String)">
+            <summary>
+            删除Remoting服务文件夹
+            </summary>
+            <param name="folderPath">Remoting文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetDirectories(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="folderInfo">Remoting文件夹信息</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetDirectories(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="folderPath">Remoting文件夹的路径</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.RemotingHelper.GetFileBytes(System.String)">
+            <summary>
+            得到Remoting服务文件二进制数据
+            </summary>
+            <param name="filePath">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="T:BestWise.Common.File.Remoting.Directory">
+            <summary>
+            文件夹的操作类
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.Instance">
+            <summary>
+            获取一个实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.Create(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>创建是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.Delete(System.String)">
+            <summary>
+            删除目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.GetInfo(System.String)">
+            <summary>
+            获取目录信息
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>目录信息数组列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.GetFolderUsage(System.String)">
+            <summary>
+            获取目录的占用信息(未实现)
+            </summary>
+            <param name="path">目录路径</param>
+            <returns>目录的占用信息(失败返回 null)</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Directory.GetFolderUsage">
+            <summary>
+            获取空间占用信息(未实现)
+            </summary>
+            <returns>空间占用信息(失败返回 null)</returns>
+        </member>
+        <member name="P:BestWise.Common.File.Remoting.FolderItem.FileName">
+            <summary>
+            文件/目录名
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.Remoting.FolderItem.FileType">
+            <summary>
+            类型 N (文件)、F (目录)
+            </summary>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.Instance">
+            <summary>
+            获取一个实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.Exists(System.String)">
+            <summary>
+            判断文件是否存在
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.Delete(System.String)">
+            <summary>
+            删除指定的文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.Save(System.String,System.Byte[])">
+            <summary>
+            保存文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <param name="bytes">文件二进制数据</param>
+            <returns>保存文件是否成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.Read(System.String)">
+            <summary>
+            读取文件
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>文件的二进制数据</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.File.GetFileInfo(System.String)">
+            <summary>
+            读取文件信息
+            </summary>
+            <param name="path">文件的Cdn路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Image.Instance">
+            <summary>
+            获取一个实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Image.GetSize(System.String)">
+            <summary>
+            获取图片的 Size
+            </summary>
+            <param name="path">图片地址</param>
+            <returns>图片的 Size</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Image.GetBytes(System.String,System.Drawing.Size)">
+            <summary>
+            获取图片的二进制数据
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="szie">图片的 Size</param>
+            <returns>二进制数据</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Image.Save(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            保存图片
+            </summary>
+            <param name="path">图片地址</param>
+            <param name="bytes">图片二进制数据</param>
+            <param name="szie">图片的 Size</param>
+            <returns>是否保存成功</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.MakeDirectory(System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <param name="path">目录路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.UploadFile(System.Byte[],System.String)">
+            <summary>
+            上传文件到Remoting服务器
+            </summary>
+            <param name="Context">上传的二进制数据</param>
+            <param name="path">文件路径</param>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="path">要删除的文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.CopyFile(System.String,System.String,System.String)">
+            <summary>
+            Copy文件
+            </summary>
+            <param name="path">文件路径</param>
+            <param name="ObjectPath">目标目录</param>
+            <param name="ObjectFilename">复制后的文件名，如果为空则为原文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetFileInfo(System.String)">
+            <summary>
+            得到Remoting服务文件信息
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.IsExistsByFile(System.String)">
+            <summary>
+            判断Remoting服务文件是否存在
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>是否存在</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.ContentLength(System.String)">
+            <summary>
+            得到Remoting服务文件的大小
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>文件的大小</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetPictureSize(System.String)">
+            <summary>
+            得到Remoting服务图片文件的尺寸
+            </summary>
+            <param name="path">Remoting图片文件的路径</param>
+            <returns>图片文件的尺寸</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.CutPicture(System.String,System.Drawing.Size)">
+            <summary>
+            返回截取Remoting服务图片文件的尺寸后的数据字节
+            </summary>
+            <param name="path">Remoting图片文件的路径</param>
+            <param name="Size">截取后图片文件的尺寸</param>
+            <returns>截取后图片文件数据字节</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.CutPicture(System.String,System.Byte[],System.Drawing.Size)">
+            <summary>
+            上传图片到远程文件服务器
+            </summary>
+            <param name="path">保存图片的路径</param>
+            <param name="bytes">上传图片的数据字节数组</param>
+            <param name="Size">保存图片的Size</param>
+            <returns>是否上传成功！</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.UpdateFileName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件名
+            </summary>
+            <param name="sourceFilePath">Remoting原文件的路径</param>
+            <param name="destFilePath">Remoting新文件的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetFiles(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="FolderInfo">Remoting文件夹信息</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetFiles(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件信息列表
+            </summary>
+            <param name="path">Remoting文件夹的路径</param>
+            <returns>子文件信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetDirectoryInfo(System.String)">
+            <summary>
+            得到Remoting服务文件夹信息
+            </summary>
+            <param name="path">Remoting文件夹的路径</param>
+            <returns>文件夹信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.UpdateDirectoryName(System.String,System.String)">
+            <summary>
+            修改Remoting服务文件夹名
+            </summary>
+            <param name="sourceFolderPath">Remoting原文件夹的路径</param>
+            <param name="destFolderPath">Remoting新文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.DeleteDirectory(System.String)">
+            <summary>
+            删除Remoting服务文件夹
+            </summary>
+            <param name="path">Remoting文件夹的路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetDirectories(System.IO.DirectoryInfo)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="FolderInfo">Remoting文件夹信息</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetDirectories(System.String)">
+            <summary>
+            得到Remoting服务文件夹子文件夹信息列表
+            </summary>
+            <param name="path">Remoting文件夹的路径</param>
+            <returns>子文件夹信息列表</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetFileBytes(System.String)">
+            <summary>
+            得到Remoting服务文件二进制数据
+            </summary>
+            <param name="path">Remoting文件的路径</param>
+            <returns>文件信息</returns>
+        </member>
+        <member name="M:BestWise.Common.File.Remoting.Request.GetServerPath(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.Common.File.UpYun.Worker.GetResponse(System.Net.Http.HttpMethod,System.String)">
+            <summary>
+            得到一个 HttpWebResponse 实例
+            </summary>
+            <param name="method">请求的动作</param>
+            <param name="Url">相对路径</param>
+            <returns>HttpWebResponse 实例</returns>
+        </member>
+        <member name="M:BestWise.Common.File.UpYun.Worker.GetResponse(System.Net.Http.HttpMethod,System.String,System.Collections.Hashtable)">
+            <summary>
+            得到一个 HttpWebResponse 实例
+            </summary>
+            <param name="method">请求的动作</param>
+            <param name="Url">相对路径</param>
+            <param name="headers">Http 请求头</param>
+            <returns>HttpWebResponse 实例</returns>
+        </member>
+        <member name="M:BestWise.Common.File.UpYun.Worker.GetResponse(System.Net.Http.HttpMethod,System.String,System.Byte[])">
+            <summary>
+            得到一个 HttpWebResponse 实例
+            </summary>
+            <param name="method">请求的动作</param>
+            <param name="Url">相对路径</param>
+            <param name="postData">二进制数据</param>
+            <returns>HttpWebResponse 实例</returns>
+        </member>
+        <member name="M:BestWise.Common.File.UpYun.Worker.GetResponse(System.Net.Http.HttpMethod,System.String,System.Byte[],System.Collections.Hashtable)">
+            <summary>
+            得到一个 HttpWebResponse 实例
+            </summary>
+            <param name="method">请求的动作</param>
+            <param name="Url">相对路径</param>
+            <param name="postData">二进制数据</param>
+            <param name="headers">Http 请求头</param>
+            <returns>HttpWebResponse 实例</returns>
+        </member>
+        <member name="P:BestWise.Common.File.UpYun.Worker.ContentMd5">
+            <summary>
+            设置待上传文件的 Content-MD5 值（如又拍云服务端收到的文件MD5值与用户设置的不一致，将回报 406 Not Acceptable 错误）
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.UpYun.Worker.FileSecret">
+            <summary>
+            设置待上传文件的 访问密钥（注意：仅支持图片空！，设置密钥后，无法根据原文件URL直接访问，需带 URL 后面加上 （缩略图间隔标志符+密钥） 进行访问）
+            如缩略图间隔标志符为 ! ，密钥为 bac，上传文件路径为 /folder/test.jpg ，那么该图片的对外访问地址为： http://空间域名/folder/test.jpg!bac
+            </summary>
+        </member>
+        <member name="P:BestWise.Common.File.UpYun.Worker.Infos">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

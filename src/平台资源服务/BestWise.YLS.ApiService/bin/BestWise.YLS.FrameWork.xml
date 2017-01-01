@@ -1,0 +1,686 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BestWise.YLS.FrameWork</name>
+    </assembly>
+    <members>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLCourse">
+            <summary>
+            课程信息业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLCourse.Add(BestWise.YLS.Model.Course)">
+            <summary>
+            新增课程信息
+            </summary>
+            <param name="model">资料信息</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLCourse.Update(BestWise.YLS.Model.Course)">
+            <summary>
+            更新课程信息
+            </summary>
+            <param name="model">资料信息</param>
+            <returns>返回修改结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLCourse.GetModel(System.Guid)">
+            <summary>
+            根据课程ID获取课程信息
+            </summary>
+            <param name="courseId">课程ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLCourse.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取课程信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>课程列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLCourse.Delete(System.Guid)">
+            <summary>
+            删除课程信息
+            </summary>
+            <param name="courseId">课程ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLCourse.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLMaterial">
+            <summary>
+            资料信息业务逻辑处理层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.Add(BestWise.YLS.Model.Material)">
+            <summary>
+            新增资料信息
+            </summary>
+            <param name="model">资料信息</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.Update(BestWise.YLS.Model.Material)">
+            <summary>
+            更新资料信息
+            </summary>
+            <param name="model">资料信息</param>
+            <returns>返回修改结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.GetModel(System.Guid)">
+            <summary>
+            根据资料ID获取资料信息
+            </summary>
+            <param name="materialId">资料ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取资料信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>资料列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.Delete(System.Guid)">
+            <summary>
+            删除资料信息
+            </summary>
+            <param name="materialId">资料ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.GetAttachmentList(System.Guid)">
+            <summary>
+            获取资料附件
+            </summary>
+            <param name="materialId">附件ID</param>
+            <returns>返回资料附件</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.GetMaterialType(System.String)">
+            <summary>
+            根据文件路径获取文件类型
+            </summary>
+            <param name="path">文件路径</param>
+            <returns>返回文件类型</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterial.IsUrl(System.String)">
+            <summary>
+            判断字符串是否为url
+            </summary>
+            <param name="str">字符串</param>
+            <returns>返回判断结果</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLMaterial.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLMaterialAttachment">
+            <summary>
+            资料附件业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterialAttachment.Delete(System.Guid)">
+            <summary>
+            删除资料附件信息
+            </summary>
+            <param name="attachmentId">资料附件ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLMaterialAttachment.GetModel(System.Guid)">
+            <summary>
+            根据附件ID获取附件信息
+            </summary>
+            <param name="attachmentId">附件ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLMaterialAttachment.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLStudentBook">
+            <summary>
+            学员预约处理业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.Add(BestWise.YLS.Model.StudentBook)">
+            <summary>
+            新增预约信息
+            </summary>
+            <param name="model">预约信息</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.Update(BestWise.YLS.Model.StudentBook)">
+            <summary>
+            更新预约信息
+            </summary>
+            <param name="model">预约信息</param>
+            <returns>返回修改结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.GetModel(System.Guid)">
+            <summary>
+            根据预约ID获取预约信息
+            </summary>
+            <param name="bookId">预约ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取预约信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>预约列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.Delete(System.Guid)">
+            <summary>
+            删除预约信息
+            </summary>
+            <param name="bookId">预约ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLStudentBook.DealState(BestWise.YLS.Model.StudentBook)">
+            <summary>
+            预约状态处理
+            </summary>
+            <param name="model">预约信息</param>
+            <returns>返回处理结果</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLStudentBook.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLTeacher">
+            <summary>
+            教师信息业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacher.Add(BestWise.YLS.Model.Teacher)">
+            <summary>
+            新增教师信息
+            </summary>
+            <param name="model">教师信息</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacher.Update(BestWise.YLS.Model.Teacher)">
+            <summary>
+            更新教师信息
+            </summary>
+            <param name="model">教师信息</param>
+            <returns>返回修改结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacher.GetModel(System.Guid)">
+            <summary>
+            根据教师ID获取教师信息
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacher.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取教师信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>教师列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacher.Delete(System.Guid)">
+            <summary>
+            删除教师信息
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLTeacher.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLTeacherPicture">
+            <summary>
+            教师图片业务处理层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacherPicture.Delete(System.Guid)">
+            <summary>
+            删除教师图片
+            </summary>
+            <param name="pictureId">图片ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTeacherPicture.GetPictureList(System.Guid)">
+            <summary>
+            根据教师ID获取教师图片信息
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>返回教师图片</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLTeacherPicture.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLTrainClass">
+            <summary>
+            培训班业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainClass.Add(BestWise.YLS.Model.TrainClass)">
+            <summary>
+            新增培训班信息
+            </summary>
+            <param name="model">培训班信息</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainClass.Update(BestWise.YLS.Model.TrainClass)">
+            <summary>
+            更新培训班信息
+            </summary>
+            <param name="model">培训班信息</param>
+            <returns>返回修改结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainClass.GetModel(System.Guid)">
+            <summary>
+            根据培训ID获取培训信息
+            </summary>
+            <param name="trainId">培训ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainClass.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取培训班信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>培训班列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainClass.Delete(System.Guid)">
+            <summary>
+            删除培训班信息
+            </summary>
+            <param name="trainId">培训班ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLTrainClass.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.BLL.BLLTrainContact">
+            <summary>
+            培训班联系人业务逻辑层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainContact.Delete(System.Guid)">
+            <summary>
+            删除培训班联系人
+            </summary>
+            <param name="contactId">联系人ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.BLL.BLLTrainContact.GetContactList(System.Guid)">
+            <summary>
+            获取联系人信息
+            </summary>
+            <param name="contactId">联系人ID</param>
+            <returns>返回联系人信息</returns>
+        </member>
+        <member name="P:BestWise.YLS.FrameWork.BLL.BLLTrainContact.Instantiate">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALCourse">
+            <summary>
+            课程信息数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALCourse.GetModel(System.Guid)">
+            <summary>
+            根据课程ID获取课程信息
+            </summary>
+            <param name="courseId">课程ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALCourse.Update(BestWise.YLS.Model.Course,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            更新课程信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回更新结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALCourse.Add(BestWise.YLS.Model.Course,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            新增课程信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALCourse.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取课程信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>课程列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALCourse.Delete(System.Guid)">
+            <summary>
+            删除课程信息
+            </summary>
+            <param name="courseId">课程ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALMaterialAttachment">
+            <summary>
+            资料附件数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterialAttachment.AddMaterialAttachment(System.String,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            添加资料附件
+            </summary>
+            <param name="dataXML">xml数据</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回添加结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterialAttachment.Delete(System.Guid)">
+            <summary>
+            删除资料附件
+            </summary>
+            <param name="attachmentId">附件ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterialAttachment.GetModel(System.Guid)">
+            <summary>
+            根据附件ID获取附件信息
+            </summary>
+            <param name="attachmentId">附件ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALMaterial">
+            <summary>
+            资料信息数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.GetModel(System.Guid)">
+            <summary>
+            根据资料ID获取资料信息
+            </summary>
+            <param name="materialId">资料ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.Update(BestWise.YLS.Model.Material,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            更新资料信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回更新结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.Add(BestWise.YLS.Model.Material,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            新增资料信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取资料信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>资料列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.Delete(System.Guid)">
+            <summary>
+            删除资料信息
+            </summary>
+            <param name="courseId">课程ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.AddMaterial(BestWise.YLS.Model.Material,System.String)">
+            <summary>
+            添加资料信息
+            </summary>
+            <param name="model">资料信息</param>
+            <param name="attachment">资料附件信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.UpdateMaterial(BestWise.YLS.Model.Material,System.String)">
+            <summary>
+            修改资料信息
+            </summary>
+            <param name="model">资料信息</param>
+            <param name="attachment">资料附件信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALMaterial.GetAttachmentList(System.Guid)">
+            <summary>
+            获取资料附件
+            </summary>
+            <param name="materialId">附件ID</param>
+            <returns>返回资料附件</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALStudentBook">
+            <summary>
+            学员预约数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.GetModel(System.Guid)">
+            <summary>
+            根据预约ID获取预约信息
+            </summary>
+            <param name="bookId">预约ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.Update(BestWise.YLS.Model.StudentBook,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            更新预约信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回更新结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.Add(BestWise.YLS.Model.StudentBook,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            新增预约信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取预约信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>预约列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.Delete(System.Guid)">
+            <summary>
+            删除预约信息
+            </summary>
+            <param name="bookId">预约ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALStudentBook.DealState(BestWise.YLS.Model.StudentBook)">
+            <summary>
+            预约状态处理
+            </summary>
+            <param name="model">预约信息</param>
+            <returns>返回处理结果</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALTeacher">
+            <summary>
+            教师数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.GetModel(System.Guid)">
+            <summary>
+            根据教师ID获取教师信息
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.Update(BestWise.YLS.Model.Teacher,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            更新教师信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回更新结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.Add(BestWise.YLS.Model.Teacher,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            新增教师信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回新增结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取教师信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>教师列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.Delete(System.Guid)">
+            <summary>
+            删除教师信息
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.AddTeacher(BestWise.YLS.Model.Teacher,System.String)">
+            <summary>
+            添加教师信息
+            </summary>
+            <param name="model">教师信息</param>
+            <param name="pictures">教师图片信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacher.UpdateTeacher(BestWise.YLS.Model.Teacher,System.String)">
+            <summary>
+            修改教师信息
+            </summary>
+            <param name="model">教师信息</param>
+            <param name="pictures">教师图片信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALTeacherPicture">
+            <summary>
+            教师图片数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacherPicture.AddTeacherPicture(System.String,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            添加教师图片
+            </summary>
+            <param name="dataXML">xml数据</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回添加结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacherPicture.Delete(System.Guid)">
+            <summary>
+            删除教师图片
+            </summary>
+            <param name="pictureId">图片ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTeacherPicture.GetPictureList(System.Guid)">
+            <summary>
+            获取教师图片
+            </summary>
+            <param name="teacherId">教师ID</param>
+            <returns>返回教师图片信息</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALTrainClass">
+            <summary>
+            培训班数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.GetModel(System.Guid)">
+            <summary>
+            根据培训班ID获取培训班信息
+            </summary>
+            <param name="trainId">主键</param>
+            <returns>实体对象</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.Update(BestWise.YLS.Model.TrainClass,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            更新培训班信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.Add(BestWise.YLS.Model.TrainClass,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            新增培训班信息
+            </summary>
+            <param name="model">实体对象</param>
+            <param name="transaction">是否启用事务</param>
+            <returns></returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.GetPageList(BestWise.Common.BaseFilter)">
+            <summary>
+            分页获取培训班信息
+            </summary>
+            <param name="baseFilter">筛选条件</param>
+            <returns>培训班列表集合</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.Delete(System.Guid)">
+            <summary>
+            删除培训班信息
+            </summary>
+            <param name="trainId">培训班ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.AddTrainClass(BestWise.YLS.Model.TrainClass,System.String)">
+            <summary>
+            添加培训班信息
+            </summary>
+            <param name="model">培训班信息</param>
+            <param name="contacts">联系人信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainClass.UpdateTrainClass(BestWise.YLS.Model.TrainClass,System.String)">
+            <summary>
+            修改培训班信息
+            </summary>
+            <param name="model">培训班信息</param>
+            <param name="contacts">联系人信息</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="T:BestWise.YLS.FrameWork.DAL.DALTrainContact">
+            <summary>
+            培训班联系人数据访问层
+            </summary>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainContact.AddTrainContact(System.String,BestWise.EnterpriseLibrary.Data.BWDatabaseWithTransaction)">
+            <summary>
+            添加培训班联系人
+            </summary>
+            <param name="dataXML">xml数据</param>
+            <param name="transaction">是否启用事务</param>
+            <returns>返回添加结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainContact.Delete(System.Guid)">
+            <summary>
+            删除培训班联系人
+            </summary>
+            <param name="contactId">联系人ID</param>
+            <returns>返回删除结果</returns>
+        </member>
+        <member name="M:BestWise.YLS.FrameWork.DAL.DALTrainContact.GetContactList(System.Guid)">
+            <summary>
+            获取联系人信息
+            </summary>
+            <param name="contactId">联系人ID</param>
+            <returns>返回联系人信息</returns>
+        </member>
+    </members>
+</doc>
