@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.4;
+    font-family: 'Microsoft YaHei';
+}
+
+
+/*公共样式*/
+
+.text-one {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+input {
+    font-family: 'Microsoft YaHei';
+}
+
+.back-gray {
+    background: #f3f5f9;
+    padding-bottom: 6.875rem;
+}
+
+.back-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    width: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    border-bottom: 1px #e7e7e7 solid;
+}
+
+header>div {
+    width: 33.3%;
+    height: 5.0rem;
+    line-height: 5.0rem;
+    float: left;
+    color: #777;
+    font-size: 1.625rem;
+    text-align: center;
+}
+
+header>div>span {
+    position: relative;
+    height: inherit;
+    display: inline-block;
+}
+
+header>div.active {
+    color: #d32d27;
+}
+
+header>div.active .header-line {
+    border-bottom: 3px #d32d27 solid;
+}
+
+.header-line {
+    position: absolute;
+    bottom: 4px;
+    left: 15%;
+    width: 70%;
+    height: 0;
+    border-bottom: 3px transparent solid;
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 3;
+    border-top: 1px #c7c7c7 solid;
+    padding: 0.688rem 0 0.812rem;
+}
+
+footer>div {
+    width: 25%;
+    float: left;
+    text-align: center;
+    color: #666;
+    font-size: 1.25rem;
+}
+
+footer>div.active {
+    color: #d32d27;
+}
+
+footer img {
+    width: 3.0rem;
+}
+
+
+/*教师列表*/
+
+.teacher-list-sec {
+    background: #f3f5f9;
+    padding: 6.875rem 0;
+}
+
+.teacher-list-sec>div {
+    padding: 0 1.75rem;
+    background: white;
+}
+
+.teacher-list-model {
+    width: 100%;
+    border-bottom: 1px #e8e8e8 solid;
+    display: table;
+}
+
+.teacher-list-model:last-child {
+    border: none;
+}
+
+.teacher-list-name {
+    color: #000;
+    font-size: 1.875rem;
+    float: left;
+    font-weight: bold;
+}
+
+.teacher-list-tag {
+    color: white;
+    background: #ff9900;
+    border-radius: 2px;
+    font-size: 1.125rem;
+    text-align: center;
+    padding: 5px 10px;
+    float: right;
+}
+
+.teacher-list-tag.tag2 {
+    background: #ff5000;
+}
+
+.teacher-list-img {
+    width: 23.2%;
+    height: 10rem;
+    float: left;
+    border-radius: 2px;
+}
+
+.teacher-list-right {
+    width: 72.7%;
+    float: right;
+}
+
+.teacher-list-title {
+    font-size: 1.75rem;
+    color: #333;
+}
+
+.teacher-list-content {
+    font-size: 1.5rem;
+    color: #999;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+
+/*教师详情*/
+
+.teacher-detail-sec {
+    padding: 2.5rem;
+}
+
+.teacher-detail-img {
+    width: 100%;
+}
+
+.teacher-detail-sec .teacher-list-tag {
+    margin-left: 1.25rem;
+    float: left;
+}
+
+.teacher-detail-sec .teacher-list-title {
+    padding: 1.75rem 0 2.5rem;
+    border-bottom: 1px #e8e8e8 solid;
+}
+
+.teacher-detail-btn {
+    color: #d32d27;
+    font-size: 1.75rem;
+    text-align: center;
+    height: 5.0rem;
+    line-height: 5rem;
+    border: 1px #d32d27 solid;
+    border-radius: 2px;
+    margin: 2.125rem 0 1.875rem;
+}
+
+.teacher-detail-btn img {
+    margin-right: 1.125rem;
+    vertical-align: middle;
+    width: 1.875rem;
+}
+
+.teacher-detail-intro {
+    font-size: 1.625rem;
+    color: #777;
+    padding: 3.125rem 0;
+    border-top: 1px #e8e8e8 solid;
+}
+
+
+/*资料列表*/
+
+.search-header {
+    background: #f3f5f9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.938rem 4%;
+    width: 92%;
+}
+
+.search-header>div {
+    width: 100%;
+    display: table;
+}
+
+.search-header input {
+    width: 74.7%;
+    height: 3.625rem;
+    line-height: 3.625rem;
+    padding-left: 5.3%;
+    border-radius: 2px;
+    border: 1px #eee solid;
+}
+
+.search-header span {
+    width: 15%;
+    height: 3.75rem;
+    line-height: 3.75rem;
+    background: #d32d27;
+    border-radius: 2px;
+    color: white;
+    font-size: 1.625rem;
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+
+.zl-list-content {
+    background: white;
+    width: 100%;
+}
+
+.zl-list-model {
+    width: 92%;
+    margin: 0 auto;
+    display: table;
+    padding: 1.875rem 0;
+    border-bottom: 1px #e8e8e8 solid;
+}
+
+.zl-list-model:last-child {
+    border: none;
+}
+
+.zl-list-left {
+    float: left;
+    width: 35%;
+}
+
+.zl-list-right {
+    float: right;
+    width: 60%;
+}
+
+.zl-list-tag {
+    background: orange;
+    border-radius: 2px;
+    padding: 0.312rem 0.625rem;
+    margin: 0.75rem 0 1.75rem;
+    display: inline-block;
+}
+
+.zl-list-date {
+    font-size: 1.125rem;
+    color: #999;
+}
+
+.zl-list-sec {
+    margin-top: 5.625rem;
+}
+
+
+/*资料详情*/
+
+.zl-detail-video {
+    width: 100%;
+    height: 25.0rem;
+}
+
+.zl-detail-content {
+    padding: 0.625rem 2.625rem 5.125rem;
+}
+
+.zl-detail-title {
+    font-size: 1.875rem;
+    color: #333;
+}
+
+.zl-detail-text {
+    font-size: 1.625rem;
+    color: #777;
+}
+
+.zl-about-tag {
+    width: 1.938rem;
+    height: 0.25rem;
+    background: #e9ebed;
+    margin-left: 0.625rem;
+    display: inline-block;
+}
+
+.zl-about-tag.active {
+    background: #d33126;
+}
+
+.dt_pc_container {
+    overflow: hidden;
+    position: relative;
+    margin-top: 1.875rem;
+}
+
+#dt_pic_div {
+    position: relative;
+    height: 11rem;
+}
+
+.dt_pic_show {
+    width: 29%;
+    margin-right: 3.2%;
+    position: absolute;
+    top: 0
+}
+
+.dt_pic_text {
+    width: 100%;
+    margin-top: 1.25rem;
+    font-size: 1.375rem;
+    color: #666;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+
+/*培训班详情*/
+
+.ban-detail-sec>div {
+    background: white;
+    margin-bottom: 1.875rem;
+}
+
+.ban-detail-name {
+    font-size: 2.125rem;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ban-detail-date {
+    font-size: 1.5rem;
+    color: #999;
+    text-align: center;
+    margin: 1.75rem 2.5rem;
+}
+
+.ban-detail-date span:first-child {
+    margin-right: 1.0rem;
+}
+
+.ban-detail-img {
+    width: 100%;
+    margin-bottom: 2.5rem;
+}
+
+.ban-detail-title {
+    padding: 2.5rem;
+    font-size: 1.875rem;
+    color: #333;
+    border: 1px #e8e8e8 solid;
+}
+
+.ban-detail-list {
+    margin-top: 3.125rem;
+}
+
+.ban-detail-list:first-child {
+    margin-top: 0.625rem;
+}
+
+.ban-detail-list>div:first-child img {
+    height: 1.875rem;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+}
+
+.ban-detail-list>div:first-child span {
+    font-size:1.75rem;
+    color: #333;
+    height: 1.875rem;
+    line-height: 1.875rem;
+    display: inline-block;
+}
+
+.ban-detail-list>div:first-child {
+    margin-bottom: 1.25rem;
+}
+
+.ban-detail-list>div:nth-child(2) {
+    font-size: 1.625rem;
+    color: #777;
+}
