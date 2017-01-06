@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>预约表</title>
+
+	<link rel="stylesheet" type="text/css" href="css/reservationCss.css">
+</head>
+<body>
+	<div class="reservation-container">
+		<div class="content-information">
+			<form action="" method="post" class="all-information">
+			<!-- 表单第一部分 开始-->
+			<div class="training-information">
+			<h4>请填写你的预约信息</h4>
+				<label>*培训时间</label>
+				<div class="time-box">
+				<input type="text" name="training-time1" id="training-time1">
+				<div class='training-time-line'></div>
+				<input type="text" name="training-time2" id="training-time2">
+				</div>
+				<label>*培训单位</label>
+				<input type="text" name="training-company ">
+				<label>*培训地点</label>
+				<input type="text" name="training-site">
+				<label>*培训人数</label>
+				<input type="text" name="training-number">
+				<label>*培训需求</label>
+				<textarea name="training-demand"></textarea>
+				</div>
+				<!-- 表单第一部分 结束-->
+				<div class="Personal-information">
+				<!-- 表单第二部分 开始-->
+			<h4>请填写你的个人信息</h4>
+				<label>*姓&ensp;&ensp;&ensp;&ensp;名</label>
+				<input type="text" name="Personal-information-name">
+				<label>*性&ensp;&ensp;&ensp;&ensp;别</label>
+				<div class='PersonalBox1'>
+				<input type="radio" name="Personal-information-gender"><label> 男</label>
+				</div>
+				<div class='PersonalBox2'>
+					<input type="radio" name="Personal-information-gender"><label> 女</label>
+				</div>
+				
+				<label>*手&ensp;&ensp;&ensp;&ensp;机</label>
+				<input type="text" name="Personal-information-phone" placeholder="13646456755">
+				<label>&ensp;邮&ensp;&ensp;&ensp;&ensp;箱</label>
+				<input type="email" name="Personal-information-email">
+				<label>*工作单位</label>
+				<input type="text" name="Personal-information-unit">
+				<label>*职&ensp;&ensp;&ensp;&ensp;务</label>
+				<input type="text" name="Personal-information-job">
+				<p class='hint'>请填写所有带*内容</p>
+				<button type="submit" class='presentation'>提交</button>
+				</div>
+				<!-- 表单第二部分 结束-->
+			</form>
+
+
+		</div>
+
+
+
+	</div>
+</body>
+</html>
