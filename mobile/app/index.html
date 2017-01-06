@@ -13,7 +13,7 @@
 </head>
 
 <body ng-app="app" ng-controller="bodyCtrl">
-    <header ng-show="headerActive.active">
+    <header ng-show="headerActive.active" style="display: none;">
         <div ui-sref="banList"  ng-class="{1:'active'}[headerActive.number]"><span>培训班次<span class="header-line"></span></span>
         </div>
         <div ui-sref="teacherList"  ng-class="{2:'active'}[headerActive.number]"><span>团校课程<span class="header-line"></span></span>
@@ -23,7 +23,7 @@
     </header>
  <!--    <img src="imgs/load.gif" id="load_bg" style="width:10%;position:absolute;top:40%;left:45%;" /> -->
     <section ui-view="" id="load_content" style="display: block;"></section>
-    <footer ng-show="footerActive.active">
+    <footer ng-show="footerActive.active" style="display: none;">
         <div ui-sref="banList"  ng-class="{1:'active'}[footerActive.number]">
             <div>
                 <img src="imgs/footer_icon1.png"  ng-show="footerActive.number!=1">
