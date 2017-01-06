@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>团校资讯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <link rel="stylesheet" href="bower_components/weui/dist/style/weui.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body ng-app="app" ng-controller="bodyCtrl">
+    <header ng-show="headerActive.active">
+        <div ui-sref="banList"  ng-class="{1:'active'}[headerActive.number]"><span>培训班次<span class="header-line"></span></span>
+        </div>
+        <div ui-sref="teacherList"  ng-class="{2:'active'}[headerActive.number]"><span>团校课程<span class="header-line"></span></span>
+        </div>
+        <div ui-sref="teacherList" ng-class="{3:'active'}[headerActive.number]"><span>教师风采<span class="header-line"></span></span>
+        </div>
+    </header>
+ <!--    <img src="imgs/load.gif" id="load_bg" style="width:10%;position:absolute;top:40%;left:45%;" /> -->
+    <section ui-view="" id="load_content" style="display: block;"></section>
+    <footer ng-show="footerActive.active">
+        <div ui-sref="banList"  ng-class="{1:'active'}[footerActive.number]">
+            <div>
+                <img src="imgs/footer_icon1.png"  ng-show="footerActive.number!=1">
+                <img src="imgs/footer_icon1_s.png" ng-show="footerActive.number==1">
+            </div>
+            <div>团校资讯</div>
+        </div>
+        <div ui-sref="banList" ng-class="{2:'active'}[footerActive.number]">
+            <div>
+                <img src="imgs/footer_icon2.png"  ng-show="footerActive.number!=2">
+                <img src="imgs/footer_icon2_s.png"  ng-show="footerActive.number==2">
+            </div>
+            <div>定制培训</div>
+        </div>
+        <div ui-sref="zlList" ng-class="{3:'active'}[footerActive.number]">
+            <div>
+                <img src="imgs/footer_icon3.png"  ng-show="footerActive.number!=3">
+                <img src="imgs/footer_icon3_s.png"  ng-show="footerActive.number==3">
+            </div>
+            <div>资料中心</div>
+        </div>
+        <div ui-sref="teacherList" ng-class="{4:'active'}[footerActive.number]">
+            <div>
+                <img src="imgs/footer_icon4.png"  ng-show="footerActive.number!=4">
+                <img src="imgs/footer_icon4_s.png"  ng-show="footerActive.number==4">
+            </div>
+            <div>个人中心</div>
+        </div>
+    </footer>
+    <!-- 微信接口 -->
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!-- 腾讯地图 -->
+    <script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp&key=LK3BZ-3KYH6-63KSW-ML6BD-4EO63-PGF3E"></script>
+    <!-- 插件 -->
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script type='text/javascript' src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
+    <script type="text/javascript" src="scripts/directives/weui.js"></script>
+    <!-- module -->
+    <script type="text/javascript" src="scripts/config.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <!-- services -->
+    <script type="text/javascript" src="scripts/services/baseService.js"></script>
+    <script type="text/javascript" src="scripts/services/httpinterceptor.js"></script>
+    <script type="text/javascript" src="scripts/services/cardService.js"></script>
+    <!-- controller -->
+     <script type="text/javascript" src="scripts/controllers/bodyCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/banCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/teacherCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/zlCtrl.js"></script>
+</body>
+
+</html>
