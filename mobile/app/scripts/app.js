@@ -47,6 +47,18 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             controller: 'zlDetailCtrl',
             stateName: '资料详情',
             templateUrl: "views/zl-detail.html"
+        })
+        .state('courseList', {
+            url: '/courseList',
+            controller: 'courseListCtrl',
+            stateName: '团校课程',
+            templateUrl: "views/course-list.html"
+        })
+        .state('courseDetail', {
+            url: '/courseDetail/:courseId',
+            controller: 'courseDetailCtrl',
+            stateName: '团校课程',
+            templateUrl: "views/course-detail.html"
         });
 
 

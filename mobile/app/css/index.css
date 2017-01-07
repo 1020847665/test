@@ -398,7 +398,7 @@ footer img {
     padding: 2.5rem;
     font-size: 1.875rem;
     color: #333;
-    border: 1px #e8e8e8 solid;
+    border-bottom: 1px #e8e8e8 solid;
 }
 
 .ban-detail-list {
@@ -416,7 +416,7 @@ footer img {
 }
 
 .ban-detail-list>div:first-child span {
-    font-size:1.75rem;
+    font-size: 1.75rem;
     color: #333;
     height: 1.875rem;
     line-height: 1.875rem;
@@ -430,4 +430,114 @@ footer img {
 .ban-detail-list>div:nth-child(2) {
     font-size: 1.625rem;
     color: #777;
+}
+
+.ban-detail-tel {
+    width: 47.8%;
+    height: 4.125rem;
+    line-height: 4.125rem;
+    text-align: center;
+    border: 1px #999 solid;
+    border-radius: 2px;
+    font-size: 1.75rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    margin-right: 3%;
+    display: inline-block;
+}
+
+.ban-detail-tel:nth-child(2) {
+    margin-right: 0;
+}
+
+.ban-detail-tel img {
+    width: 10.3%;
+    vertical-align: middle;
+}
+
+.comment-list-sec {
+    padding: 1.25rem 2.5rem 2.5rem;
+}
+
+.comment-head {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 2px;
+    margin-right: 1.25rem;
+    float: left;
+}
+
+.comment-name>div:first-child {
+    color: #666;
+    font-size: 1.75rem;
+    float: left;
+}
+
+.comment-name>div:nth-child(2) {
+    color: #999;
+    font-size: 1.5rem;
+    float: right;
+}
+
+.comment-star {
+    margin: 1.125rem 0 1.875rem;
+}
+
+.comment-star img {
+    height: 1.5rem;
+}
+
+.comment-content {
+    color: #999;
+    font-size: 1.625rem;
+    margin-bottom: 2.5rem;
+    padding-left: 5.625rem;
+}
+
+.comment_arrow {
+    text-align: center;
+}
+
+.comment_arrow img {
+    height: 0.875rem;
+}
+
+.ban-footer {
+    background: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    padding: 0.625rem 0;
+    width: 100%;
+        border-top: 1px #e8e8e8 solid;
+}
+.ban-footer.one .footer-btn{
+    width:83.7%;
+}
+.footer-btn {
+    width: 42.3%;
+    height:4.625rem;
+    line-height: 4.625rem;
+    color: white;
+    font-size: 1.75rem;
+    background: #e1453a;
+    border: 1px #d33126 solid;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.footer-btn:first-child {
+    margin-right: 2.6%;
+    margin-left: 5.3%;
+}
+
+.footer-btn:nth-child(2) {
+    margin-right: 5.3%;
+}
+
+.footer-btn.nostart {
+    color: #999;
+    border: 1px #e8e8e8 solid;
+    background: transparent;
 }
