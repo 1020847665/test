@@ -1,0 +1,91 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei"
+}
+html{
+	font-size: 16px;
+}
+
+/*课程表头部开始*/
+
+.timetable-top{
+	width: 100%;
+	padding: 3.125rem 0;
+	border-bottom: 0.0625rem solid #e8e8e8;
+
+}
+.timetable-top h3{
+	font-size: 1.875rem;
+	font-weight: normal;
+	color: #333;
+	margin-bottom: 32px;
+	margin-left: 1.875rem;
+}
+.timetable-top p{
+	font-size: 1.625rem;
+	color: #999;
+	margin-left: 1.875rem;
+
+}
+
+/*课程表头部结束*/
+
+
+
+
+/*课程表内容开始*/
+
+.timetable-content{
+	margin-top: 3.125rem;
+}
+
+.timetable-list{
+	width: 92%;
+	margin: 0 auto;
+	font-size: 1.625rem;
+	text-align: center;
+	box-shadow: 0.3125rem 0.3125rem 0.625rem #999;
+}
+.timetable-list th{
+	height: 5.0rem;
+	line-height: 5.0rem;
+	background: #edf4ff;
+	font-size:1.625rem;
+	font-weight: normal;
+	color: #666;
+	width: 25%;
+}
+.timetable-list td{
+	width: 25%;
+	padding: 0;
+	height: 5.0rem;
+	border-bottom:1px solid #e8e8e8;
+}
+.timetable-list tr p{
+	height: 2.5rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+}
+.timetable-list tr p:nth-child(1){
+	color:#666;
+}
+.timetable-list tr p:nth-child(2){
+	border-top: 1px dashed #dedede;
+	color:#999 ;
+}
+.timetable-list tr{
+	border-bottom: 0.0625rem solid #e8e8e8;
+
+}
+
+.timetable-list tr td:nth-child(odd){
+	background: #f7f7f7;
+	width: 23%;
+	padding:0 2%; 
+}
+.timetable-list tr td:nth-child(even){
+	background: #fff;
+}
+
+/*课程表内容结束*/
