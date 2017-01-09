@@ -12,6 +12,7 @@ angular.module('tuanxiao.controller')
         active: true,
         number: 1
     };
-    document.getElementsByTagName("header")[0].style.display="block";
-    document.getElementsByTagName("footer")[0].style.display="block";
+    document.getElementsByTagName("header")[0].style.display = "block";
+    document.getElementsByTagName("footer")[0].style.display = "block";
+
 }]);

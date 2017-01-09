@@ -510,19 +510,21 @@ footer img {
     text-align: center;
     padding: 0.625rem 0;
     width: 100%;
-        border-top: 1px #e8e8e8 solid;
+    border-top: 1px #e8e8e8 solid;
 }
-.ban-footer.one .footer-btn{
-    width:83.7%;
+
+.ban-footer.one .footer-btn {
+    width: 83.7%;
 }
+
 .footer-btn {
     width: 42.3%;
-    height:4.625rem;
+    height: 4.625rem;
     line-height: 4.625rem;
     color: white;
     font-size: 1.75rem;
     background: #e1453a;
-    border: 1px #d33126 solid;
+    border: 1px transparent solid;
     border-radius: 4px;
     display: inline-block;
 }
@@ -540,4 +542,8 @@ footer img {
     color: #999;
     border: 1px #e8e8e8 solid;
     background: transparent;
+}
+
+.footer-btn.signUp {
+    background: #ff9900;
 }

@@ -24,6 +24,18 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             stateName: '培训班详情',
             templateUrl: "views/ban-detail.html"
         })
+        .state('signUp', {
+            url: '/signUp/:banId',
+            controller: 'signUpCtrl',
+            stateName: '报名填写',
+            templateUrl: "views/signUp.html"
+        })
+        .state('reservation', {
+            url: '/reservation/:banId',
+            controller: 'reservationCtrl',
+            stateName: '预约填写',
+            templateUrl: "views/reservation.html"
+        })
         .state('teacherList', {
             url: '/teacherList',
             controller: 'teacherListCtrl',
