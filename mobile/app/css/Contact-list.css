@@ -1,0 +1,99 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei"
+}
+html{
+	font-size: 16px;
+}
+
+.Contact-list-container{
+	background: #f3f5f9;
+	overflow: hidden;
+}
+
+/*搜索栏开始*/
+
+.Contact-list-searchBox{
+	background: #fff;
+	width: 90.67%;
+	height: 4.75rem;
+	border: 0.0625rem solid #e8e8e8;
+	border-radius: 0.25rem;
+	margin: 1.25rem auto 1.875rem auto;
+}
+
+.Contact-list-searchBox div{
+	float: left;
+}
+.search-icon{
+	width: 14.7%;
+	text-align: center;
+	line-height: 4.75rem;
+	height: 4.75rem;
+}
+.search-icon img{
+	vertical-align: middle;
+}
+.Contact-search{
+	width: 85.3%;
+}
+.Contact-search input{
+	width: 100%;
+	border: none;
+	background: none;
+	color: #dbdbdb;
+	height: 4.75rem;
+	font-size: 1.625rem;
+	outline:none;
+	
+}
+
+/*搜索栏结束*/
+
+/*培训班学生信息开始*/
+
+.Contact-list-info{
+	background: #fff;
+}
+
+.Contact-list-info h3{
+	font-weight: normal;
+	color: #333;
+	font-size: 1.875rem;
+	line-height: 6.25rem;
+	height: 6.25rem;
+	width: 90.67%;
+	margin: 0 auto;
+}
+.student-Contact {
+	list-style: none;
+	border-top:  0.0625rem solid #e8e8e8;
+}
+.student-Contact li{
+	font-size: 1.625rem;
+	width: 89.3%;
+	margin: 0 auto;
+	height: 5.0rem;
+	line-height: 5.0rem;
+	border-bottom:0.0625rem solid #e8e8e8; 
+}
+.student-Contact li p{
+	float: left;
+	width: 33.33%;
+}
+
+.student-Contact li p:nth-child(1){
+	text-align: left;
+	color: #666;
+}
+
+.student-Contact li p:nth-child(2){
+	text-align: center;
+	color: #999;
+}
+.student-Contact li p:nth-child(3){
+	text-align: right;
+	color: #666;
+}
+/*培训班学生信息结束*/

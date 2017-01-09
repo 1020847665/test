@@ -53,19 +53,36 @@ html{
 	color: #999;
 }
 .signUpBox1,.signUpBox2{
-	width: 49%;
-	display:inline-block;
+	width: 50%;
+	float: left;
 	text-align: center;
 	color: #999;
 	margin: 1.625rem 0;
 }
 .signUpBox1 label,.signUpBox2 label{
 	display: inline-block;
-}
-.signUp-information input[type="radio"]{
 	position: relative;
-	margin: 0.5rem;
 }
+
+
+
+.signUp-information input[type="radio"]{
+	margin-right: 1.625rem;
+}
+.radioCss{
+	display: inline-block;
+	position: absolute;
+	width: 1.375rem;
+	height: 1.375rem;
+	top:0.6875rem;
+	left: 0;
+	background: url('../imgs/unChoice.png') no-repeat;
+
+}
+.signUp-information input[type="radio"]:checked +div{
+	background: url('../imgs/choice.png') no-repeat;
+}
+
  .signUp-hint{
 	color: #D33126;
 	font-size:1.625rem;

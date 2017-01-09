@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei"
+}
+html{
+	font-size: 16px;
+}
+
+/*预约时间开始*/
+
+.my-reservation-container{
+	background: #f3f5f9;
+	overflow: hidden;
+	height: 83.375rem;
+}
+.reservation-time{
+	margin:1.875rem 0;
+	height: 15.625rem;
+	background: #fff;
+}
+.reservation-time>p{
+	text-align: center;
+	font-size: 4.75rem;
+	color: #333;
+	height: 12.0rem;
+	line-height: 12.0rem;
+}
+.reservation-time>div{
+	overflow: hidden;
+	width: 92%;
+	height: 1.75rem;
+	line-height: 1.75rem;
+	margin: 0 auto;
+}
+
+.reservation-time>div p{
+	color: #999;
+	font-size: 1.75rem;
+	margin-bottom: 1.875rem;
+}
+.reservation-time>div p:nth-child(1){
+	float: left;
+}
+.reservation-time>div p:nth-child(2){
+	float: right;
+}
+
+/*预约时间结束*/
+
+
+/*预约地点开始 */
+
+.reservation-site{
+	background: #fff;
+	overflow: hidden;
+	padding-bottom: 5.625rem;
+
+}
+.reservation-site>p{
+	font-size: 1.875rem;
+	color: #333;
+	width: 92%;
+
+	margin:3.125rem auto 2.5rem;
+
+}
+
+.reservation-map{
+	width: 92%;
+	height: 16.25rem;
+	margin:0 auto;
+	border: 1px solid red;
+}
+/*预约地点结束*/
+.reservation-button{
+	width: 80%;
+	margin:7.6875rem auto 0 auto;
+}
+.reservation-button button{
+	background: #fd9549;
+	color: #fff;
+	font-size: 2.0rem;
+	width: 100%;
+	margin: 0 auto;
+	height: 5.0rem;
+	border-radius: 0.125rem;
+	border: none;
+}
