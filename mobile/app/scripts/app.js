@@ -31,7 +31,8 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             templateUrl: "views/signUp.html"
         })
         .state('reservation', {
-            url: '/reservation/:banId',
+            url: '/reservation/:banId/:type',
+            // type:1-调训班,2-课程,3-教师,4-定制
             controller: 'reservationCtrl',
             stateName: '预约填写',
             templateUrl: "views/reservation.html"
@@ -71,6 +72,12 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             controller: 'courseDetailCtrl',
             stateName: '团校课程',
             templateUrl: "views/course-detail.html"
+        })
+        .state('perCenter', {
+            url: '/perCenter',
+            controller: 'perCenterCtrl',
+            stateName: '个人中心',
+            templateUrl: "views/personal-center.html"
         });
 
 

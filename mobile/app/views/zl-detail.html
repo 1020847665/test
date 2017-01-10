@@ -7,16 +7,16 @@
     <div class="zl-list-model" style="padding:1.625rem 0;width:100%;">
         <div class="zl-detail-text">优酷是中国领先的视频分享网站，由古永锵在2006年6月21日创立。优酷网以 “快者为王”为产品理念，注重用户体验，不断完善服务策略，其卓尔不群的“快速播放，快速发布，快速搜索”的产品特性，充分满足用户日益增长的多元化互动需求，使之.</div>
     </div>
-    <div class="zl-list-model">
+    <div class="zl-list-model" ng-if="showImgList.length>0">
         <div class="zl-detail-title">相关资料
             <div style="float: right;display: inline-block;text-align: right;">
                 <span class="zl-about-tag active"></span>
                 <span class="zl-about-tag"></span>
             </div>
         </div>
-        <div class="dt_pc_container">
+        <div class="dt_pc_container" >
             <div id="dt_pic_div">
-                <div class="dt_pic_show">
+                <div class="dt_pic_show" style="left:{{picDis}}" ng-init="picDis=$index*32.2+'%'" ng-repeat="n in showImgList" ui-sref="zlDetail({zlId:111})">
                     <div class="back-cover" style="background-image:url('imgs/imgTest/zl_video.png');height:6rem;"></div>
                     <div class="dt_pic_text">
                         资料名称资料名称资料名称资料名称资料名称资料名称资料名称

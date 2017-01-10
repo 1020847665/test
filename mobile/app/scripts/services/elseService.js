@@ -1,5 +1,5 @@
 angular.module('tuanxiao.services')
-    .factory('cardService', ['$resource', 'ENV', function($resource, ENV) {
+    .factory('elseService', ['$resource', 'ENV', function($resource, ENV) {
         var resource = $resource(ENV.api, {}, {
             getOrgCardList: {
                 method: 'GET', //获取机构课卡列表

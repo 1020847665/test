@@ -211,89 +211,6 @@ angular.module("tuanxiao.services")
                     position: new qq.maps.LatLng(latitude, longitude)
                 });
             },
-
-            /**创建地图
-             * [initMap description]
-             * @param  {[type]} id            [description]地图显示位置id
-             * @param  {[type]} nearLatitude  [description]最近商家纬度
-             * @param  {[type]} nearLongitude [description]最近商家经度
-             * @return {[type]}               [description]
-             */
-            initMap: function(id) {
-                //定义map变量 调用 qq.maps.Map() 构造函数   获取地图显示容器
-                var map = new qq.maps.Map(document.getElementById(id), {
-                    center: new qq.maps.LatLng($rootScope.nearObj.Lat, $rootScope.nearObj.Lng), // 地图的中心地理坐标。
-                    zoom: 13, // 地图的中心地理坐标。
-                    panControl: false, //平移控件的初始启用/停用状态。      
-                    zoomControl: false, //缩放控件的初始启用/停用状态。
-                    scaleControl: true //滚动控件的初始启用/停用状态。
-
-                });
-                return map;
-            },
-            /**添加标记
-             * [addMarker description]
-             * @param {[type]} $rootScope.zj [description]商家信息
-             * @param {[type]} nearPoint  [description]距离最近的点,默认标记
-             */
-            addMarker: function(map) {
-
-                // console.log('当前范围内早教', $rootScope.zjNow);
-                // 自定义标记样式
-                var icon = new qq.maps.MarkerImage('imgs/local_p.png'),
-                    icon2 = new qq.maps.MarkerImage('imgs/now.png');
-                // var anchor = new qq.maps.Point(6, 6),
-                //     size = new qq.maps.Size(30.4, 34.4),
-                //     size2 = new qq.maps.Size(36.8, 42.4),
-                //     origin = new qq.maps.Point(0, 0),
-                //     icon = new qq.maps.MarkerImage('imgs/local_p.png', size, origin, anchor),
-                //     icon2 = new qq.maps.MarkerImage('imgs/now.png', size2, origin, anchor);
-                for (var i = 0; i < $rootScope.zjNow.length; i++) {
-                    (function(n) {
-                        var marker = new qq.maps.Marker({
-                            icon: icon,
-                            map: map,
-                            position: new qq.maps.LatLng(
-                                $rootScope.zjNow[n].Lat, $rootScope.zjNow[n].Lng)
-                        });
-                        qq.maps.event.addListener(marker, 'click', function() {
-                            $rootScope.selectZjArray = [];
-
-                            //点击选中某个早教对象,Y移动标记点
-                            $rootScope.selectZj = $rootScope.zjNow[n];
-                            markerSelect.setMap(null);
-
-                            markerSelect = new qq.maps.Marker({
-                                icon: icon2,
-                                map: map,
-                                position: new qq.maps.LatLng(
-                                    $rootScope.selectZj.Lat, $rootScope.selectZj.Lng)
-                            });
-                            for (var i = 0; i < $rootScope.zjNow.length; i++) {
-                                //相同经纬度的标记
-                                if ($rootScope.zjNow[i].Lat == $rootScope.selectZj.Lat && $rootScope.zjNow[i].Lng == $rootScope.selectZj.Lng) {
-                                    $rootScope.selectZjArray.push($rootScope.zjNow[i]);
-                                }
-                            }
-                            // console.log('选中', $rootScope.selectZj);
-                            // 重新刷新数据
-                            var s = getDistance($rootScope.user.userLatitude, $rootScope.user.userLongitude,
-                                $rootScope.selectZj.Lat, $rootScope.selectZj.Lng);
-                            $rootScope.user.distance = Math.round(s * 10) / 10;
-
-                            $rootScope.$apply();
-                        });
-                    })(i);
-                }
-                // 默认标记
-                var markerSelect = new qq.maps.Marker({
-                    icon: icon2,
-                    map: map,
-                    position: new qq.maps.LatLng(
-                        $rootScope.nearObj.Lat, $rootScope.nearObj.Lng)
-                });
-
-            },
             /**经纬度转换为具体地址
              * [getAddress description]
              * @return {[type]} [description]
@@ -360,12 +277,12 @@ angular.module("tuanxiao.services")
             },
             /**滑动事件
              * [slide description]
-             * @param  {[type]} element            [description]
+             * @param  {[type]} id            [description]
              * @param  {[type]} callbackLeft  [description]
              * @param  {[type]} callbackRight [description]
              * @return {[type]}               [description]
              */
-            slide: function(element, callbackLeft, callbackRight, callbackClick, prevent) {
+            slide: function(id, callbackLeft, callbackRight, callbackClick, prevent) {
                 var startPos, endPos; //起始和结束位置
                 // console.log( document.body.clientWidth);
                 var windowWidth = document.body.clientWidth;
@@ -437,12 +354,11 @@ angular.module("tuanxiao.services")
                 }
                 //绑定事件  
                 function bindEvent() {
-                    $(element).each(function() {
-                        this.addEventListener('touchstart', touchSatrtFunc, false);
-                        this.addEventListener('touchmove', touchMoveFunc, false);
-                        this.addEventListener('touchend', touchEndFunc, false);
-                    })
-
+                    var element=document.getElementById(id);
+                    console.log(element);
+                    element.addEventListener('touchstart', touchSatrtFunc,false);
+                    element.addEventListener('touchmove', touchMoveFunc,false);
+                    element.addEventListener('touchend', touchEndFunc,false);
                 }
                 bindEvent();
             },
@@ -486,6 +402,28 @@ angular.module("tuanxiao.services")
                     });
                 }
 
+            },
+            // 定位
+            getLocation: function(callbackSucc, callbackFail) {
+                wx.getLocation({
+                    type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                    success: function(res) {
+                        //alert("定位成功");
+                        var userLocation = {
+                            latitude: res.latitude,
+                            longitude: res.longitude
+                        };
+                    },
+                    fail: function(res) {
+                        console.log('定位失败');
+                        alert("定位失败");
+
+                    },
+                    cancel: function(res) {
+                        alert("定位取消");
+
+                    }
+                });
             }
         }
     }]);

@@ -49,7 +49,7 @@
             </div>
             <div>团校资讯</div>
         </div>
-        <div ui-sref="banList" ng-class="{2:'active'}[footerActive.number]">
+        <div ui-sref="reservation" ng-class="{2:'active'}[footerActive.number]">
             <div>
                 <img src="imgs/footer_icon2.png" ng-show="footerActive.number!=2">
                 <img src="imgs/footer_icon2_s.png" ng-show="footerActive.number==2">
@@ -63,7 +63,7 @@
             </div>
             <div>资料中心</div>
         </div>
-        <div ui-sref="teacherList" ng-class="{4:'active'}[footerActive.number]">
+        <div ui-sref="perCenter" ng-class="{4:'active'}[footerActive.number]">
             <div>
                 <img src="imgs/footer_icon4.png" ng-show="footerActive.number!=4">
                 <img src="imgs/footer_icon4_s.png" ng-show="footerActive.number==4">
@@ -90,7 +90,8 @@
     <!-- services -->
     <script type="text/javascript" src="scripts/services/baseService.js"></script>
     <script type="text/javascript" src="scripts/services/httpinterceptor.js"></script>
-    <script type="text/javascript" src="scripts/services/cardService.js"></script>
+    <script type="text/javascript" src="scripts/services/zlService.js"></script>
+    <script type="text/javascript" src="scripts/services/elseService.js"></script>
     <!-- controller -->
     <script type="text/javascript" src="scripts/controllers/bodyCtrl.js"></script>
     <script type="text/javascript" src="scripts/controllers/banCtrl.js"></script>
@@ -98,6 +99,7 @@
     <script type="text/javascript" src="scripts/controllers/zlCtrl.js"></script>
     <script type="text/javascript" src="scripts/controllers/courseCtrl.js"></script>
     <script type="text/javascript" src="scripts/controllers/orderCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/perCenterCtrl.js"></script>
 </body>
 
 </html>

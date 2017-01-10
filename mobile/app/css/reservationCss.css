@@ -68,7 +68,7 @@ html{
 	height: 4.25rem;
 	border-radius:0.125rem;
 	font-size: 1.625rem;
-	border:0.0625rem solid #cdcdcd;
+	border:1px solid #cdcdcd;
 	text-indent: 0.625rem;
 	color: #999;
 }
@@ -78,7 +78,7 @@ html{
 	border-radius: 0.125rem;
 	text-indent: 1.25rem;
 	font-size: 1.625rem;
-	border:0.0625rem solid #cdcdcd;
+	border:1px solid #cdcdcd;
 }
 
 .training-information textarea{
@@ -87,7 +87,7 @@ html{
 	border-radius:0.125rem;
 	text-indent: 1.25rem;
 	font-size: 1.625rem;
-	border:0.0625rem solid #cdcdcd;
+	border:1px solid #cdcdcd;
 }
 /*表单第一部分 结束*/
 
