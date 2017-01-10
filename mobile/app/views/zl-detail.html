@@ -1,25 +1,31 @@
-<iframe class="zl-detail-video" src="http://v.youku.com/v_show/id_XMTkwNzUyNzc4OA==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A.RdZmMC&f=29117919&from=y1.3-idx-beta-1519-23042.223465.4-1">
+<iframe class="zl-detail-video" src="http://v.youku.com/v_show/id_XMTkwNzUyNzc4OA==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A.RdZmMC&f=29117919&from=y1.3-idx-beta-1519-23042.223465.4-1" ng-if="zlDetail.Type=='Link'">
 </iframe>
+<iframe src="/plugins/pdfjs/generic/web/viewer.html?file=/plugins/pdfjs/generic/web/test.pdf" class="zl-detail-wd" ng-if="zlDetail.Type=='Other'"></iframe>
+<!-- 方式一：将plugins整个文件夹pdfjs放到后台所在服务器上试试；方式二：不跨域 -->
+<video ng-src="{{zlDetail.Url}}" controls="controls" class="zl-detail-video" ng-if="zlDetail.Type=='Video'"></video>
+<!-- <video src="http://video.cztv.com/video/rzx/201701/06/9e8d1432eeb9d25b331385775bd24a8f1483668280.mp4" controls="controls" class="zl-detail-video"></video> -->
+<audio ng-src="{{zlDetail.Url}}" controls="controls" class="zl-detail-audio" ng-if="zlDetail.Type=='Audio'"></audio>
 <div class="zl-detail-content">
     <div class="zl-list-model">
-        <div class="zl-detail-title">给职场新人的EXCEL课</div>
+        <div class="zl-detail-title">{{zlDetail.Name}}</div>
     </div>
     <div class="zl-list-model" style="padding:1.625rem 0;width:100%;">
-        <div class="zl-detail-text">优酷是中国领先的视频分享网站，由古永锵在2006年6月21日创立。优酷网以 “快者为王”为产品理念，注重用户体验，不断完善服务策略，其卓尔不群的“快速播放，快速发布，快速搜索”的产品特性，充分满足用户日益增长的多元化互动需求，使之.</div>
+        <div class="zl-detail-text">{{zlDetail.Introduce}}</div>
     </div>
-    <div class="zl-list-model" ng-if="showImgList.length>0">
+    <div class="zl-list-model" ng-if="zlDetail.Attachment.length>0">
         <div class="zl-detail-title">相关资料
             <div style="float: right;display: inline-block;text-align: right;">
-                <span class="zl-about-tag active"></span>
-                <span class="zl-about-tag"></span>
+                <span class="zl-about-tag" ng-repeat="n in slidePage" ng-class="{true:'active'}[n.active]"></span>
             </div>
         </div>
-        <div class="dt_pc_container" >
+        <div class="dt_pc_container">
             <div id="dt_pic_div">
-                <div class="dt_pic_show" style="left:{{picDis}}" ng-init="picDis=$index*32.2+'%'" ng-repeat="n in showImgList" ui-sref="zlDetail({zlId:111})">
-                    <div class="back-cover" style="background-image:url('imgs/imgTest/zl_video.png');height:6rem;"></div>
+                <div class="dt_pic_show" style="left:{{picDis}}" ng-init="picDis=$index*32.2+'%'" ng-repeat="n in zlDetail.Attachment" ui-sref="zlDetail({zlId:n.AttachmentId})">
+                    <div class="back-cover" style="background-image:url('imgs/zl_video.png');height:6rem;" ng-if="n.Type=='Video'||n.Type=='Link'"></div>
+                    <div class="back-cover" style="background-image:url('imgs/zl_audio.png');height:6rem;" ng-if="n.Type=='Audio'"></div>
+                    <div class="back-cover" style="background-image:url('imgs/zl_wd.png');height:6rem;" ng-if="n.Type=='Other'"></div>
                     <div class="dt_pic_text">
-                        资料名称资料名称资料名称资料名称资料名称资料名称资料名称
+                        {{n.Name}}
                     </div>
                 </div>
             </div>

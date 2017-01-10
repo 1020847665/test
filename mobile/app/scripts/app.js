@@ -3,7 +3,6 @@ var app = angular.module('app', [
     'tuanxiao.controller',
     'ui.router',
     'ngCookies',
-    'infinite-scroll',
     'tuanxiao.filters',
     'tuanxiao.directive'
 ]);

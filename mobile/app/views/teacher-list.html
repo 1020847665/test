@@ -1,16 +1,17 @@
 <div class="teacher-list-sec">
     <div>
-        <div ui-sref="teacherDetail({teacherId:123})" class="teacher-list-model">
+        <div ui-sref="teacherDetail({teacherId:n.TeacherId})" class="teacher-list-model" ng-repeat="n in teacherList">
             <div style="margin-top: 1.875rem;">
-                <div class="teacher-list-name">冯程</div>
-                <div class="teacher-list-tag tag2">团校教师</div>
+                <div class="teacher-list-name">{{n.Name}}</div>
+                <div class="teacher-list-tag tag1" ng-if="n.TypeName=='特聘'">特聘教师</div>
+                <div class="teacher-list-tag tag2" ng-if="n.TypeName=='团校'">团校教师</div>
             </div>
             <div style="clear: both;"></div>
-            <div style="display:table;margin:1.25rem 0 3.75rem;">
-                <div class="teacher-list-img back-cover" style="background-image: url('imgs/imgTest/teacher1.png')"></div>
+            <div style="display:table;width:100%;margin:1.25rem 0 3.75rem;">
+                <div class="teacher-list-img back-cover" style="background-image: url({{n.ImageUrl}})"></div>
                 <div class="teacher-list-right">
-                    <div class="teacher-list-title">国内时尚礼仪教育专家，国内著名时尚礼仪培训师</div>
-                    <div class="teacher-list-content">主讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计</div>
+                    <div class="teacher-list-title">{{n.Position}}</div>
+                    <div class="teacher-list-content">主讲课程：{{n.Course}}</div>
                 </div>
             </div>
         </div>

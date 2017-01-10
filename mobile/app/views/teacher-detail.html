@@ -1,12 +1,13 @@
 <div class="teacher-detail-sec">
-    <img class="teacher-detail-img" src="imgs/imgTest/teacher1.png" />
+    <img class="teacher-detail-img" src="imgs/imgTest/teacher1.png" ng-src="{{tDetail.ImageUrl}}" />
     <div style="margin-top: 2.5rem ;">
-        <span class="teacher-list-name">冯程</span>
-        <span class="teacher-list-tag tag2">团校教师</span>
+        <span class="teacher-list-name">{{tDetail.Name}}</span>
+        <div class="teacher-list-tag tag1" ng-if="tDetail.TypeName=='特聘'">特聘教师</div>
+        <div class="teacher-list-tag tag2" ng-if="tDetail.TypeName=='团校'">团校教师</div>
     </div>
     <div style="clear: both;"></div>
-    <div class="teacher-list-title">国内时尚礼仪教育专家，国内著名时尚礼仪培训师
+    <div class="teacher-list-title">{{tDetail.Position}}
     </div>
     <div class="teacher-detail-btn"><img src="imgs/order_icon.png">去预约</div>
-    <div class="teacher-detail-intro"> 教师介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容介绍内容</div>
+    <div class="teacher-detail-intro">{{tDetail.Introduce}}</div>
 </div>

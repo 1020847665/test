@@ -3,7 +3,7 @@ angular.module('tuanxiao.services')
         var resource = $resource(ENV.api, {}, {
             getZlList: {
                 method: 'POST',
-                url: ENV.api + "WeChat/GetMaterialPageList"
+                url: ENV.api + "WeChat/GetAttachmentPageList"
             },
             getZlDetail: {
                 method: 'GET',
@@ -22,7 +22,7 @@ angular.module('tuanxiao.services')
             getZlList: function(obj, callback) {
                 return resource.getZlList(null, JSON.stringify({
                         PageIndex: obj.PageIndex,
-                        PageSize: obj.PageSize,
+                        PageSize:ENV.pageSize,
                         IsPage: true,
                         Condition: obj.Condition,
                         Sort: {
@@ -46,7 +46,7 @@ angular.module('tuanxiao.services')
              */
             getZlDetail: function(zlId, callback) {
                 return resource.getZlDetail({
-                    materialId: zlId
+                    attachmentId: zlId
                 }, null, function(response) {
                     callback && callback(response);
                 });

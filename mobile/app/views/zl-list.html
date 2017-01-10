@@ -1,20 +1,23 @@
 <div class="search-header">
     <div>
-        <input type="text" placeholder="请输入文件名称">
-        <span>搜索</span>
+        <input type="text" placeholder="请输入文件名称" ios-fixed ng-model="searchName">
+        <span ng-click="seachData()">搜索</span>
     </div>
 </div>
 <div class="zl-list-sec back-gray">
-    <div class="zl-list-content" >
-        <!-- <div class="zl-list-content" > -->
-        <div ui-sref="zlDetail({zlId:123})" class="zl-list-model">
-            <img class="zl-list-left" src="imgs/zl_video.png" />
-              <!-- <img class="zl-list-left" src="imgs/zl_video.png" /> -->
-                <!-- <img class="zl-list-left" src="imgs/zl_video.png" /> -->
+    <div class="zl-list-content" scroll-load getdata="loadMore">
+        <div ui-sref="zlDetail({zlId:n.AttachmentId})" class="zl-list-model" ng-repeat="n in zlList">
+            <img class="zl-list-left" src="imgs/zl_video.png" ng-if="n.Type=='Video'||n.Type=='Link'" />
+            <img class="zl-list-left" src="imgs/zl_audio.png" ng-if="n.Type=='Audio'" />
+            <img class="zl-list-left" src="imgs/zl_wd.png" ng-if="n.Type=='Other'" />
             <div class="zl-list-right">
-                <div class="teacher-list-title text-one">时尚礼仪培训时尚礼仪培训时尚礼仪培训时尚礼仪培训</div>
-                <div><span class="zl-list-tag tag1">音频资料</span></div>
-                <div class="zl-list-date">发布时间：2016-02-03</div>
+                <div class="teacher-list-title text-one">{{n.Name}}</div>
+                <div>
+                    <span class="zl-list-tag tag1" ng-if="n.Type=='Video'||n.Type=='Link'">视频资料</span>
+                    <span class="zl-list-tag tag2" ng-if="n.Type=='Audio'">音频资料</span>
+                    <span class="zl-list-tag tag3" ng-if="n.Type=='Other'">文档资料</span>
+                </div>
+                <div class="zl-list-date">发布时间：{{n.PublishTime|date:'yyyy-MM-dd'}}</div>
             </div>
         </div>
     </div>

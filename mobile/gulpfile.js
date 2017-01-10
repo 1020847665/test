@@ -66,7 +66,10 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/scripts'));
 
 });
-
+gulp.task('plugins',function(){
+	    return gulp.src('app/plugins/**')
+        .pipe(gulp.dest('dist/plugins'));
+    });
 
 // 图片
 gulp.task('images', function() {
@@ -149,11 +152,11 @@ gulp.task('watch', function() {
 
 
 gulp.task('build', function(done) {
-    runSequence(['images'], ['font'], ['bower'], ['scripts'], ['styles'], ['views'], ['rev'], done);
+    runSequence(['images'], ['font'], ['bower'], ['scripts'], ['styles'],['plugins'], ['views'], ['rev'], done);
 });
 
 //发布-服务器正式版本
-gulp.task('build-server', ['scripts-serve', 'styles', 'images', 'views', 'bower', "font"], function() {});
+gulp.task('build-server', ['scripts-serve', 'styles', 'plugins','images', 'views', 'bower', "font",'rev'], function() {});
 // 启动服务
 gulp.task('serve', ['build', 'watch'], function() {
     connect.server({
