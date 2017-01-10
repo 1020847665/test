@@ -1,0 +1,110 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei"
+}
+html{
+	font-size: 16px;
+}
+
+/*评论弹框开始*/
+
+.comments-bounced-container{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;  
+	 -webkit-align-items: center;
+}
+	  
+      
+.bounced-content{
+
+	position: relative;
+	/*margin: auto;*/
+	width: 82.67%;
+	height: 41.25rem;
+	background: #fff;
+	border-radius: 0.125rem;
+}
+.bounced-close{
+	width: 4.625rem;
+	height: 4.625rem;
+	border-radius: 50%;
+	background: #999;
+	position: absolute;
+	top: -7.75rem;
+	right: 0;
+	background: url('../imgs/close_bounced.png');
+	text-align: center;
+	line-height: 4.625rem;
+	font-size: 1.625rem;
+	
+	
+}
+.bounced-content-top{
+	border-bottom: 0.0625rem solid #e8e8e8;
+	padding-bottom: 3.75rem;
+}
+.bounced-content-top>p{
+
+	font-size:2.0rem;
+	color: ;
+	width: 88.1%;
+	margin: 4.125rem auto 2.625rem auto;
+}
+.comments-stars-box{
+	width: 88.1%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.comments-stars-box>p{
+	float: left;
+	margin-right: 1.875rem;
+	font-size: 1.75rem;
+	color: #666;
+
+}
+.comments-stars{
+
+	overflow: hidden;
+}
+.comments-stars img{
+	float: left;
+	margin-right: 2.1875rem;
+}
+.comments-write textarea{
+	width: 87.8%;
+	height: 16.0rem;
+	font-size: 1.75rem;
+	color: #dcdada;
+	border:none;
+	display: block;
+	margin: 1.875rem auto;
+	outline: none;
+}
+
+.comments-write button{
+	position: absolute;
+	bottom: 1.875rem;
+	left: 0; 
+	right: 0;
+	width: 87.1%;
+	height: 4.1875rem;
+	border-radius: 0.125rem;
+	font-size: 1.625rem;
+	color: #fff;
+	background: #e1453a;
+	border: none;
+	display: block;
+	outline: none;
+	margin: 0 auto;
+}
+
+/*评论弹框结束*/
