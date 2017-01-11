@@ -25,12 +25,19 @@ html{
 	float: left;
 
 }
-.perCenTer-Box div img{
+.perCenTer-Box div{
 	width: 7.625rem;
 	height: 7.625rem;
 	border-radius: 50%;
+	overflow: hidden;
 	border: 0.25rem solid #9d9d9d
 }
+.perCenTer-Box div img{
+	width: 100%;
+
+
+}
+
 .perCenTer-Box p{
 	font-size: 1.875rem;
 	color: #666;
