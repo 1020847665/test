@@ -79,7 +79,7 @@
     <div>
         <div class="ban-detail-title">所有评论（{{TotalItemCount}}）</div>
         <div class="comment-list-sec" scroll-load getdata="loadMore">
-        <div style="color:#777;" ng-if="TotalItemCount==0">暂无评论~</div>
+            <div style="color:#777;" ng-if="TotalItemCount==0">暂无评论~</div>
             <div class="comment-list" ng-repeat="c in comList|limitTo:commentNum">
                 <div>
                     <div class="comment-head back-cover" style="background-image: url({{c.Avatar}})"></div>
@@ -89,23 +89,22 @@
                     </div>
                     <div style="clear: right;"></div>
                     <div class="comment-star">
-                        <img ng-src="{{s.url}}" ng-repeat="s in c.stars"/>
+                        <img ng-src="{{s.url}}" ng-repeat="s in c.stars" />
                     </div>
                 </div>
                 <div class="comment-content">{{c.Body}}</div>
             </div>
-          
-            <div class="comment_arrow" ng-if="TotalItemCount>3" >
-                <img src="imgs/arrow_down.png" ng-click="openComment()" ng-class="{true:'rotate180'}[openCom]"/>
+            <div class="comment_arrow" ng-if="TotalItemCount>3">
+                <img src="imgs/arrow_down.png" ng-click="openComment()" ng-class="{true:'rotate180'}[openCom]" />
             </div>
         </div>
     </div>
 </div>
 </div>
-   <div back-top></div>
+<div back-top></div>
 <div class="ban-footer">
-    <div class="footer-btn nostart" ng-if="">报名未开始</div>   
-    <div class="footer-btn signUp" ui-sref="signUp({banId:111})">报名</div>
+    <!-- <div class="footer-btn nostart" ng-if="">报名未开始</div>    -->
+    <div class="footer-btn signUp" ui-sref="signUp({banId:banId})">报名</div>
     <!-- <div class="footer-btn nostart" >报名已结束</div> -->
-    <div class="footer-btn" ui-sref="reservation({banId:111,type:1})">预约</div>
+    <div class="footer-btn" ui-sref="reservation({banId:banId,type:3})">预约</div>
 </div>

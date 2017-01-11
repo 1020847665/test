@@ -1,7 +1,7 @@
 angular.module('tuanxiao.controller')
 
 //教师
-.controller('teacherListCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'teacherService', function(ENV, $rootScope, $scope, $cookieStore, $state, teacherService) {
+.controller('teacherListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'teacherService', function(ENV, $rootScope, $scope, $state, teacherService) {
         // 设置nav
         $rootScope.headerActive = {
             active: true,
@@ -44,7 +44,7 @@ angular.module('tuanxiao.controller')
             }
         };
     }])
-    .controller('teacherDetailCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', '$stateParams', 'teacherService', function(ENV, $rootScope, $scope, $cookieStore, $state, $stateParams, teacherService) {
+    .controller('teacherDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'teacherService', function(ENV, $rootScope, $scope, $state, $stateParams, teacherService) {
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -57,7 +57,7 @@ angular.module('tuanxiao.controller')
         // 获取数据
         teacherService.getTeacherDetail($stateParams.teacherId, function(response) {
             if (response.Status == 1 && response.Data) {
-                $scope.tDetail=response.Data;
+                $scope.tDetail = response.Data;
             }
         });
     }]);

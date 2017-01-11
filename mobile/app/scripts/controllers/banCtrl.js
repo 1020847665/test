@@ -1,7 +1,7 @@
 angular.module('tuanxiao.controller')
 
 //培训班
-.controller('banListCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'baseService', 'banService', function(ENV, $rootScope, $scope, $cookieStore, $state, baseService, banService) {
+.controller('banListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'baseService', 'banService', function(ENV, $rootScope, $scope, $state, baseService, banService) {
         // 设置nav
         $rootScope.headerActive = {
             active: true,
@@ -50,7 +50,8 @@ angular.module('tuanxiao.controller')
         };
 
     }])
-    .controller('banDetailCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', '$stateParams', 'banService', 'comService', function(ENV, $rootScope, $scope, $cookieStore, $state, $stateParams, banService, comService) {
+    .controller('banDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'banService', 'comService', 'dataService', function(ENV, $rootScope, $scope, $state, $stateParams, banService, comService, dataService) {
+        $scope.banId = $stateParams.banId;
 
         // 设置nav
         $rootScope.headerActive = {
@@ -65,6 +66,8 @@ angular.module('tuanxiao.controller')
         banService.getBanDetail($stateParams.banId, function(response) {
             if (response.Status == 1 && response.Data) {
                 $scope.banDetail = response.Data;
+                // 去报名的班級名
+                dataService.signUpBanName = $scope.banDetail.Name;
             }
         });
         //------------------------ 获取评论------------------------
@@ -126,13 +129,13 @@ angular.module('tuanxiao.controller')
         };
         // 是否展开评论
         $scope.commentNum = 3;
-        $scope.openCom=false;
+        $scope.openCom = false;
         $scope.openComment = function() {
             $scope.commentNum = $scope.commentNum == 3 ? 'auto' : 3;
-                if ($scope.openCom == false) {
-                    $scope.openCom = true;
-                } else {
-                    $scope.openCom = false;
-                }
+            if ($scope.openCom == false) {
+                $scope.openCom = true;
+            } else {
+                $scope.openCom = false;
+            }
         };
     }]);

@@ -15,8 +15,7 @@ angular.module("tuanxiao.config", [])
             'scope': 'snsapi_userinfo', //非静默授权，获取用户信息
             'state': '11#wechat_redirect',
             'tencentKey': 'LK3BZ-3KYH6-63KSW-ML6BD-4EO63-PGF3E', //腾讯地图key
-            'url': 'http://index.html',
-            'redirectUrl': 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0a3a8e71c747c955&redirect_uri=' + 'http://' + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirec'
+            'redirectUrl': 'localhost:8080/index.html'//默认回调地址
         };
 
     });

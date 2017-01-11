@@ -1,7 +1,7 @@
 angular.module('tuanxiao.controller')
 
 //团校课程
-.controller('courseListCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state','courseService', function(ENV, $rootScope, $scope, $cookieStore, $state,courseService) {
+.controller('courseListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'courseService', function(ENV, $rootScope, $scope, $state, courseService) {
         // 设置nav
         $rootScope.headerActive = {
             active: true,
@@ -11,7 +11,7 @@ angular.module('tuanxiao.controller')
             active: true,
             number: 1
         };
-           // 滚动加载获取数据
+        // 滚动加载获取数据
         $scope.loadObj = {
             PageIndex: 1,
             busy: false //未到底部时，为不忙状态
@@ -45,7 +45,7 @@ angular.module('tuanxiao.controller')
         };
 
     }])
-    .controller('courseDetailCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state','$stateParams','courseService','comService', function(ENV, $rootScope, $scope, $cookieStore, $state,$stateParams,courseService,comService) {
+    .controller('courseDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'courseService', 'comService', function(ENV, $rootScope, $scope, $state, $stateParams, courseService, comService) {
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -55,7 +55,7 @@ angular.module('tuanxiao.controller')
             active: false,
             number: 0
         };
-      // 获取数据
+        // 获取数据
         courseService.getCourseDetail($stateParams.courseId, function(response) {
             if (response.Status == 1 && response.Data) {
                 $scope.courseDetail = response.Data;
@@ -120,13 +120,13 @@ angular.module('tuanxiao.controller')
         };
         // 是否展开评论
         $scope.commentNum = 3;
-        $scope.openCom=false;
+        $scope.openCom = false;
         $scope.openComment = function() {
             $scope.commentNum = $scope.commentNum == 3 ? 'auto' : 3;
-                if ($scope.openCom == false) {
-                    $scope.openCom = true;
-                } else {
-                    $scope.openCom = false;
-                }
+            if ($scope.openCom == false) {
+                $scope.openCom = true;
+            } else {
+                $scope.openCom = false;
+            }
         };
     }]);

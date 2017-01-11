@@ -1,7 +1,7 @@
 angular.module('tuanxiao.controller')
 
 //首页
-.controller('bodyCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', function(ENV, $rootScope, $scope, $cookieStore, $state) {
+.controller('bodyCtrl', ['ENV', '$rootScope', '$scope', '$state', 'baseService', 'userService', function(ENV, $rootScope, $scope,$state, baseService, userService) {
 
     // 设置nav
     $rootScope.headerActive = {
@@ -14,6 +14,8 @@ angular.module('tuanxiao.controller')
     };
     document.getElementsByTagName("header")[0].style.display = "block";
     document.getElementsByTagName("footer")[0].style.display = "block";
+     // 授权
+    userService.sendCode();
     //-------------------------------------------------js-SDK----------------------------------------------
     //调用后台接口--获取签名
     // elseService.getTicket(encodeURIComponent(location.href.split('#')[0]), function(response) {
@@ -29,12 +31,12 @@ angular.module('tuanxiao.controller')
     //             });
     //         }
     //     })
-        // wx.ready(function() {
+    // wx.ready(function() {
 
     // });
     // wx.error(function(res) {
 
     // });
 
-
+   
 }]);

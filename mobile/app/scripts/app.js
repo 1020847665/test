@@ -27,6 +27,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             url: '/signUp/:banId',
             controller: 'signUpCtrl',
             stateName: '报名填写',
+            auth: true, //设置是否授权
             templateUrl: "views/signUp.html"
         })
         .state('reservation', {
@@ -34,6 +35,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             // type:1-调训班,2-课程,3-教师,4-定制
             controller: 'reservationCtrl',
             stateName: '预约填写',
+            auth: true,
             templateUrl: "views/reservation.html"
         })
         .state('teacherList', {
@@ -69,7 +71,7 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
         .state('courseDetail', {
             url: '/courseDetail/:courseId',
             controller: 'courseDetailCtrl',
-            stateName: '团校课程',
+            stateName: '课程详情',
             templateUrl: "views/course-detail.html"
         })
         .state('perCenter', {
@@ -77,7 +79,55 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             controller: 'perCenterCtrl',
             stateName: '个人中心',
             templateUrl: "views/personal-center.html"
-        });
+        })
+        // .state('myInfo', {
+        //     url: '/myInfo',
+        //     controller: 'myInfoCtrl',
+        //     stateName: '个人信息',
+        //     templateUrl: "views/my-info.html"
+        // })
+        // .state('myBan', {
+        //     url: '/myBan',
+        //     controller: 'myBanCtrl',
+        //     stateName: '我的课程',
+        //     templateUrl: "views/my-courses.html"
+        // })
+        // .state('myBanDetail', {
+        //     url: '/myBanDetail',
+        //     controller: 'myBanDetailCtrl',
+        //     stateName: '课程详情',
+        //     templateUrl: "views/my-courses-detail.html"
+        // })
+        // .state('myBanContact', {
+        //     url: '/myBanContact',
+        //     controller: 'myBanContactCtrl',
+        //     stateName: '班级通讯录',
+        //     templateUrl: "views/my-contact-list.html"
+        // })
+        // .state('myBanContact', {
+        //     url: '/myBanContact',
+        //     controller: 'myBanContactCtrl',
+        //     stateName: '课程表',
+        //     templateUrl: "views/my-course-table.html"
+        // })
+        // .state('myReservation', {
+        //     url: '/myReservation',
+        //     controller: 'myReservationCtrl',
+        //     stateName: '我的预约',
+        //     templateUrl: "views/my-reservation.html"
+        // })
+        // .state('myRegister', {
+        //     url: '/myRegister',
+        //     controller: 'myRegisterCtrl',
+        //     stateName: '我要报到',
+        //     templateUrl: "views/my-register.html"
+        // })
+        // .state(' myAttend', {
+        //     url: '/myAttend',
+        //     controller: 'myAttendCtrl',
+        //     stateName: '我要考勤',
+        //     templateUrl: "views/my-attendance.html"
+        // });
 
 
 
@@ -87,7 +137,6 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
     $httpProvider.defaults.transformRequest = [function(data) {
         return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
     }];
-    // $httpProvider.defaults.headers.post['Authorization'] = "bearer" + " " + "968Js2l16tvRyrP5hCf239rixtQzFyiL43WFjdjmZf_vgQIZ8XjC_T-RnuNJPZ-ayak5zTLOQvCP--UcvLIkgY9rn_g4o5aycPkLlW2h6buwXfb90ZFtpgZDKfJR4JZUc_8dbftpUiCET8kYmrjd4kEVvd4BK1BukkyRYBRg-2_lL1ZAlaZsKHuiULpPtDmdrmsg7BWuExgIj7oXJjQcrz9FS1QagplziYUfUwNItPhrteeAtAib12Udv_l5vG_6F4MYFwwAEEnnax6b08gwYjPbsTCIXaxdJZLR7hHlHPnm_k8dzqfTwXb7iaR4TpPQ0aEniLKOj81Pu2Mkxt5GTv6N8mO75RXto6U-iGPL1K42j_7ZNZCh6vEcx1R6xMwlkaigIOCQzShOdTbC4kuawxRljqK8WPY7r5qwnXn25CMD1ioq";
     $httpProvider.defaults.headers.common['Accept'] = 'application/json, text/javascript';
     // $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
@@ -97,16 +146,18 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
 
 
 }]);
-app.run(['$rootScope', '$state', '$cookieStore', function($rootScope, $state, $cookieStore) {
+app.run(['$rootScope', '$state', 'userService', function($rootScope, $state, userService) {
     //路由拦截器切换之前
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
+        if (toState.auth === true && !window.Authorization) {
+            // 授权
+            userService.sendCode();
+        }
     });
     //路由切换成功之后
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         document.body.scrollTop = 0; //置顶
         document.title = toState.stateName; //设置title  android 直接就可以修改成功
-
         //微信中的浏览器中单页面第一次加载成功后，不再监听tile的变化,通过iframe来触发 页面重新来监听
         // var $body = $('body');
         // var $iframe = $("<iframe style='opacity: 0;' src='/favicon.ico'></iframe>");

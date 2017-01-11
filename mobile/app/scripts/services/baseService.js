@@ -1,4 +1,10 @@
+angular.module("tuanxiao.services")
+    .factory('dataService', [function() {
+        return {
+            signUpBanName: ""
+        };
 
+    }]);
 
 
 
@@ -170,10 +176,10 @@ angular.module("tuanxiao.services")
                 }
                 //绑定事件  
                 function bindEvent() {
-                    var element=document.getElementById(id);
-                    element.addEventListener('touchstart', touchSatrtFunc,false);
-                    element.addEventListener('touchmove', touchMoveFunc,false);
-                    element.addEventListener('touchend', touchEndFunc,false);
+                    var element = document.getElementById(id);
+                    element.addEventListener('touchstart', touchSatrtFunc, false);
+                    element.addEventListener('touchmove', touchMoveFunc, false);
+                    element.addEventListener('touchend', touchEndFunc, false);
                 }
                 bindEvent();
             },
@@ -198,25 +204,22 @@ angular.module("tuanxiao.services")
                 };
                 array.remove(value);
             },
-            // 获取code
-            getCode: function(callback) {
-                if ($cookieStore.get("openId")) {
-                    window.openId = $cookieStore.get("openId");
-                } else {
-                    var code = dataService.getUrlParams('code');
-                    // 将code传参给后台
-                    userService.sendCode(code, function(response) {
-                        if (response.Status == 1 && response.Data != "") {
-                            window.openId = response.Data;
-                            $cookieStore.put("openId", window.openId);
-                            console.log('发送code成功！');
-                            if (callback) {
-                                callback();
-                            }
-                        }
-                    });
+            /**获取url参数方法
+             * [getUrlParams description]
+             * @param  {[type]} key [description]
+             * @return {[type]}     [description]
+             */
+            getUrlParams: function(key) {
+                var args = {};
+                var pairs = location.search.substring(1).split('&');
+                for (var i = 0; i < pairs.length; i++) {
+                    var pos = pairs[i].indexOf('=');
+                    if (pos === -1) {
+                        continue;
+                    }
+                    args[pairs[i].substring(0, pos)] = decodeURIComponent(pairs[i].substring(pos + 1));
                 }
-
+                return args[key];
             },
             // 定位
             getLocation: function(callbackSucc, callbackFail) {
@@ -240,7 +243,7 @@ angular.module("tuanxiao.services")
                     }
                 });
             }
-        }
+        };
     }]);
 
 

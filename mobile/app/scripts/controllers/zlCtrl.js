@@ -1,7 +1,7 @@
 angular.module('tuanxiao.controller')
 
 //资料
-.controller('zlListCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'zlService', function(ENV, $rootScope, $scope, $cookieStore, $state, zlService) {
+.controller('zlListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'zlService', function(ENV, $rootScope, $scope, $state, zlService) {
 
         // 设置nav
         $rootScope.headerActive = {
@@ -58,7 +58,7 @@ angular.module('tuanxiao.controller')
             }
         };
     }])
-    .controller('zlDetailCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', '$stateParams', 'baseService', 'zlService', function(ENV, $rootScope, $scope, $cookieStore, $state, $stateParams, baseService, zlService) {
+    .controller('zlDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'baseService', 'zlService', function(ENV, $rootScope, $scope, $state, $stateParams, baseService, zlService) {
         // 设置nav
         $rootScope.headerActive = {
             active: false,
