@@ -1,7 +1,8 @@
 <iframe class="zl-detail-video" src="http://v.youku.com/v_show/id_XMTkwNzUyNzc4OA==.html?spm=a2hww.20023042.m_223465.5~5~5~5!2~5~5~A.RdZmMC&f=29117919&from=y1.3-idx-beta-1519-23042.223465.4-1" ng-if="zlDetail.Type=='Link'">
 </iframe>
 <iframe src="/plugins/pdfjs/generic/web/viewer.html?file=/plugins/pdfjs/generic/web/test.pdf" class="zl-detail-wd" ng-if="zlDetail.Type=='Other'"></iframe>
-<!-- 方式一：将plugins整个文件夹pdfjs放到后台所在服务器上试试；方式二：不跨域 -->
+<!-- <iframe src="http://nc.4tec.cn/t/plugins/pdfjs/generic/web/viewer.html?file=http://nc.4tec.cn/t/yy/test.pdf" class="zl-detail-wd" ng-if="zlDetail.Type=='Other'"></iframe> -->
+<!-- 方式一：将plugins整个文件夹pdfjs放到后台所在服务器上,不跨域即可-->
 <video ng-src="{{zlDetail.Url}}" controls="controls" class="zl-detail-video" ng-if="zlDetail.Type=='Video'"></video>
 <!-- <video src="http://video.cztv.com/video/rzx/201701/06/9e8d1432eeb9d25b331385775bd24a8f1483668280.mp4" controls="controls" class="zl-detail-video"></video> -->
 <audio ng-src="{{zlDetail.Url}}" controls="controls" class="zl-detail-audio" ng-if="zlDetail.Type=='Audio'"></audio>

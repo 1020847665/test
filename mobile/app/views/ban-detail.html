@@ -1,12 +1,12 @@
 <div class="back-gray ban-detail-sec">
     <div class="teacher-detail-sec">
-        <div class="ban-detail-name">青年创业指导培训班（第十一期）</div>
+        <div class="ban-detail-name">{{banDetail.Name}}</div>
         <div class="ban-detail-date">
-            <span>2016.11.03</span>
+            <span>{{banDetail.CreateTime|date:'yyyy.mm.dd'}}</span>
             <span>成都市团校</span>
         </div>
-        <img class="ban-detail-img" src="imgs/imgTest/teacher1.png" />
-        <div class="teacher-list-content" style="font-size: 1.625rem;">主讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计</div>
+        <img class="ban-detail-img" src="imgs/imgTest/teacher1.png" ng-src="{{banDetail.LogoUrl}}" />
+        <div class="teacher-list-content" style="font-size: 1.625rem;" ng-bind-html="n.Introduce|trustAsHtml"></div>
     </div>
     <div>
         <div class="ban-detail-title">培训详情</div>
@@ -16,116 +16,96 @@
                     <img src="imgs/ban_time.png" alt="">
                     <span>培训时间</span>
                 </div>
-                <div>2017.01.12-2017.01.15</div>
+                <div>{{banDetail.StartTime|date:'yyyy.mm.dd'}}-{{banDetail.EndTime|date:'yyyy.mm.dd'}}</div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_clock.png" alt="">
                     <span>报名截止时间</span>
                 </div>
-                <div>2017.01.02 18:00</div>
+                <div>{{banDetail.DeadLineTime|date:'yyyy-MM-dd HH:mm'}}</div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_loc.png" alt="">
                     <span>培训地点</span>
                 </div>
-                <div>成都市团校</div>
+                <div>{{banDetail.Address}}</div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_person.png" alt="">
                     <span>培训对象</span>
                 </div>
-                <div>各基层团组织负责青年“双创”工作的相关人员（共100人）</div>
+                <div>{{banDetail.Target}}（共{{banDetail.Number}}人）</div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_content.png" alt="">
                     <span>培训内容</span>
                 </div>
-                <div>各基层团组织负责青年“双创”工作的相关人员（共100人）</div>
+                <div>{{banDetail.Body}}</div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_teacher.png" alt="">
                     <span>培训老师</span>
                 </div>
-                <div>程东</div>
+                <div>
+                    <span ng-repeat="t in banDetail.TrainTeacher" style="margin-right: 0.8rem;display: inline-block;">
+                    {{t}}
+                </span>
+                </div>
             </div>
             <div class="ban-detail-list">
                 <div>
                     <img src="imgs/ban_note.png" alt="">
                     <span>培训要求</span>
                 </div>
-                <div>各基层团组织负责青年“双创”工作的相关人员（共100人）</div>
+                <div ng-bind-html="banDetail.TrainNeeds|trustAsHtml"></div>
             </div>
         </div>
     </div>
     <div>
         <div class="ban-detail-title" style="border:none;">联系方式</div>
         <div style="padding:0 2.5rem;">
-            <div class="ban-detail-tel">
+            <div class="ban-detail-tel" ng-repeat="s in banDetail.Contacts">
                 <img src="imgs/ban_call.png" alt="">
-                <span>张老师</span>
-                <span>61313955</span>
-            </div>
-            <div class="ban-detail-tel">
-                <img src="imgs/ban_call.png" alt="">
-                <span>李老师</span>
-                <span>61313955</span>
+                <span>{{s.Name}}</span>
+                <span>{{s.Number}}</span>
             </div>
         </div>
     </div>
     <div>
-        <div class="ban-detail-title">所有评论（4）</div>
-        <div class="comment-list-sec">
-            <div class="comment-list">
+        <div class="ban-detail-title">所有评论（{{TotalItemCount}}）</div>
+        <div class="comment-list-sec" scroll-load getdata="loadMore">
+        <div style="color:#777;" ng-if="TotalItemCount==0">暂无评论~</div>
+            <div class="comment-list" ng-repeat="c in comList|limitTo:commentNum">
                 <div>
-                    <div class="comment-head back-cover" style="background-image: url('imgs/imgTest/teacher1.png')"></div>
+                    <div class="comment-head back-cover" style="background-image: url({{c.Avatar}})"></div>
                     <div class="comment-name">
-                        <div>用户昵称</div>
-                        <div>2016-08-15 09:45</div>
+                        <div>{{c.NickName}}</div>
+                        <div>{{c.CommentTime|date:'yyyy-MM-dd HH:mm'}}</div>
                     </div>
                     <div style="clear: right;"></div>
                     <div class="comment-star">
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star.png" />
+                        <img ng-src="{{s.url}}" ng-repeat="s in c.stars"/>
                     </div>
                 </div>
-                <div class="comment-content">这个课程不错，学到很多东西，老师讲的很实用，分享的东西很好，期待下一期</div>
+                <div class="comment-content">{{c.Body}}</div>
             </div>
-            <div class="comment-list">
-                <div>
-                    <div class="comment-head back-cover" style="background-image: url('imgs/imgTest/teacher1.png')"></div>
-                    <div class="comment-name">
-                        <div>用户昵称</div>
-                        <div>2016-08-15 09:45</div>
-                    </div>
-                    <div style="clear: right;"></div>
-                    <div class="comment-star">
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star.png" />
-                    </div>
-                </div>
-                <div class="comment-content">这个课程不错，学到很多东西，老师讲的很实用，分享的东西很好，期待下一期</div>
-            </div>
-            <div class="comment_arrow">
-                <img src="imgs/arrow_down.png" />
+          
+            <div class="comment_arrow" ng-if="TotalItemCount>3" >
+                <img src="imgs/arrow_down.png" ng-click="openComment()" ng-class="{true:'rotate180'}[openCom]"/>
             </div>
         </div>
     </div>
 </div>
 </div>
+   <div back-top></div>
 <div class="ban-footer">
-    <!-- <div class="footer-btn nostart">报名未开始</div>    -->
-     <div class="footer-btn signUp" ui-sref="signUp({banId:111})">报名</div>
-       <!-- <div class="footer-btn nostart" >报名已结束</div> -->
+    <div class="footer-btn nostart" ng-if="">报名未开始</div>   
+    <div class="footer-btn signUp" ui-sref="signUp({banId:111})">报名</div>
+    <!-- <div class="footer-btn nostart" >报名已结束</div> -->
     <div class="footer-btn" ui-sref="reservation({banId:111,type:1})">预约</div>
 </div>

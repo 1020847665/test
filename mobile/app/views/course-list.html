@@ -1,11 +1,11 @@
-<div class="teacher-list-sec">
+<div class="teacher-list-sec" scroll-load getdata="loadMore">
     <div>
-        <div ui-sref="courseDetail({courseId:123})" class="teacher-list-model">
+        <div ui-sref="courseDetail({courseId:n.CourseId})" class="teacher-list-model" ng-repeat="n in courseList">
             <div style="display:table;width:100%;margin:2.5rem 0;">
-                <div class="teacher-list-img back-cover" style="background-image: url('imgs/imgTest/teacher1.png');width:35%;"></div>
+                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;"></div>
                 <div class="teacher-list-right" style="width:60%;">
-                    <div class="teacher-list-title">绘画人生-少儿水彩画班</div>
-                    <div class="teacher-list-content" style="margin-top:1rem;">精品课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计</div>
+                    <div class="teacher-list-title">{{n.Name}}</div>
+                    <div class="teacher-list-content" style="margin-top:1rem;">{{n.Introduce}}</div>
                 </div>
             </div>
         </div>

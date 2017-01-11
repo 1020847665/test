@@ -1,19 +1,16 @@
-<div class="teacher-list-sec" style="padding-top:5rem;">
+<div class="teacher-list-sec" style="padding-top:5rem;" scroll-load getdata="loadMore">
 <!-- 测试 -->
 <!-- <div id="map" style="width: 100%;height:200px;"></div>
   <button ng-click="getAddress()">地理位置</button> -->
-<!--   <a href="javascript:void(0)" target="_blank" ng-click="showPdf()">显示pdf文档</a>
-<canvas id="the-canvas"></canvas>
- -->
 
     <img src="imgs/banner.png" style="width:100%;margin-bottom: 1.875rem;">
     <div>
-        <div ui-sref="banDetail({banId:123})" class="teacher-list-model">
+        <div ui-sref="banDetail({banId:n.TrainId})" class="teacher-list-model" ng-repeat="n in banList">
             <div style="display:table;width:100%;margin:2.5rem 0;">
-                <div class="teacher-list-img back-cover" style="background-image: url('imgs/imgTest/teacher1.png');width:35%;"></div>
+                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;"></div>
                 <div class="teacher-list-right" style="width:60%;">
-                    <div class="teacher-list-title">青年创业指导培训班（第十一期）</div>
-                    <div class="teacher-list-content" style="margin-top:1rem;">主讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计</div>
+                    <div class="teacher-list-title">{{n.Name}}</div>
+                    <div class="teacher-list-content" style="margin-top:1rem;" ng-bind-html="n.Introduce|trustAsHtml" ></div>
                 </div>
             </div>
         </div>

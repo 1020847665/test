@@ -11,6 +11,18 @@ body {
 
 /*公共样式*/
 
+.back-top {
+    background-image: url("../imgs/back_top.png");
+    position: fixed;
+    bottom: 9.25rem;
+    right: 1.125rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
 .text-one {
     white-space: nowrap;
     overflow: hidden;
@@ -141,9 +153,11 @@ footer img {
     padding: 5px 10px;
     float: right;
 }
+
 .teacher-list-tag.tag1 {
     background: #ff9900;
 }
+
 .teacher-list-tag.tag2 {
     background: #ff5000;
 }
@@ -321,11 +335,13 @@ footer img {
     width: 100%;
     height: 25.0rem;
 }
-.zl-detail-audio{
+
+.zl-detail-audio {
     width: 90%;
-    height:5rem;
+    height: 5rem;
     margin-left: 5%;
 }
+
 .zl-detail-wd {
     width: 100%;
     height: 100vh;
@@ -390,7 +406,7 @@ footer img {
 /*培训班详情*/
 
 .ban-detail-sec>div {
-    background: white;
+    background-color: white;
     margin-bottom: 1.875rem;
 }
 
@@ -523,6 +539,9 @@ footer img {
 
 .comment_arrow img {
     height: 0.875rem;
+}
+.rotate180 {
+    transform: rotate(180deg);
 }
 
 .ban-footer {

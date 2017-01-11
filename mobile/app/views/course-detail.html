@@ -1,14 +1,13 @@
 <div class="back-gray ban-detail-sec">
     <div class="teacher-detail-sec">
-        <div class="ban-detail-name">绘画人生-少儿水彩画班</div>
+        <div class="ban-detail-name">{{courseDetail.Name}}</div>
         <div class="ban-detail-date">
-            <span>2016.11.03</span>
             <span>成都市团校</span>
         </div>
         <img class="ban-detail-img" src="imgs/imgTest/teacher1.png" />
-        <div class="teacher-list-content" style="font-size: 1.625rem;">精品课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计讲课程：企业战略分析与规划；品牌推广、市场策划；营销组织框架、销售管理体系设计</div>
+        <div class="teacher-list-content" style="font-size: 1.625rem;">{{courseDetail.Body}}</div>
     </div>
-    <div>
+    <!--   <div>
         <div class="ban-detail-title">所有评论（4）</div>
         <div class="comment-list-sec">
             <div class="comment-list">
@@ -51,9 +50,33 @@
                 <img src="imgs/arrow_down.png" />
             </div>
         </div>
+    </div> -->
+    <div>
+        <div class="ban-detail-title">所有评论（{{TotalItemCount}}）</div>
+        <div class="comment-list-sec" scroll-load getdata="loadMore">
+            <div style="color:#777;" ng-if="TotalItemCount==0">暂无评论~</div>
+            <div class="comment-list" ng-repeat="c in comList|limitTo:commentNum">
+                <div>
+                    <div class="comment-head back-cover" style="background-image: url({{c.Avatar}})"></div>
+                    <div class="comment-name">
+                        <div>{{c.NickName}}</div>
+                        <div>{{c.CommentTime|date:'yyyy-MM-dd HH:mm'}}</div>
+                    </div>
+                    <div style="clear: right;"></div>
+                    <div class="comment-star">
+                        <img ng-src="{{s.url}}" ng-repeat="s in c.stars" />
+                    </div>
+                </div>
+                <div class="comment-content">{{c.Body}}</div>
+            </div>
+            <div class="comment_arrow" ng-if="TotalItemCount>3">
+                <img src="imgs/arrow_down.png" ng-click="openComment()" ng-class="{true:'rotate180'}[openCom]" />
+            </div>
+        </div>
     </div>
 </div>
 </div>
+<div back-top></div>
 <div class="ban-footer one">
     <div class="footer-btn" ui-sref="reservation({courseId:111,type:'2'})">预约</div>
 </div>
