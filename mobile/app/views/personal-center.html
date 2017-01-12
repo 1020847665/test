@@ -4,8 +4,8 @@
 	<!-- 个人信息头部开始 -->
 	<div class="perCenTer-top back-cover">
 		<div class="perCenTer-Box">
-			<div><img src="imgs/userpicImg.jpeg" alt=""></div>
-			<p>Hi,用户名</p>
+			<div><img src="imgs/userpicImg.jpeg" ng-src="{{userInfo.Avatar}}"></div>
+			<p>Hi，{{userInfo.Name}}</p>
 		</div>
 	</div>
 	<!-- 个人信息头部结束 -->
@@ -31,7 +31,7 @@
 				</div>
 				<div><img src="imgs/right_icon.png"></div> 
 			</li>
-			<li>
+			<li ng-if="isCheck">
 				<div class="person-info4">
 					<p>我要考勤</p>
 				</div>

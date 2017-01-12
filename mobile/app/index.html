@@ -10,31 +10,6 @@
     <meta name="x5-orientation" content="portrait">
     <link rel="stylesheet" href="bower_components/weui/dist/style/weui.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <!--     <link rel="stylesheet" type="text/css" href="css/signUpCss.css"> -->
-    <!-- 报名css文件 -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/reservationCss.css"> -->
-    <!-- 预约css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/signUpCss.css">   
-    <!-- 报名css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/reservationCss.css"> 
-    <!-- 预约css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/Contact-list.css"> 
-    <!-- 联系人列表css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/my-reservation.css"> 
-    <!-- 我的预约css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/personal-center.css"> 
-    <!-- 个人中心css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/timetable.css"> 
-    <!-- 课程列表css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/my-courses.css">
-    <!-- 我的课程css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/comments-bounced.css">
-    <!-- 评论弹框css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/course-details.css">
-    <!-- 课程详情css文件 -->
-    <link rel="stylesheet" type="text/css" href="css/my-appointment.css">
-    <!-- 我的预约css文件 -->
-
 
 </head>
 
@@ -47,8 +22,8 @@
         <div ui-sref="teacherList" ng-class="{3:'active'}[headerActive.number]"><span>教师风采<span class="header-line"></span></span>
         </div>
     </header>
-    <!--    <img src="imgs/load.gif" id="load_bg" style="width:10%;position:absolute;top:40%;left:45%;" /> -->
-    <section ui-view="" id="load_content" style="display: block;">
+       <img src="imgs/load.gif" id="load_bg" style="width:10%;position:absolute;top:40%;left:45%;" ng-show="loading"/>
+    <section ui-view="" id="load_content" ng-show="!loading">
     </section>
     <footer ng-show="footerActive.active" style="display: none;">
         <div ui-sref="banList" ng-class="{1:'active'}[footerActive.number]">
@@ -58,7 +33,7 @@
             </div>
             <div>团校资讯</div>
         </div>
-        <div ui-sref="reservation" ng-class="{2:'active'}[footerActive.number]">
+        <div ui-sref="reservation({type:4})" ng-class="{2:'active'}[footerActive.number]">
             <div>
                 <img src="imgs/footer_icon2.png" ng-show="footerActive.number!=2">
                 <img src="imgs/footer_icon2_s.png" ng-show="footerActive.number==2">
@@ -89,13 +64,12 @@
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
-    <script type="text/javascript" src="scripts/directives/weui.js"></script>
-
 
     <!-- module -->
     <script type="text/javascript" src="scripts/config.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/directives/baseDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/weuiDirective.js"></script>
     <!-- services -->
     <script type="text/javascript" src="scripts/services/baseService.js"></script>
     <script type="text/javascript" src="scripts/services/httpinterceptor.js"></script>

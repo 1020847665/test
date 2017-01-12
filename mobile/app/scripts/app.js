@@ -31,14 +31,21 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             templateUrl: "views/signUp.html"
         })
         .state('reservation', {
-            url: '/reservation/:banId/:type',
-            // type:1-调训班,2-课程,3-教师,4-定制
+            url: '/reservation/:targId/:type',
             controller: 'reservationCtrl',
+            // (1-课程,2-教师,3-培训班(调讯班),4-培训班(定制班))
             stateName: '预约填写',
             auth: true,
             templateUrl: "views/reservation.html"
         })
-        .state('teacherList', {
+        .state('reserveSuccess', {
+            url: '/reserveSuccess',
+            controller: 'reserveSuccessCtrl',
+            stateName: '预约成功',
+            templateUrl: "views/reserve-success.html"
+        })
+
+    .state('teacherList', {
             url: '/teacherList',
             controller: 'teacherListCtrl',
             stateName: '教师风采',
@@ -78,54 +85,63 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             url: '/perCenter',
             controller: 'perCenterCtrl',
             stateName: '个人中心',
+            auth: true,
             templateUrl: "views/personal-center.html"
         })
         // .state('myInfo', {
         //     url: '/myInfo',
         //     controller: 'myInfoCtrl',
         //     stateName: '个人信息',
+        //      auth: true,
         //     templateUrl: "views/my-info.html"
         // })
         // .state('myBan', {
         //     url: '/myBan',
         //     controller: 'myBanCtrl',
         //     stateName: '我的课程',
+        //      auth: true,
         //     templateUrl: "views/my-courses.html"
         // })
         // .state('myBanDetail', {
         //     url: '/myBanDetail',
         //     controller: 'myBanDetailCtrl',
         //     stateName: '课程详情',
+        //      auth: true,
         //     templateUrl: "views/my-courses-detail.html"
         // })
         // .state('myBanContact', {
         //     url: '/myBanContact',
         //     controller: 'myBanContactCtrl',
         //     stateName: '班级通讯录',
+        //      auth: true,
         //     templateUrl: "views/my-contact-list.html"
         // })
         // .state('myBanContact', {
         //     url: '/myBanContact',
         //     controller: 'myBanContactCtrl',
         //     stateName: '课程表',
+        //      auth: true,
         //     templateUrl: "views/my-course-table.html"
         // })
         // .state('myReservation', {
         //     url: '/myReservation',
         //     controller: 'myReservationCtrl',
         //     stateName: '我的预约',
+        //      auth: true,
         //     templateUrl: "views/my-reservation.html"
         // })
         // .state('myRegister', {
         //     url: '/myRegister',
         //     controller: 'myRegisterCtrl',
         //     stateName: '我要报到',
+        //      auth: true,
         //     templateUrl: "views/my-register.html"
         // })
         // .state(' myAttend', {
         //     url: '/myAttend',
         //     controller: 'myAttendCtrl',
         //     stateName: '我要考勤',
+        //      auth: true,
         //     templateUrl: "views/my-attendance.html"
         // });
 
@@ -146,13 +162,10 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
 
 
 }]);
-app.run(['$rootScope', '$state', 'userService', function($rootScope, $state, userService) {
+app.run(['$rootScope', '$state', function($rootScope, $state) {
     //路由拦截器切换之前
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-        if (toState.auth === true && !window.Authorization) {
-            // 授权
-            userService.sendCode();
-        }
+
     });
     //路由切换成功之后
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {

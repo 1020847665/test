@@ -11,6 +11,12 @@ body {
 
 /*公共样式*/
 
+button.disabled {
+    background-color: #F7F7F7;
+    color: #C9C9C9;
+    border:1px rgba(0, 0, 0, 0.1) solid;
+}
+
 .back-top {
     background-image: url("../imgs/back_top.png");
     position: fixed;
@@ -21,7 +27,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 .text-one {
     white-space: nowrap;
@@ -483,7 +488,7 @@ footer img {
     margin-bottom: 1.5rem;
     margin-right: 3%;
     display: inline-block;
-    padding:0 0.5rem;
+    padding: 0 0.5rem;
 }
 
 .ban-detail-tel:nth-child(2) {
@@ -541,6 +546,7 @@ footer img {
 .comment_arrow img {
     height: 0.875rem;
 }
+
 .rotate180 {
     transform: rotate(180deg);
 }

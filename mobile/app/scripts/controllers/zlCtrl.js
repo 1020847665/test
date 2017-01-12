@@ -2,7 +2,7 @@ angular.module('tuanxiao.controller')
 
 //资料
 .controller('zlListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'zlService', function(ENV, $rootScope, $scope, $state, zlService) {
-
+ $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -40,6 +40,7 @@ angular.module('tuanxiao.controller')
                     });
                     $scope.pageCount = response.Data.TotalPageCount;
                     $scope.loadObj.busy = false;
+                     $rootScope.loading = false;
                 }
             });
         };
@@ -59,6 +60,7 @@ angular.module('tuanxiao.controller')
         };
     }])
     .controller('zlDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'baseService', 'zlService', function(ENV, $rootScope, $scope, $state, $stateParams, baseService, zlService) {
+         $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -72,6 +74,7 @@ angular.module('tuanxiao.controller')
         zlService.getZlDetail($stateParams.zlId, function(response) {
             if (response.Status == 1 && response.Data) {
                 $scope.zlDetail = response.Data;
+                 $rootScope.loading = false;
                 // $scope.zlDetail.Url="/test.mp3";
                 if ($scope.zlDetail.Attachment && $scope.zlDetail.Attachment.length > 0) {
                     //展示图片张数
@@ -93,17 +96,6 @@ angular.module('tuanxiao.controller')
         });
 
         // 轮播
-
-        // $scope.showImgList = [{
-        //     url: 'imgs/imgTest/zl_video.png'
-        // }, {
-        //     url: 'imgs/imgTest/zl_video.png'
-        // }, {
-        //     url: 'imgs/imgTest/zl_video.png'
-        // }, {
-        //     url: 'imgs/imgTest/zl_video.png'
-        // }];
-
 
         function picShow() {
             setTimeout(function() {

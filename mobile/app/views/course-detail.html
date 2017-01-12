@@ -7,50 +7,6 @@
         <img class="ban-detail-img" src="imgs/imgTest/teacher1.png" />
         <div class="teacher-list-content" style="font-size: 1.625rem;">{{courseDetail.Body}}</div>
     </div>
-    <!--   <div>
-        <div class="ban-detail-title">所有评论（4）</div>
-        <div class="comment-list-sec">
-            <div class="comment-list">
-                <div>
-                    <div class="comment-head back-cover" style="background-image: url('imgs/imgTest/teacher1.png')"></div>
-                    <div class="comment-name">
-                        <div>用户昵称</div>
-                        <div>2016-08-15 09:45</div>
-                    </div>
-                    <div style="clear: right;"></div>
-                    <div class="comment-star">
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star.png" />
-                    </div>
-                </div>
-                <div class="comment-content">这个课程不错，学到很多东西，老师讲的很实用，分享的东西很好，期待下一期</div>
-            </div>
-            <div class="comment-list">
-                <div>
-                    <div class="comment-head back-cover" style="background-image: url('imgs/imgTest/teacher1.png')"></div>
-                    <div class="comment-name">
-                        <div>用户昵称</div>
-                        <div>2016-08-15 09:45</div>
-                    </div>
-                    <div style="clear: right;"></div>
-                    <div class="comment-star">
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star_s.png" />
-                        <img src="imgs/star.png" />
-                    </div>
-                </div>
-                <div class="comment-content">这个课程不错，学到很多东西，老师讲的很实用，分享的东西很好，期待下一期</div>
-            </div>
-            <div class="comment_arrow">
-                <img src="imgs/arrow_down.png" />
-            </div>
-        </div>
-    </div> -->
     <div>
         <div class="ban-detail-title">所有评论（{{TotalItemCount}}）</div>
         <div class="comment-list-sec" scroll-load getdata="loadMore">
@@ -78,5 +34,5 @@
 </div>
 <div back-top></div>
 <div class="ban-footer one">
-    <div class="footer-btn" ui-sref="reservation({courseId:111,type:'2'})">预约</div>
+    <div class="footer-btn" ui-sref="reservation({targId:courseId,type:1})">预约</div>
 </div>

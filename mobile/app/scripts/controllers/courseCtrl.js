@@ -2,6 +2,7 @@ angular.module('tuanxiao.controller')
 
 //团校课程
 .controller('courseListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'courseService', function(ENV, $rootScope, $scope, $state, courseService) {
+         $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: true,
@@ -26,6 +27,7 @@ angular.module('tuanxiao.controller')
                     });
                     $scope.pageCount = response.Data.TotalPageCount;
                     $scope.loadObj.busy = false;
+                     $rootScope.loading = false;
                 }
             });
         };
@@ -46,6 +48,8 @@ angular.module('tuanxiao.controller')
 
     }])
     .controller('courseDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'courseService', 'comService', function(ENV, $rootScope, $scope, $state, $stateParams, courseService, comService) {
+        $rootScope.loading = true;
+        $scope.courseId=$stateParams.courseId;
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -59,6 +63,7 @@ angular.module('tuanxiao.controller')
         courseService.getCourseDetail($stateParams.courseId, function(response) {
             if (response.Status == 1 && response.Data) {
                 $scope.courseDetail = response.Data;
+                 $rootScope.loading = false;
             }
         });
         //------------------------ 获取评论------------------------

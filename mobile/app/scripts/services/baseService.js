@@ -1,7 +1,9 @@
 angular.module("tuanxiao.services")
     .factory('dataService', [function() {
         return {
-            signUpBanName: ""
+            signUpBanName: "",//报名培训班名
+            checkBanObj:{}//允许考勤的班级信息
+
         };
 
     }]);
@@ -56,7 +58,24 @@ angular.module("tuanxiao.services")
              */
             validatemobile: function(mobile, callback1, callback2) {
                 var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(17[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-                if (mobile.length != 11 || !myreg.test(mobile)) {
+                if (String(mobile).length != 11 || !myreg.test(mobile)) {
+                    callback1();
+                } else {
+                    callback2();
+                }
+            },
+            /**验证邮箱
+             * [validateemail description]
+             * @Author   'yuxiaoting@bestwise.cc'
+             * @DateTime 2017-01-12
+             * @param    {[type]}                 email     [description]
+             * @param    {[type]}                 callback1 [description]
+             * @param    {[type]}                 callback2 [description]
+             * @return   {[type]}                           [description]
+             */
+            validateemail: function(email, callback1, callback2) {
+                var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                if (!myreg.test(email)) {
                     callback1();
                 } else {
                     callback2();
@@ -68,7 +87,7 @@ angular.module("tuanxiao.services")
              * @return {[type]}      [description]
              */
             tranTime: function(date) {
-                date = date.replace(/-/g, '/');
+                date = String(date).replace(/-/g, '/');
                 var timestamp = new Date(date).getTime();
                 return timestamp;
             },

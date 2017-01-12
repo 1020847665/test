@@ -2,6 +2,7 @@ angular.module('tuanxiao.controller')
 
 //培训班
 .controller('banListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'baseService', 'banService', function(ENV, $rootScope, $scope, $state, baseService, banService) {
+        $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: true,
@@ -31,6 +32,7 @@ angular.module('tuanxiao.controller')
                     });
                     $scope.pageCount = response.Data.TotalPageCount;
                     $scope.loadObj.busy = false;
+                    $rootScope.loading = false;
                 }
             });
         };
@@ -51,6 +53,7 @@ angular.module('tuanxiao.controller')
 
     }])
     .controller('banDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'banService', 'comService', 'dataService', function(ENV, $rootScope, $scope, $state, $stateParams, banService, comService, dataService) {
+        $rootScope.loading = true;
         $scope.banId = $stateParams.banId;
 
         // 设置nav
@@ -68,6 +71,7 @@ angular.module('tuanxiao.controller')
                 $scope.banDetail = response.Data;
                 // 去报名的班級名
                 dataService.signUpBanName = $scope.banDetail.Name;
+                $rootScope.loading = false;
             }
         });
         //------------------------ 获取评论------------------------

@@ -24,7 +24,7 @@ angular.module('tuanxiao.services')
                         Name: obj.Name,
                         TrainId: obj.TrainId,
                         Sex: obj.Sex,
-                        Position: obj.Condition,
+                        Position: obj.Position,
                         Organization: obj.Organization,
                         MobileNumber: obj.MobileNumber,
                         Email: obj.Email
@@ -33,24 +33,24 @@ angular.module('tuanxiao.services')
                         callback && callback(response);
                     });
             },
-            /**预约
+            /**
              * [reserve description]
              * @Author   'yuxiaoting@bestwise.cc'
-             * @DateTime 2017-01-11
-             * @param    {[type]}                 teacherId [description]
-             * @param    {Function}               callback  [description]
-             * @return   {[type]}                           [description]
+             * @DateTime 2017-01-12
+             * @param    {[type]}                 obj      [description]
+             * @param    {Function}               callback [description]
+             * @return   {[type]}                          [description]
              */
-            reserve: function(teacherId, callback) {
+            reserve: function(obj, callback) {
                 return resource.reserve(null, JSON.stringify({
-                    TargetId: TargetId,
-                    StartTime: StartTime,
-                    EndTime: EndTime,
-                    TrainOrganization: TrainOrganization,
-                    TrainAddress: TrainAddress,
-                    TrainNumber: TrainNumber,
-                    TrainNeeds: TrainNeeds,
-                    Type: Type
+                    TargetId: obj.TargetId,
+                    StartTime: obj.StartTime,
+                    EndTime: obj.EndTime,
+                    TrainOrganization: obj.TrainOrganization,
+                    TrainAddress: obj.TrainAddress,
+                    TrainNumber: obj.TrainNumber,
+                    TrainNeeds: obj.TrainNeeds,
+                    Type:obj.Type
                 }), function(response) {
                     callback && callback(response);
                 });

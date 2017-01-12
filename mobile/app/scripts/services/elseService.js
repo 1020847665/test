@@ -1,52 +1,29 @@
 angular.module('tuanxiao.services')
     .factory('elseService', ['$resource', 'ENV', function($resource, ENV) {
         var resource = $resource(ENV.api, {}, {
-            getOrgCardList: {
-                method: 'GET', //获取机构课卡列表
-                url: ENV.api + "CardsList/GetOrgList"
-            },
-            getMyCardList: {
-                method: 'GET', //获取用户的已购课卡
-                url: ENV.api + "CardsList/GetMyList"
+            getJsSdk: {
+                method: 'GET',
+                url: ENV.api + "WeChat/GetWeChatConfig"
             }
         });
         return {
-            /**
-             * [getOrgCardList description]
-             *
-             * //获取机构的课卡列表
-             * @author  wei.liu@ritetrek.com
-             * @DateTime 2016-07-25T13:56:36+0800
-             * @param    {[type]}                 orgId    [description]
-             * @param    {Function}               callback [description]
-             * @return   {[type]}                          [description]
-             */
-            getOrgCardList: function(orgId, callback) {
-                return resource.getOrgCardList({
-                        orgId: orgId
+            getJsSdk: function() {
+                return resource.getJsSdk({
+                        url: encodeURIComponent(location.href.split('#')[0])
                     }, null,
                     function(response) {
-                        callback && callback(response);
+                        if (response.Status == 1) {
+                            //-------------------------权限验证配置注入----------
+                            wx.config({
+                                debug: false, //是否弹出错误信息
+                                appId: ENV.appid,
+                                timestamp: response.Data.Timestamp,
+                                nonceStr: response.Data.NonceStr,
+                                signature: response.Data.Signature,
+                                jsApiList: ['getLocation', 'previewImage']
+                            });
+                        }
                     });
-            },
-            /**
-             * [getMyCardList description]
-             *
-             * //查询我的课卡列表
-             * @author  wei.liu@ritetrek.com
-             * @DateTime 2016-07-25T13:56:09+0800
-             * @param    {[type]}                 openId      [description]
-             * @param    {[type]}                 cardsNumber [description]
-             * @param    {Function}               callback    [description]
-             * @return   {[type]}                             [description]
-             */
-            getMyCardList: function(openId, cardsNumber, callback) {
-                return resource.getMyCardList({
-                    openId: openId,
-                    cardsNumber: cardsNumber
-                }, null, function(response) {
-                    callback && callback(response);
-                });
             }
-        }
+        };
     }]);
