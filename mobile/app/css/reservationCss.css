@@ -1,12 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Microsoft YaHei";
-}
 
-html {
-    font-size: 16px;
-}
 
 .reservation-container label {
     display: block;

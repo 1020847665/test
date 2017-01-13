@@ -88,62 +88,69 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             auth: true,
             templateUrl: "views/personal-center.html"
         })
-        // .state('myInfo', {
-        //     url: '/myInfo',
-        //     controller: 'myInfoCtrl',
-        //     stateName: '个人信息',
-        //      auth: true,
-        //     templateUrl: "views/my-info.html"
-        // })
-        // .state('myBan', {
-        //     url: '/myBan',
-        //     controller: 'myBanCtrl',
-        //     stateName: '我的课程',
-        //      auth: true,
-        //     templateUrl: "views/my-courses.html"
-        // })
-        // .state('myBanDetail', {
-        //     url: '/myBanDetail',
-        //     controller: 'myBanDetailCtrl',
-        //     stateName: '课程详情',
-        //      auth: true,
-        //     templateUrl: "views/my-courses-detail.html"
-        // })
-        // .state('myBanContact', {
-        //     url: '/myBanContact',
-        //     controller: 'myBanContactCtrl',
-        //     stateName: '班级通讯录',
-        //      auth: true,
-        //     templateUrl: "views/my-contact-list.html"
-        // })
-        // .state('myBanContact', {
-        //     url: '/myBanContact',
-        //     controller: 'myBanContactCtrl',
-        //     stateName: '课程表',
-        //      auth: true,
-        //     templateUrl: "views/my-course-table.html"
-        // })
-        // .state('myReservation', {
-        //     url: '/myReservation',
-        //     controller: 'myReservationCtrl',
-        //     stateName: '我的预约',
-        //      auth: true,
-        //     templateUrl: "views/my-reservation.html"
-        // })
-        // .state('myRegister', {
-        //     url: '/myRegister',
-        //     controller: 'myRegisterCtrl',
-        //     stateName: '我要报到',
-        //      auth: true,
-        //     templateUrl: "views/my-register.html"
-        // })
-        // .state(' myAttend', {
-        //     url: '/myAttend',
-        //     controller: 'myAttendCtrl',
-        //     stateName: '我要考勤',
-        //      auth: true,
-        //     templateUrl: "views/my-attendance.html"
-        // });
+        .state('myInfo', {
+            url: '/myInfo',
+            controller: 'myInfoCtrl',
+            stateName: '个人信息',
+            auth: true,
+            templateUrl: "views/my-info.html"
+        })
+        .state('myBan', {
+            url: '/myBan',
+            controller: 'myBanCtrl',
+            stateName: '我的课程',
+            auth: true,
+            templateUrl: "views/my-courses.html"
+        })
+        .state('myBanDetail', {
+            url: '/myBanDetail/:banId',
+            controller: 'myBanDetailCtrl',
+            stateName: '课程详情',
+            auth: true,
+            templateUrl: "views/my-course-detail.html"
+        })
+        .state('myBanContact', {
+            url: '/myBanContact',
+            controller: 'myBanContactCtrl',
+            stateName: '班级通讯录',
+            auth: true,
+            templateUrl: "views/my-contact-list.html"
+        })
+        .state('myBanCourse', {
+            url: '/myBanCourse',
+            controller: 'myBanCourseCtrl',
+            stateName: '课程表',
+            auth: true,
+            templateUrl: "views/my-course-table.html"
+        })
+        .state('myReservation', {
+            url: '/myReservation',
+            controller: 'myReservationCtrl',
+            stateName: '我的预约',
+            auth: true,
+            templateUrl: "views/my-reservation.html"
+        })
+        .state('myRegister', {
+            url: '/myRegister',
+            controller: 'myRegisterCtrl',
+            stateName: '我要报到',
+            auth: true,
+            templateUrl: "views/my-register.html"
+        })
+        .state('myAttend', {
+            url: '/myAttend',
+            controller: 'myAttendCtrl',
+            stateName: '我要考勤',
+            auth: true,
+            templateUrl: "views/my-attendance.html"
+        })
+        .state('myToComment', {
+            url: '/myToComment/:targId/:type',
+            controller: 'myToCommentCtrl',
+            stateName: '我要评论',
+            auth: true,
+            templateUrl: "views/comment-bounced.html"
+        });
 
 
 

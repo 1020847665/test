@@ -20,12 +20,12 @@ angular.module('tuanxiao.controller')
     //调用后台接口--获取签名
     elseService.getJsSdk();
 
-    wx.ready(function() {
+    // wx.ready(function() {
 
-    });
-    wx.error(function(res) {
+    // });
+    // wx.error(function(res) {
 
-    });
+    // });
 
 
 }]);

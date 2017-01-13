@@ -1,0 +1,34 @@
+<div class='signUp-container'>
+    <form>
+        <div class="signUp-information">
+            <!-- 报名表开始-->
+            <label>*姓&ensp;&ensp;&ensp;&ensp;名</label>
+            <input type="text" name="signUp-information-name" ng-model="userInfo.Name">
+            <label>*性&ensp;&ensp;&ensp;&ensp;别</label>
+            <div class='signUpBox1'>
+                <label for="male">
+                    <input type="radio" name="signUp-information-gender" id='male' ng-model="userInfo.Sex" value=0>
+                    <div class='radioCss'></div>
+                    男</label>
+            </div>
+            <div class='signUpBox2'>
+                <label>
+                    <input type="radio" name="signUp-information-gender" id='sex' ng-model="userInfo.Sex" value=1>
+                    <div class='radioCss'></div>女</label>
+            </div>
+            <label>*手&ensp;&ensp;&ensp;&ensp;机</label>
+            <input type="number" name="signUp-information-phone" max-length=11 ng-model="userInfo.MobileNumber" ng-blur="validatemobile()">
+            <p class='signUp-hint' ng-if="mobileNot">请输入正确的手机号</p>
+            <label>&ensp;邮&ensp;&ensp;&ensp;&ensp;箱</label>
+            <input type="email" name="signUp-information-email" ng-model="userInfo.Email" ng-blur="validateemail()">
+            <p class='signUp-hint' ng-if="emailNot">请输入正确的邮箱</p>
+            <label>*工作单位</label>
+            <input type="text" name="signUp-information-unit" ng-model="userInfo.Organization">
+            <label>*职&ensp;&ensp;&ensp;&ensp;务</label>
+            <input type="text" name="signUp-information-job" ng-model="userInfo.Position">
+            <p class='signUp-hint' ng-if="nullNot">请填写所有带*内容</p>
+            <button class='signUp-presentation' ng-disabled="isSubmitClick" ng-class="{true:'disabled'}[isSubmitClick]" ng-click="updateUserInfo()">确认</button>
+        </div>
+    </form>
+</div>
+<we-toast msg="toastMsg" callback="successCallback" ng-if="istoast" ></we-toast>

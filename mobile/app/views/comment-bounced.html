@@ -1,35 +1,21 @@
-
-
-
-
-<div class='comments-bounced-container'>
-<!-- 评论弹框开始 -->
-
-	<div class='bounced-content'>
-	<div class='bounced-close'></div>
-		<div class='bounced-content-top'>
-			<p>PPT企业级版式设计与精炼PPT企业级版式设计与精炼</p>
-			<div class='comments-stars-box'>
-				<p>评分</p>
-				<div class="comments-stars">
-					<img src="imgs/checked-start.png" alt="">
-					<img src="imgs/checked-start.png" alt="">
-					<img src="imgs/checked-start.png" alt="">
-					<img src="imgs/unchecked-start.png" alt="">
-					<img src="imgs/unchecked-start.png" alt="">
-				</div>
-			</div>
-		</div>
-
-		<div class='comments-write'>
-			<textarea placeholder="喜欢这个课程吗，说几句吧~"></textarea>
-			<button type="button">发表</button>
-		</div>
-	</div>
-
-<!-- 评论弹框结束 -->
-
+<!-- <div class='comments-bounced-container'> -->
+<div class='bounced-content'>
+    <!-- <div class='bounced-close'></div> -->
+    <div class='bounced-content-top'>
+        <p>PPT企业级版式设计与精炼PPT企业级版式设计与精炼</p>
+        <div class='comments-stars-box'>
+            <p>评分</p>
+            <div class="comment-star-add">
+                <img ng-src="{{s.url}}" ng-repeat="s in stars" ng-click="addGrade($index)" />
+            </div>
+        </div>
+    </div>
+    <div class='comments-write'>
+        <textarea placeholder="喜欢这个课程吗，说几句吧~" ng-model="commentMsg.Body"></textarea>
+        <p class='signUp-hint' ng-if="nullNot">评分和内容都不能为空哦~</p>
+        <button type="button" ng-disabled="isSubmitClick" ng-class="{true:'disabled'}[isSubmitClick]" ng-click="addCom()">{{btnMsg}}</button>
+    </div>
 </div>
-	
-</body>
-</html>
+<!-- 评论弹框结束 -->
+<!-- </div> -->
+<we-toast msg="toastMsg" callback="successCallback" ng-if="istoast"></we-toast>

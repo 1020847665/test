@@ -1,199 +1,82 @@
-*{
-	margin: 0;
-	padding: 0;
-	font-family: "Microsoft YaHei"
-}
-html{
-	font-size: 16px;
-}
+
 
 /*课程详情名称部分开始*/
 
-.course-details-container{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	background: #f3f5f9;
+.course-details-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #f3f5f9;
+}
 
+.course-details-name {
+    background: #fff;
+    padding: 0 5.3% 0 4%;
+    width: 90.7%;
+    overflow: hidden;
 }
-.course-details-name{
-	background: #fff;
-	padding:0 5.3% 0 4%;
-	width: 90.7%;
-	overflow: hidden; 
+
+.course-details-name>p {
+    margin-top: 3.125rem;
+    font-size: 2.125rem;
+    color: #333;
 }
-.course-details-name>p{
-	margin-top: 3.125rem;
-	font-size: 2.125rem;
-	color: #333;
+
+.course-details-timeBox {
+    overflow: hidden;
+    margin-top: 1.75rem;
+    margin-bottom: 3.125rem;
 }
-.course-details-timeBox{
-	overflow: hidden;
-	margin-top: 1.75rem;
-	margin-bottom: 3.125rem;
+
+.course-details-timeBox p:first-child {
+    color: #999;
+    font-size: 1.625rem;
+    float: left;
 }
-.course-details-timeBox p:first-child{
-	color: #999;
-	font-size: 1.625rem;
-	float: left;
+
+.course-details-timeBox p:last-child {
+    float: right;
+    color: #46b0fc;
+    font-size: 1.5rem;
 }
-.course-details-timeBox p:last-child{
-	float: right;
-	color: #46b0fc;
-	font-size: 1.5rem;
+
+.course-details-timeBox p:last-child.red {
+    color: #e85e51;
 }
+
 
 /*课程详情名称部分结束*/
 
+
 /*课程详情列表开始*/
-.course-details-listBox{
-	padding:0 5.3% 0 4%;
-	width: 90.7%;
-	margin-top: 1.875rem;
-	background: #fff;
+
+.course-details-listBox {
+    padding: 0 5.3% 0 4%;
+    width: 90.7%;
+    margin-top: 1.875rem;
+    background: #fff;
 }
 
-.course-details-listBox ul{
-	list-style: none;
+.course-details-listBox ul {
+    list-style: none;
 }
-.course-details-list{
-	overflow: hidden;
-}
-.course-details-list>li{
-	border-bottom: 0.0625rem solid #e8e8e8;
-	background: url('../imgs/right_icon.png') no-repeat center right;
-}
-.course-details-list>li>p{
-	font-size: 1.875rem;
-	color: #333;
-	height: 6.25rem;
-	line-height: 6.25rem;
-}
-.course-materials{
-	overflow: hidden;
 
+.course-details-list {
+    overflow: hidden;
 }
-.course-materials>p{
-	line-height: 6.25rem;
-	height: 6.25rem;
-	float: left;
-	font-size: 1.875rem;
-	color: #333;
+
+.course-details-list>li {
+    border-bottom: 0.0625rem solid #e8e8e8;
+    background: url('../imgs/right_icon.png') no-repeat center right;
+    background-size: 1.062rem 1.625rem;
+}
+
+.course-details-list>li>p {
+    font-size: 1.875rem;
+    color: #333;
+    height: 6.25rem;
+    line-height: 6.25rem;
 }
 
 
-.materialsRight{
-	float: right;
-	height: 6.25rem;
-	width: 4.375rem;
-}
-.materialsRight i{
-	margin-top: 4.125rem;
-	display: inline-block;
-	width: 1.875rem;
-	height: 0.25rem;
-	background: #e9ebed;
-}
-.materialsRight i:first-child{
-	background: #d33126;
-}
-
-.course-materials-list{
-	overflow: hidden;
-	padding-bottom: 1.875rem;
-	width: 86.25rem;
-}
-.course-materials-list li{
-	float: left;
-	width: 12.5rem;
-	margin-right: 1.875rem;
-	overflow: hidden;
-}
-
-
-.previewBox{
-	width: 12.5rem;
-	height: 8.75rem;
-	border-radius: 0.25rem;
-	background: #999;
-}
-.previewBox img{
-	width: 100%;
-}
-.course-description{
-	font-size: 1.375rem;
-	color: #666;
-	line-height: 2.25rem;
-	margin-top: 1.25rem;
-}
-
-
-
-/*课程详情列表结束*/
-
-
-/*课程详情之我的评论开始*/
-.course-details-comment{
-	margin-top: 1.875rem;
-	background: #fff;
-	padding-bottom: 1.875rem;
-	overflow: hidden;
-}
-
-.comment-title{
-	padding:0 5.3% 0 4%;
-	width: 90.7%;
-	font-size: 1.875rem;
-	color: #333;
-	margin-top: 2.0rem;
-
-}
-.course-comment-list{
-	list-style: none;
-}
-.course-comment-list li{
-	width: 76%;
-	margin:0 auto;
-	padding-bottom: 2.625rem;
-	border-bottom: 0.0625rem solid #e8e8e8;
-}
-.course-comment-list li:last-child{
-	border: none;
-}
-.comment-timestarts-Box{
-	overflow: hidden;
-	margin: 1.875rem 0;
-}
-.course-comment-stars {
-	float: left;
-	height: 2.375rem;
-	line-height:2.375rem;
-	width: 50%;
-}
-.course-comment-stars img{
-	vertical-align: middle;
-}
-.course-comment-time{
-	height: 2.375rem;
-	line-height: 2.375rem;
-	font-size: 1.5rem;
-	color: #999;
-	float: right;
-	width: 50%;
-	text-align: right;
-}
-.comment-details{
-	font-size: 1.625rem;
-	color: #999;
-}
-
-.back-course-details{
-	position: fixed;
-	bottom: 1.875rem;
-	left: 50%;
-	margin-left: -0.75rem;
-}
-
-
-/*课程详情之我的评论结束*/

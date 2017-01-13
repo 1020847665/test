@@ -60,30 +60,6 @@ angular.module("tuanxiao.directive")
             }
         };
     })
-    .directive('alert', function() {
-        return {
-            restrict: 'A',
-            link: function(scope, element, attrs) {
-                scope.alertCar = function() {
-                    $rootScope.alert = true;
-                    $rootScope.addCarAlert = true;
-                    $(".alert_sec").css({
-                        opacity: 1,
-                        transition: 'all 0.5s linear',
-                        webkitTransition: 'all 0.5s linear'
-                    })
-                    setTimeout(function() {
-                        $(".alert_content").css({
-                            bottom: '0',
-                            transition: 'all 0.5s linear',
-                            webkitTransition: 'all 0.5s linear'
-                        })
-                    }, 0);
-                }
-
-            }
-        }
-    })
     // 默认图片设置
     .directive('nullPic', function() {
         return {

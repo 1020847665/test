@@ -1,146 +1,158 @@
-*{
-	margin: 0;
-	padding: 0;
-	font-family: "Microsoft YaHei"
-}
-html{
-	font-size: 16px;
-}
+
+
 /*我的课程切换按钮开始*/
-.my-courses-container{
-	background-color: #f3f5f9;
-	height: 83.375rem;
+
+.my-courses-container {
+    background-color: #f3f5f9;
+    padding: 6.875rem 0;
 }
 
-.my-courses-container ul{
-	list-style: none;
-	width: 100%;
-	overflow: hidden;
+.my-courses-container ul {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
 }
-.my-courses-tab ul{
-	background-color: #fff;
-	border-bottom: 0.0625rem solid #e8e8e8;
+
+.my-courses-tab {
+    position: fixed;
 }
-.my-courses-tab ul li{
-	position: relative;
-	float: left;
-	width: 50%;
-	text-align: center;
-	font-size: 1.875rem;
+
+header.my-courses-tab {
+    background-color: #fff;
+    border-bottom: 0.0625rem solid #e8e8e8;
 }
-.my-courses-tab ul li p{
-	height: 4.375rem;
-	line-height: 4.375rem;
-	padding: 0.9375rem 0;
+
+.my-courses-tab ul li {
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 1.875rem;
 }
-.my-courses-tab ul li:last-child::after{
-	content: '';
-	height: 4.375rem;
-	width: 0.125rem;
-	display: inline-block;
-	position: absolute;
-	left: 0;
-	top:50%;
-	margin-top:-1.875rem;
-	background: #e8e8e8;
+
+.my-courses-tab ul li p {
+    height: 4.375rem;
+    line-height: 4.375rem;
+    padding: 0.9375rem 0;
 }
-.my-courses-tab ul li:last-child i{
-	display: block;
-	width: 5.625rem;
-	height: 0.1875rem;
-	background-color: #d32d27;
-	margin: 0 auto;
+
+.my-courses-tab ul li:last-child::after {
+    content: '';
+    height: 4.375rem;
+    width: 0.125rem;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -1.875rem;
+    background: #e8e8e8;
 }
+
+.my-courses-tab ul li.active i {
+    display: block;
+    width: 5.625rem;
+    height: 0.1875rem;
+    background-color: #d32d27;
+    margin: 0 auto;
+}
+
+
 /*我的课程切换按钮结束*/
-.training-finish ul{
-	margin-top:1.875rem;
-	background-color: #fff;
+
+.training-finish ul {
+    margin-top: 1.875rem;
+    background-color: #fff;
 }
 
-.training-finish ul li{
-	width: 92%;
-	margin: 0 auto;
-	border-bottom: 0.0625rem solid #e8e8e8;
-
+.training-finish ul li {
+    width: 92%;
+    margin: 0 auto;
+    border-bottom: 0.0625rem solid #e8e8e8;
 }
 
-.training-finish ul li:last-child{
-	border: none;
-}
-.trainingClass-name{
-	overflow: hidden;
-	height: 6.5rem;
-	padding-left: 0.625rem;
-	line-height: 6.5rem;
-}
-.trainingClass-name p:first-child{
-	float: left;
-	font-size: 2.0rem;
-	color: #333;
-}
-.trainingClass-name p:last-child{
-	float: right;
-	font-size: 1.5rem;
-	color: #46b0fc;
+.training-finish ul li:last-child {
+    border: none;
 }
 
-#not-associate{
-	color: #e85e51;
+.trainingClass-name {
+    overflow: hidden;
+    height: 6.5rem;
+    padding-left: 0.625rem;
+    line-height: 6.5rem;
 }
 
-.training-time p{
-	padding-left: 0.625rem;
-	font-size:1.625rem;
-	color: #999;
-	margin-bottom: 1.25rem;
+.trainingClass-name p:first-child {
+    float: left;
+    font-size: 2.0rem;
+    color: #333;
 }
 
-.trainingClass-button{
-	margin: 1.875rem 0 2.5rem;
-	overflow: hidden;
-}
-.trainingClass-button div{
-	float: right;
-	width: 20.3%;
-	height:4.0rem;
-	line-height: 4.0rem;
-	font-size: 1.5rem;
-	border-radius: 0.25rem;
-	text-align: center;
-	
-}
-.trainingClass-diploma{
-	border: 0.0625rem solid #999;
-	color: #727272;
-
-}
-.toCommentOn{
-	margin-left: 1.875rem;
-	color: #fff;
-	background: #e1453a;
-	border: 0.0625rem solid #e1453a;
+.trainingClass-name p:last-child {
+    float: right;
+    font-size: 1.5rem;
+    color: #46b0fc;
 }
 
-
-.training-unfinished ul{
-	margin-top:1.875rem;
-	background-color: #fff;
-	padding-bottom:1.25rem; 
+.trainingClass-name p:last-child.red {
+    color: #e85e51;
 }
 
-.training-unfinished ul li{
-	width: 92%;
-	margin: 0 auto;
-	border-bottom: 0.0625rem solid #e8e8e8;
+#not-associate {
+    color: #e85e51;
 }
 
-.training-unfinished ul li:last-child{
-	border: none;
+.training-time p {
+    padding-left: 0.625rem;
+    font-size: 1.625rem;
+    color: #999;
+    margin-bottom: 1.25rem;
 }
+
+.trainingClass-button {
+    margin: 1.875rem 0 2.5rem;
+    overflow: hidden;
+}
+
+.trainingClass-button div {
+    float: right;
+    width: 20.3%;
+    /*width:8.75rem;*/
+    height: 4.0rem;
+    line-height: 4.0rem;
+    font-size: 1.5rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+.trainingClass-diploma {
+    border: 0.0625rem solid #999;
+    color: #727272;
+}
+
+.toCommentOn {
+    margin-left: 1.875rem;
+    color: #fff;
+    background: #e1453a;
+    border: 0.0625rem solid #e1453a;
+}
+
+.training-unfinished ul {
+    margin-top: 1.875rem;
+    background-color: #fff;
+    padding-bottom: 1.25rem;
+}
+
+.training-unfinished ul li {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.training-unfinished ul li:nth-child(2) {
+    border-top: 0.0625rem solid #e8e8e8;
+}
+
+
 /*我的课程状态开始*/
-
-
-
 
 
 /*我的课程状态结束*/

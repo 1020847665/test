@@ -16,7 +16,14 @@ angular.module('tuanxiao.services')
             getCheckBan: {
                 method: 'GET', //获取可考勤的培训班信息
                 url: ENV.api + "WeChat/GetCheckTrainClass"
-
+            },
+            getMyBan: {
+                method: 'POST',
+                url: ENV.api + "WeChat/GetStudentTrainClass"
+            },
+            getMyZl: {
+                method: 'GET', //获取我的培训班资料
+                url: ENV.api + "WeChat/GetTrainClassAttachment"
             }
         });
         return {
@@ -66,8 +73,35 @@ angular.module('tuanxiao.services')
                         callback && callback(response);
                     });
             },
+            // 获取可考勤的培训班信息
             getCheckBan: function(callback) {
                 return resource.getCheckBan({}, {}, function(response) {
+                    callback && callback(response);
+                });
+            },
+            // 获取我的培训班信息
+            getMyBan: function(obj, callback) {
+                return resource.getMyBan(null, JSON.stringify({
+                    PageIndex: obj.PageIndex,
+                    PageSize: ENV.pageSize,
+                    IsPage: true,
+                    Condition: obj.Condition
+                }), function(response) {
+                    callback && callback(response);
+                });
+            },
+            /**获取我的课程资料
+             * [getMyZl description]
+             * @Author   'yuxiaoting@bestwise.cc'
+             * @DateTime 2017-01-13
+             * @param    {[type]}                 banId    [description]
+             * @param    {Function}               callback [description]
+             * @return   {[type]}                          [description]
+             */
+            getMyZl: function(banId, callback) {
+                return resource.getMyZl({
+                    trainId: banId
+                }, null, function(response) {
                     callback && callback(response);
                 });
             }
