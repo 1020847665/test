@@ -1,10 +1,11 @@
 angular.module("tuanxiao.services")
     .factory('dataService', [function() {
         return {
-            signUpBanName: "",//报名培训班名
-            checkBanObj:null,//允许考勤的班级信息
-            commentName:"",//评论的班级/课程名
-            myBanDetailObj:null//跳转至我的课程详情时
+            signUpBanName: "", //报名培训班名
+            checkBanObj: null, //允许考勤的班级信息
+            commentName: "", //评论的班级/课程名
+            myBanDetailObj: null, //跳转至我的课程详情时
+            userInfo: null
         };
 
     }]);

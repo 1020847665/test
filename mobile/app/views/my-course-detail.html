@@ -4,7 +4,7 @@
     <div class="course-details-name">
         <p>{{banDetail.Name}}</p>
         <div class='course-details-timeBox'>
-            <p>培训时间:{{banDetail.StartTime|date:'yyyy.mm.dd'}}-{{banDetail.EndTime|date:'yyyy.mm.dd'}}</p>
+            <p>培训时间：{{banDetail.StartTime|date:'yyyy.MM.dd'}}-{{banDetail.EndTime|date:'yyyy.MM.dd'}}</p>
             <p ng-class="{0:'red'}[banDetail.State]">{{banDetail.StateText}}</p>
         </div>
     </div>
@@ -15,13 +15,13 @@
             <li ng-if="banDetail.State==3" ng-click="openCertificate()">
                 <p>结业证书</p>
             </li>
-            <li ng-if="banDetail.State==3">
+            <li ng-if="banDetail.State==3" ng-click="openClassHours()">
                 <p>学时证明</p>
             </li>
-            <li>
+            <li ui-sref="myBanCourse({banId:banDetail.TrainId})">
                 <p>课程表</p>
             </li>
-            <li>
+            <li ui-sref="myBanContact({banId:banDetail.TrainId})">
                 <p>班级通讯录</p>
             </li>
         </ul>

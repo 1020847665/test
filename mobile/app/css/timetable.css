@@ -37,7 +37,7 @@
 	margin: 0 auto;
 	font-size: 1.625rem;
 	text-align: center;
-	box-shadow: 0.3125rem 0.3125rem 0.625rem #999;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 .timetable-list th{
 	height: 5.0rem;
@@ -53,11 +53,11 @@
 	padding: 0;
 	height: 5.0rem;
 	border-bottom:1px solid #e8e8e8;
+	color:#999;
 }
 .timetable-list tr p{
-	height: 2.5rem;
 	font-size: 1.5rem;
-	line-height: 2.5rem;
+	padding:5px 0;
 }
 .timetable-list tr p:nth-child(1){
 	color:#666;

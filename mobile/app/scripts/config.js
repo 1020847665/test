@@ -6,8 +6,8 @@ angular.module("tuanxiao.config", [])
             "version": "1.0.0",
             "name": "tuanxiao",
             "description": "成都市团校微信网页开发",
-            "pageSize":3,//默认每页显示数量
-            "api": "http://192.168.0.120:8654/api/", //测试接口
+            "pageSize":5,//默认每页显示数量
+            "api": "http://192.168.0.122:8654/api/", //测试接口
             // "api": "http://121.40.206.191:8300/api/",//正式接口
             // 公众号调用接口获取access_token测试凭证
             'grant_type': 'client_credential',

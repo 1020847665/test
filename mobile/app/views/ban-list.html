@@ -1,13 +1,10 @@
 <div class="teacher-list-sec" style="padding-top:5rem;" scroll-load getdata="loadMore">
-<!-- 测试 -->
-<!-- <div id="map" style="width: 100%;height:200px;"></div>
-  <button ng-click="getAddress()">地理位置</button> -->
-
     <img src="imgs/banner.png" style="width:100%;margin-bottom: 1.875rem;">
     <div>
         <div ui-sref="banDetail({banId:n.TrainId})" class="teacher-list-model" ng-repeat="n in banList">
             <div style="display:table;width:100%;margin:2.5rem 0;">
-                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;"></div>
+                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;"  null-pic bg-type="ban" pic="n.LogoUrl">
+                </div>
                 <div class="teacher-list-right" style="width:60%;">
                     <div class="teacher-list-title">{{n.Name}}</div>
                     <div class="teacher-list-content" style="margin-top:1rem;" ng-bind-html="n.Introduce|trustAsHtml" ></div>

@@ -2,7 +2,7 @@ angular.module('tuanxiao.controller')
 
 //资料
 .controller('zlListCtrl', ['ENV', '$rootScope', '$scope', '$state', 'zlService', function(ENV, $rootScope, $scope, $state, zlService) {
- $rootScope.loading = true;
+        $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -18,17 +18,17 @@ angular.module('tuanxiao.controller')
             busy: false //未到底部时，为不忙状态
         };
         $scope.seachData = function() {
-            if (!$scope.searchName) return;
-            $scope.zlList = [];
-            $scope.loadObj.PageIndex = 1;
-            $scope.loadObj.Condition = [{
-                "GroupName": "zlname",
-                "FieldName": "Name",
-                "FieldValue": $scope.searchName,
-                "SqlOperator": 'Like',
-                "IsQuery": true
-            }];
-            $scope.getzlList();
+                $scope.zlList = [];
+                $scope.loadObj.PageIndex = 1;
+                $scope.loadObj.Condition = [{
+                    "GroupName": "zlname",
+                    "FieldName": "Name",
+                    "FieldValue": $scope.searchName,
+                    "SqlOperator": 'Like',
+                    "IsQuery": true
+                }];
+                $scope.getzlList();
+
         };
         // 获取列表
         $scope.zlList = [];
@@ -40,7 +40,7 @@ angular.module('tuanxiao.controller')
                     });
                     $scope.pageCount = response.Data.TotalPageCount;
                     $scope.loadObj.busy = false;
-                     $rootScope.loading = false;
+                    $rootScope.loading = false;
                 }
             });
         };
@@ -60,7 +60,7 @@ angular.module('tuanxiao.controller')
         };
     }])
     .controller('zlDetailCtrl', ['ENV', '$rootScope', '$scope', '$state', '$stateParams', 'baseService', 'zlService', function(ENV, $rootScope, $scope, $state, $stateParams, baseService, zlService) {
-         $rootScope.loading = true;
+        $rootScope.loading = true;
         // 设置nav
         $rootScope.headerActive = {
             active: false,
@@ -74,7 +74,7 @@ angular.module('tuanxiao.controller')
         zlService.getZlDetail($stateParams.zlId, function(response) {
             if (response.Status == 1 && response.Data) {
                 $scope.zlDetail = response.Data;
-                 $rootScope.loading = false;
+                $rootScope.loading = false;
                 // $scope.zlDetail.Url="/test.mp3";
                 if ($scope.zlDetail.Attachment && $scope.zlDetail.Attachment.length > 0) {
                     //展示图片张数

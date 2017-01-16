@@ -70,21 +70,15 @@ angular.module("tuanxiao.directive")
             restrict: 'A',
             link: function(scope, element, attrs) {
                 if (scope.pic == null || scope.pic == "") {
-                    if (scope.bgType == 'OrgCoverBig') {
-                        scope.pic = 'imgs/null.png'; //机构详情页轮播默认图
-                    } else if (scope.bgType == 'OrgCover') {
-                        scope.pic = 'imgs/sm_null.png'; //机构默认封面
-                    } else if (scope.bgType == 'OrgLogo') {
-                        scope.pic = 'imgs/logo_null.png'; //机构默认封面
+                    if (scope.bgType == 'ban') {
+                        scope.pic = 'imgs/course_default.png';
+                    } else if (scope.bgType == 'teacher') {
+                        scope.pic = 'imgs/teacher_default.png';
+
                     }
                 }
-                //如果有值，那么就设置图片的高的值等于宽度值
-                if (attrs.nullPic) {
-                    element.css("height", element.css("width"));
-                }
-
             }
-        }
+        };
     })
     //返回顶部
     .directive('backTop', function() {
@@ -136,7 +130,7 @@ angular.module("tuanxiao.directive")
                     });
                 });
                 element.bind('focusout', function() {
-                  angular.element(document).find('.search-header').css({
+                    angular.element(document).find('.search-header').css({
                         "postion": 'fixed'
                     });
                 });

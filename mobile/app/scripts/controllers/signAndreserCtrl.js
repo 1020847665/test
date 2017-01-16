@@ -218,4 +218,63 @@ angular.module('tuanxiao.controller')
             active: false,
             number: 0
         };
+    }])
+    .controller('myReservationCtrl', ['$rootScope', '$scope', '$state','$cookieStore', 'userService','dataService', function($rootScope, $scope,$state, $cookieStore, userService,dataService) {
+        $rootScope.loading = true;
+        // 设置nav
+        $rootScope.headerActive = {
+            active: false,
+            number: 0
+        };
+        $rootScope.footerActive = {
+            active: false,
+            number: 0
+        };
+        // 滚动加载获取数据
+        $scope.loadObj = {
+            PageIndex: 1,
+            busy: false //未到底部时，为不忙状态
+        };
+        // 获取列表
+        $scope.myReserve = [];
+        $scope.getMyReserve = function() {
+            userService.getMyReserve($scope.loadObj, function(response) {
+                if (response.Status == 1 && response.Data) {
+                    angular.forEach(response.Data.Items, function(item, index) {
+                        $scope.myReserve.push(item);
+                    });
+                    $scope.pageCount = response.Data.TotalPageCount;
+                    $scope.loadObj.busy = false;
+                    $rootScope.loading = false;
+                }
+            });
+        };
+        //滑动获取数据
+        $scope.loadMore = function() {
+            if ($scope.loadObj.busy === true) {
+                return;
+            } else {
+                if ($scope.loadObj.PageIndex < $scope.pageCount) {
+                    $scope.loadObj.PageIndex++;
+                    $scope.loadObj.busy = true;
+                    $scope.getMyReserve();
+                } else return;
+            }
+        };
+        // 获取数据
+        if ($cookieStore.get("Authorization")) {
+            $scope.getMyReserve();
+        } else {
+            userService.sendCode(function() {
+                $scope.getMyReserve();
+            });
+        }
+        // -------------去评论-----------
+        $scope.gotoComment = function(u) {
+            dataService.commentName = u.Name;
+            $state.go("myToComment", {
+                targId: u.TargetId,
+                type: 1
+            });
+        };
     }]);

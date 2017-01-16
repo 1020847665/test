@@ -110,14 +110,14 @@ app.config(['$urlRouterProvider', '$stateProvider', '$httpProvider', function($u
             templateUrl: "views/my-course-detail.html"
         })
         .state('myBanContact', {
-            url: '/myBanContact',
+            url: '/myBanContact/:banId',
             controller: 'myBanContactCtrl',
             stateName: '班级通讯录',
             auth: true,
             templateUrl: "views/my-contact-list.html"
         })
         .state('myBanCourse', {
-            url: '/myBanCourse',
+            url: '/myBanCourse/:banId',
             controller: 'myBanCourseCtrl',
             stateName: '课程表',
             auth: true,

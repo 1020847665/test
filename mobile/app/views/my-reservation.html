@@ -1,45 +1,23 @@
-
-	<!-- 我的预约 -->
-
-
-<!-- 预约开始 -->
-<div class='reservation-container'>
-
-				<div class="reservation-status">
-						<div class="reservation-name">
-							<p>青年创业指导培训班（第十一期）</p>
-							<p class='status-succeed'>预约成功</p>
-						</div>
-						<div class='reservation-time'>
-							<p>培训时间:2016.12.07 - 2016.12.12</p>
-						</div>
-						<div class='reservation-button'>
-							<div class='toCommentOn' >去评论</div>
-						</div>
-				</div>
-
-				<div class="reservation-status">
-					<div class="reservation-name">
-					<p>商务精品英语培训（第五期）</p>
-					<p class='status-defeat'>预约失败</p>
-					</div>
-					<div class='reservation-time'>
-					<p>培训时间:2016.12.07 - 2016.12.12</p>
-					</div>
-				</div>
-				
-				<div class="reservation-status">
-					
-						<div class="reservation-name">
-						<p>商务精品英语培训（第五期）</p>
-						<p class='status-treatment'>处理中</p>
-						</div>
-						<div class='reservation-time'>
-						<p>培训时间:2016.12.07 - 2016.12.12</p>
-						</div>
-					
-
-				</div>
-		<!-- 预约结束 -->
-	</div>
+<div class="training-unfinished" style="background-color: #f3f5f9;" scroll-load getdata="loadMore" ng-show="myReserve.length>0">
+    <ul ng-repeat="n in myReserve">
+        <li>
+            <div class="trainingClass-name">
+                <p>{{n.TargetName}}</p>
+                <p class="{2:'red'}[n.BookState]">{{n.BookStateText}}</p>
+            </div>
+            <div class='training-time'>
+                <p>预约时间：{{n.BookTime|date:'yyyy.MM.dd'}}</p>
+            </div>
+        </li>
+        <li ng-if="n.BookState==1&&n.BookType==1">
+            <div class='trainingClass-button'>
+                <div class='toCommentOn' ng-click="gotoComment(n)">去评论</div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!-- 空白页 -->
+<div class="my-course-null" ng-show="myReserve.length==0">
+    <img src="imgs/my_reserve_null.png">
+    <div>目前还没有预约噢~</div>
 </div>

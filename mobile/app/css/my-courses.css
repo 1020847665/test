@@ -1,5 +1,3 @@
-
-
 /*我的课程切换按钮开始*/
 
 .my-courses-container {
@@ -28,6 +26,7 @@ header.my-courses-tab {
     width: 50%;
     text-align: center;
     font-size: 1.875rem;
+    color:#999;
 }
 
 .my-courses-tab ul li p {
@@ -47,7 +46,9 @@ header.my-courses-tab {
     margin-top: -1.875rem;
     background: #e8e8e8;
 }
-
+.my-courses-tab ul li.active{
+    color:#010101;
+}
 .my-courses-tab ul li.active i {
     display: block;
     width: 5.625rem;
@@ -156,3 +157,20 @@ header.my-courses-tab {
 
 
 /*我的课程状态结束*/
+
+
+/*空白页*/
+
+.my-course-null {
+    background-color: #f3f5f9;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.75rem;
+    color: #d8d7d7;
+    font-weight: bold;
+}
+
+.my-course-null img {
+    width: 30.5%;
+    margin:40% auto 7.5rem;
+}

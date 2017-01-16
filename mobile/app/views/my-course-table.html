@@ -5,8 +5,8 @@
 <!-- 课程表头部开始 -->
 
 <div class="timetable-top">
-	<h3>青年创业指导培训班(第十期)</h3>
-	<p>培训时间:2016.12.03 - 2016.12.07</p>
+	<h3>{{banDetail.Name}}</h3>
+	<p>培训时间：{{banDetail.StartTime|date:'yyyy.MM.dd'}}-{{banDetail.EndTime|date:'yyyy.MM.dd'}}</p>
 </div>
 
 <!-- 课程表头部结束 -->
@@ -21,16 +21,16 @@
         <th>培训老师</th> 
         <th>学时</th>
     	</tr> 
-		<tr>
-			<td>找到目标</td>
+		<tr ng-repeat="n in banTable">
+			<td>{{n.Name}}</td>
 			<td>
-			<p>12.03.上午</p>
-			<p>09:30-12:00</p>
+			<p>{{n.StartTime|date:'yyyy-MM-dd HH:mm'}}</p>
+			<p>{{n.EndTime|date:'yyyy-MM-dd HH:mm'}}</p>
 			</td>
-			<td>张兰</td>
-			<td>3</td>
+			<td><span ng-repeat="t in n.TrainTeacher" style="margin-right: 5px;">{{t}}</span></td>
+			<td>{{n.ClassHours}}</td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>确认客户群</td>
 			<td>
 			<p>12.04.下午</p>
@@ -56,7 +56,7 @@
 			</td>
 			<td>张兰</td>
 			<td>3</td>
-		</tr>
+		</tr> -->
 	</table>
 
 </div>

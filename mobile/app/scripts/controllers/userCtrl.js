@@ -25,6 +25,7 @@ angular.module('tuanxiao.controller')
             userService.getUserInfo(function(response) {
                 if (response.Status == 1 && response.Data) {
                     $scope.userInfo = response.Data;
+                    dataService.userInfo = response.Data;
                 }
             });
             // 判断是否可考勤
@@ -128,11 +129,58 @@ angular.module('tuanxiao.controller')
 
     }])
     // 我要考勤
-    .controller('myAttendCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', 'dataService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService, dataService) {
+    .controller('myAttendCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', 'dataService', 'baseService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService, dataService, baseService) {
+        $rootScope.loading = false;
+        // 设置nav
+        $rootScope.headerActive = {
+            active: false,
+            number: 0
+        };
+        $rootScope.footerActive = {
+            active: false,
+            number: 0
+        };
+        // 获取信息
+        function getInfo() {
+            //个人信息
+            if (!dataService.userInfo) {
+                userService.getUserInfo(function(response) {
+                    if (response.Status == 1 && response.Data) {
+                        $scope.userInfo = response.Data;
+                    }
+                });
+            } else {
+                $scope.userInfo = dataService.userInfo;
+            }
 
+            // 判断是否可考勤
+            if (!dataService.checkBanObj) {
+                userService.getCheckBan(function(response) {
+                    if (response.Status == 1 && response.Data) {
+                        $scope.isCheck = true; //允许考勤
+                        $scope.checkBan = response.Data;
+                    }
+                });
+            } else {
+                $scope.checkBan = dataService.checkBanObj;
+            }
+        }
+        //获取数据
+        if ($cookieStore.get("Authorization")) {
+            getInfo();
+        } else {
+            userService.sendCode(function() {
+                getInfo();
+            });
+        }
+        // 经纬度转换--测试
+        $scope.getAddress = function() {
+            baseService.getAddress(39.98174, 116.30631);
+            baseService.showMap("map", 39.98174, 116.30631);
+        };
     }])
     // 我要报到
-    .controller('myRegisterCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', 'dataService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService, dataService) {
+    .controller('myRegisterCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', 'dataService', 'baseService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService, dataService, baseService) {
 
     }])
     //去评论

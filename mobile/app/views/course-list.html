@@ -2,7 +2,8 @@
     <div>
         <div ui-sref="courseDetail({courseId:n.CourseId})" class="teacher-list-model" ng-repeat="n in courseList">
             <div style="display:table;width:100%;margin:2.5rem 0;">
-                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;"></div>
+                <div class="teacher-list-img back-cover" style="background-image: url({{n.LogoUrl}});width:35%;" null-pic bg-type="ban" pic="n.LogoUrl">
+                </div>
                 <div class="teacher-list-right" style="width:60%;">
                     <div class="teacher-list-title">{{n.Name}}</div>
                     <div class="teacher-list-content" style="margin-top:1rem;">{{n.Introduce}}</div>

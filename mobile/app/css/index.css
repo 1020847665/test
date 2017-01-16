@@ -10,7 +10,9 @@ body {
 
 
 /*公共样式*/
-
+ul li{
+    list-style:none;
+}
 button.disabled {
     background-color: #F7F7F7;
     color: #C9C9C9;

@@ -6,7 +6,7 @@
 
 /*搜索栏开始*/
 
-.Contact-list-searchBox{
+.Contact-list-searchBox>div{
 	background: #fff;
 	width: 90.67%;
 	height: 4.75rem;
@@ -14,8 +14,14 @@
 	border-radius: 0.25rem;
 	margin: 1.25rem auto 1.875rem auto;
 }
-
-.Contact-list-searchBox div{
+.Contact-list-searchBox{
+	    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f3f5f9;
+}
+.Contact-list-searchBox>div div{
 	float: left;
 }
 .search-icon{
@@ -26,6 +32,7 @@
 }
 .search-icon img{
 	vertical-align: middle;
+	height:1.625rem;
 }
 .Contact-search{
 	width: 85.3%;
@@ -34,7 +41,6 @@
 	width: 100%;
 	border: none;
 	background: none;
-	color: #dbdbdb;
 	height: 4.75rem;
 	font-size: 1.625rem;
 	outline:none;
@@ -47,6 +53,7 @@
 
 .Contact-list-info{
 	background: #fff;
+	padding:8rem 0;
 }
 
 .Contact-list-info h3{

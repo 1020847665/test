@@ -1,25 +1,40 @@
-
-	<!-- 考勤-->
-
+<!-- 测试 -->
+<div id="map" style="width: 100%;height:200px;"></div>
+<button ng-click="getAddress()">地理位置</button>
+<!-- 考勤-->
 <div class="my-reservation-container">
-
-
-	<div class='reservation-time'>
-		<p>10:02</p>
-		<div><p>青年创业指导班（第十一期）</p><p>王智波</p></div>
-	</div>
-
-
-
-	<div class="reservation-site">
-		<p>和芯科技大厦</p>
-		<div class="reservation-map">这是地图</div>
-	</div>
-<div class="reservation-button">
-	<button type="button">报到</button>
+    <div class='reservation-time'>
+        <p>10:02</p>
+   <!--      <div>
+            <p>青年创业指导班（第十一期）</p>
+            <p>王智波</p>
+        </div> -->
+        <div class="weui_cells weui_cells_radio">
+            <label class="weui_cell weui_check_label" for="x11" >
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>单选列表项1</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <input type="radio" class="weui_check" name="radio1" id="x11">
+                    <span class="weui_icon_checked"></span>
+                </div>
+            </label>
+            <label class="weui_cell weui_check_label" for="x12">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>单选列表项2</p>
+                </div>
+                <div class="weui_cell_ft">
+                    <input type="radio" name="radio1" class="weui_check" id="x12" checked="checked">
+                    <span class="weui_icon_checked"></span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="reservation-site">
+        <p>和芯科技大厦</p>
+        <div class="reservation-map">这是地图</div>
+    </div>
+    <div class="reservation-button">
+        <button type="button">报到</button>
+    </div>
 </div>
-	
-
-
-</div>
-	

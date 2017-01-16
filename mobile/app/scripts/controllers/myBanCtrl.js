@@ -104,7 +104,6 @@ angular.module('tuanxiao.controller')
                             array.push(item);
                         });
                         paramObj.pageCount = response.Data.TotalPageCount;
-                        console.log(paramObj);
                         paramObj.busy = false;
                     }
                     $rootScope.loading = false;
@@ -154,6 +153,7 @@ angular.module('tuanxiao.controller')
         // 跳转详情
         $scope.gomyBanDetail = function(u) {
             dataService.myBanDetailObj = u;
+            console.log(dataService.myBanDetailObj);
             $state.go("myBanDetail", {
                 banId: u.TrainId
             });
@@ -172,39 +172,46 @@ angular.module('tuanxiao.controller')
             active: false,
             number: 1
         };
-        // 获取数据
-        if (!dataService.myBanDetailObj) {
-            banService.getBanDetail($stateParams.banId, function(response) {
+
+        function getInfo() {
+            //获取课程详情
+            if (!dataService.myBanDetailObj) {
+
+                userService.getMyBanDetail($stateParams.banId, function(response) {
+                    if (response.Status == 1 && response.Data) {
+                        $scope.banDetail = response.Data;
+                        $rootScope.loading = false;
+                    }
+                });
+            } else {
+                $scope.banDetail = dataService.myBanDetailObj;
+                $rootScope.loading = false;
+            }
+            // ---------------获取我的培训班资料----------------
+            userService.getMyZl($scope.banId, function(response) {
                 if (response.Status == 1 && response.Data) {
-                    $scope.banDetail = response.Data;
-                    $rootScope.loading = false;
+                    $scope.attachment = response.Data;
+                    //展示图片张数
+                    var s = Math.ceil($scope.attachment.length / 3);
+                    $scope.slidePage = []; //图片展示页数
+                    if (s > 0) {
+                        for (var n = 0; n < s; n++) {
+                            $scope.slidePage.push({
+                                index: n,
+                                active: false
+                            });
+                        }
+                        $scope.slidePage[0].active = true;
+                        $scope.slidePageIndex = 0;
+                        picShow();
+                    }
+
                 }
             });
-        } else {
-            $scope.banDetail = dataService.myBanDetailObj;
-            $rootScope.loading = false;
+            //获取评论列表
+            $scope.getComList();
         }
-        // ---------------获取我的培训班资料（接口更换重改）----------------
-        userService.getMyZl($scope.banId, function(response) {
-            if (response.Status == 1 && response.Data) {
-                $scope.attachment = response.Data;
-                //展示图片张数
-                var s = Math.ceil($scope.attachment.length / 3);
-                $scope.slidePage = []; //图片展示页数
-                if (s > 0) {
-                    for (var n = 0; n < s; n++) {
-                        $scope.slidePage.push({
-                            index: n,
-                            active: false
-                        });
-                    }
-                    $scope.slidePage[0].active = true;
-                    $scope.slidePageIndex = 0;
-                    picShow();
-                }
 
-            }
-        });
 
         // 轮播
 
@@ -292,7 +299,6 @@ angular.module('tuanxiao.controller')
                 }
             });
         };
-        $scope.getComList();
 
         //滑动获取数据
         $scope.loadMore = function() {
@@ -324,13 +330,166 @@ angular.module('tuanxiao.controller')
                 urls: [u.CertificateURL] // 需要预览的图片http链接列表
             });
         };
+        // ----------预览学时证明------------
+        $scope.openClassHours = function() {
+            wx.previewImage({
+                current: u.ClassHoursURL, // 当前显示图片的http链接
+                urls: [u.ClassHoursURL] // 需要预览的图片http链接列表
+            });
+        };
+
+        // 获取数据
+        if ($cookieStore.get("Authorization")) {
+            getInfo();
+        } else {
+            userService.sendCode(function() {
+                getInfo();
+            });
+        }
+
 
     }])
     // 通讯录
-    .controller('myBanContactCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService) {
+    .controller('myBanContactCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', '$stateParams', 'userService', 'dataService', function(ENV, $rootScope, $scope, $cookieStore, $state, $stateParams, userService, dataService) {
+        $rootScope.loading = true;
+        // 设置nav
+        $rootScope.headerActive = {
+            active: false,
+            number: 0
+        };
+        $rootScope.footerActive = {
+            active: false,
+            number: 0
+        };
+        $scope.searchName = "";
+        $scope.loadObj = {
+            PageIndex: 1,
+            Condition: [{
+                "GroupName": "myCourse",
+                "FieldName": "TrainId",
+                "FieldValue": $stateParams.banId,
+                "SqlOperator": 'Equal',
+                "IsQuery": true
+            }, {
+                "GroupName": "studentname",
+                "FieldName": "Name",
+                "FieldValue": $scope.searchName,
+                "SqlOperator": 'Like',
+                "IsQuery": true
+            }],
+            busy: false //未到底部时，为不忙状态
 
+        };
+
+        // 获取列表
+        $scope.contactList = [];
+
+        function getInfo() {
+            //获取培训班基础信息
+            if (!dataService.myBanDetailObj) {
+                userService.getMyBanDetail($stateParams.banId, function(response) {
+                    if (response.Status == 1 && response.Data) {
+                        $scope.banDetail = response.Data;
+                    }
+                });
+            } else {
+                $scope.banDetail = dataService.myBanDetailObj;
+            }
+            //获取通讯录
+            $scope.getMyBanContact();
+        }
+        $scope.getMyBanContact = function() {
+            userService.getMyBanContact($scope.loadObj, function(response) {
+                if (response.Status == 1 && response.Data) {
+                    angular.forEach(response.Data.Items, function(item, index) {
+                        $scope.contactList.push(item);
+                    });
+                    $scope.pageCount = response.Data.TotalPageCount;
+                    $scope.loadObj.busy = false;
+                    $rootScope.loading = false;
+                }
+            });
+        };
+
+        //滑动获取数据
+        $scope.loadMore = function() {
+            if ($scope.loadObj.busy === true) {
+                return;
+            } else {
+                if ($scope.loadObj.PageIndex < $scope.pageCount) {
+                    $scope.loadObj.PageIndex++;
+                    $scope.loadObj.busy = true;
+                    $scope.getMyBanContact();
+                } else return;
+            }
+        };
+        //获取数据
+        if ($cookieStore.get("Authorization")) {
+            getInfo();
+        } else {
+            userService.sendCode(function() {
+                getInfo();
+            });
+        }
+        // 搜索
+        $scope.seachData = function() {
+            $scope.contactList = [];
+            $scope.loadObj.PageIndex = 1;
+            $scope.loadObj.Condition[1].FieldValue = $scope.searchName;
+            $scope.getMyBanContact();
+        };
     }])
     // 课程表
-    .controller('myBanCourseCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', 'userService', function(ENV, $rootScope, $scope, $cookieStore, $state, userService) {
+    .controller('myBanCourseCtrl', ['ENV', '$rootScope', '$scope', '$cookieStore', '$state', '$stateParams', 'userService', 'dataService', function(ENV, $rootScope, $scope, $cookieStore, $state, $stateParams, userService, dataService) {
+        $rootScope.loading = true;
+        // 设置nav
+        $rootScope.headerActive = {
+            active: false,
+            number: 0
+        };
+        $rootScope.footerActive = {
+            active: false,
+            number: 0
+        };
+        $scope.loadObj = {
+            PageIndex: 1,
+            Condition: [{
+                "GroupName": "myCourse",
+                "FieldName": "TrainId",
+                "FieldValue": $stateParams.banId,
+                "SqlOperator": 'Equal',
+                "IsQuery": true
+            }]
+        };
 
+        function getInfo() {
+            //获取培训班基础信息
+            if (!dataService.myBanDetailObj) {
+                userService.getMyBanDetail($stateParams.banId, function(response) {
+                    if (response.Status == 1 && response.Data) {
+                        $scope.banDetail = response.Data;
+                    }
+                });
+            } else {
+                $scope.banDetail = dataService.myBanDetailObj;
+            }
+            //获取课程表
+            userService.getMyBanCourse($scope.loadObj, function(response) {
+                if (response.Status == 1) {
+                    if (response.Data&&response.Data.Items) {
+                        $scope.banTable = response.Data.Items;
+                    }
+                    $rootScope.loading = false;
+                }
+            });
+        }
+
+        // 获取数据
+        if ($cookieStore.get("Authorization")) {
+            getInfo();
+        } else {
+            userService.sendCode(function() {
+                getInfo();
+            });
+        }
     }]);

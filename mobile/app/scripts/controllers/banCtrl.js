@@ -12,11 +12,7 @@ angular.module('tuanxiao.controller')
             active: true,
             number: 1
         };
-        // 经纬度转换--测试
-        $scope.getAddress = function() {
-            baseService.getAddress(39.98174, 116.30631);
-            baseService.showMap("map", 39.98174, 116.30631);
-        };
+     
         // 滚动加载获取数据
         $scope.loadObj = {
             PageIndex: 1,
